@@ -1,0 +1,26 @@
+@font-face {
+  font-family: $font-second;
+  src: url('ResistSansText-Regular.ttf');
+  src: url('ResistSansText-Regular.woff2') format('woff2'),
+      url('ResistSansText-Regular.woff') format('woff'),
+      url('ResistSansText-Regular.ttf') format('ttf'),
+      url('ResistSansText-Regular.eot') format('eot');
+}
+@font-face {
+  font-family: $font-second;
+  src: url('ResistSansText-Light.ttf');
+  src: url('ResistSansText-Light.woff2') format('woff2'),
+      url('ResistSansText-Light.woff') format('woff'),
+      url('ResistSansText-Light.ttf') format('ttf'),
+      url('ResistSansText-Light.eot') format('eot');
+  font-weight: $weight-light;
+}
+@font-face {
+  font-family: $font-second;
+  src: url('ResistSansText-Medium.ttf');
+  src: url('ResistSansText-Medium.woff2') format('woff2'),
+      url('ResistSansText-Medium.woff') format('woff'),
+      url('ResistSansText-Medium.ttf') format('ttf'),
+      url('ResistSansText-Medium.eot') format('eot');
+  font-weight: $weight-medium;
+}

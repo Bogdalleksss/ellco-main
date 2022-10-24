@@ -1,0 +1,36 @@
+@mixin h1($color) {
+  font-size: 60px;
+  font-weight: $weight-medium;
+  letter-spacing: -.04em;
+  color: $color;
+}
+
+@mixin h2($color) {
+  font-size: 50px;
+  font-weight: $weight-medium;
+  line-height: 110%;
+  letter-spacing: -.01em;
+  color: $color;
+}
+
+@mixin h3($color) {
+  font-size: 24px;
+  font-weight: $weight-medium;
+  line-height: 120%;
+  color: $color;
+}
+
+@mixin h4($color) {
+  font-size: 20px;
+  font-weight: $weight-medium;
+  line-height: 120%;
+  letter-spacing: -.03em;
+  color: $color;
+}
+
+@mixin h5($color) {
+  font-size: 36px;
+  font-weight: $weight-medium;
+  letter-spacing: -.03em;
+  color: $color;
+}

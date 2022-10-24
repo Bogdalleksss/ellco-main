@@ -1,0 +1,263 @@
+.button {
+  border: none;
+  border-radius: 12px;
+  font-family: $font-second;
+  line-height: 120%;
+
+  &-main {
+    padding: 20px 30px;
+    background: $yellow;
+    color: $black;
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: $weight-medium;
+  }
+
+  &-secondary {
+    padding: 14px 30px;
+    background: $grey;
+    color: $blue;
+    font-size: 16px;
+  }
+
+  &-outline {
+    padding: 15px 30px;
+    border: 1px solid $black;
+    font-size: 16px;
+    line-height: 120%;
+    color: $black;
+    background: transparent;
+  }
+}
+
+.slider {
+  &-card {
+    width: 440px;
+    min-height: 586px;
+    padding: 20px;
+    border-radius: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #4B4B4B;
+    backdrop-filter: blur(5px);
+    transition: .5s;
+
+    img {
+      border-radius: 40px;
+      max-height: 420px;
+      width: 100%;
+      transition: .5s;
+    }
+
+    &--small {
+      width: 290px;
+      min-height: 396px;
+
+      img {
+        max-height: 250px;
+      }
+    }
+  }
+
+  &-control {
+    &__arrow {
+      width: 40px;
+      height: 40px;
+      background: $white;
+      border-radius: 10px;
+    }
+
+    &__progress-bar {
+      width: 270px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.4);
+
+      span {
+        background: #FFFFFF;
+        border-radius: 10px;
+        height: 100%;
+        display: block;
+        transition: .4s;
+      }
+    }
+  }
+
+  .swiper {
+    &-wrapper {
+      height: 586px;
+    }
+    //swiper-slide-next
+    &-slide {
+      &-active {
+        display: grid;
+        align-items: center;
+      }
+      &-next {
+        justify-content: flex-end !important;
+      }
+      &:not(&-active) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.tariff {
+  &-card {
+    position: relative;
+    min-width: 367px;
+    max-width: 367px;
+    min-height: 678px;
+    max-height: 678px;
+
+    background: $grey-light;
+    border-radius: 30px;
+    overflow: hidden;
+
+    &.game-mode {
+      background: $blue;
+
+      h3, p {
+        color: $white;
+      }
+
+      .tariff-card__available {
+        background: rgba(255, 255, 255, 0.1) !important;
+      }
+
+      .tariff-card__advantages {
+        border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+      }
+
+      .button-secondary {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: $white;
+      }
+    }
+
+    .game-mode {
+      &__texture {
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    h3 {
+      width: 80%;
+      min-height: 58px;
+    }
+
+    img {
+      width: 50px;
+      position: absolute;
+      top: 0;
+      right: 15px;
+    }
+
+    .price {
+      font-size: 50px;
+      line-height: 120%;
+      letter-spacing: -0.03em;
+
+      &-old {
+        //TODO Изменить шрифт на 'Inter'
+
+        position: relative;
+        color: $green;
+        font-size: 21px;
+        line-height: 130%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+          position: absolute;
+          content: '';
+          width: 110%;
+          height: 2px;
+          background: $green;
+          margin-top: -4px;
+        }
+      }
+    }
+
+    &__advantages {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &__available {
+      padding: 10px 20px;
+      background: $grey;
+      border-radius: 100px;
+    }
+  }
+}
+
+.tabs {
+  border-bottom: 2px solid $grey;
+
+  &__tab {
+    margin-bottom: -2px;
+    span {
+      color: $grey-dark;
+      opacity: 0.4;
+    }
+
+    &.active {
+      span {
+        color: $blue;
+        opacity: 1;
+      }
+
+      border-bottom: 2px solid $yellow;
+    }
+  }
+}
+
+.post {
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    row-gap: 30px;
+    column-gap: 40px;
+  }
+
+  &-card {
+    box-shadow: 0px 8px 44px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    max-height: 461px;
+
+    img {
+      width: 100%;
+      min-height: 300px;
+      border-radius: 20px;
+    }
+
+    &--large {
+      position: relative;
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      img {
+        min-height: 100% !important;
+        max-height: 421px;
+      }
+
+      .content {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        max-width: 70%;
+
+        * {
+          color: $white;
+        }
+      }
+    }
+  }
+}
