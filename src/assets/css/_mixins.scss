@@ -34,3 +34,13 @@
   letter-spacing: -.03em;
   color: $color;
 }
+
+@mixin b1() { font-size: 24px; }
+@mixin b2() { font-size: 20px; }
+@mixin b3() { font-size: 18px; font-weight: $weight-medium; }
+@mixin b4() { font-size: 18px; font-weight: $weight-light; }
+@mixin b5() { font-size: 16px; font-weight: $weight-medium; }
+@mixin b6() { font-size: 16px; }
+@mixin b7() { font-size: 14px; }
+@mixin b8() { font-size: 14px; font-weight: $weight-medium; }
+@mixin b9() { font-size: 18px; }

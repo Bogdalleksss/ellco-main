@@ -1,13 +1,13 @@
 import TextureMountain from '@/assets/img/mountain-texture-footer.svg'
 
-import Logo from '@/assets/img/logo.png'
-
 import GooglePlay from '@/assets/img/GooglePlay-Blue.svg'
 import AppStore from '@/assets/img/AppStore-Blue.svg'
 import PhoneMockup from '@/assets/img/footer-phone.png'
+import Logo from "../Logo";
 
 const nav = [
   {
+    id: 1,
     title: 'Интернет',
     links: [
       {
@@ -33,6 +33,7 @@ const nav = [
     ]
   },
   {
+    id: 2,
     title: 'Телефония',
     links: [
       {
@@ -58,6 +59,7 @@ const nav = [
     ]
   },
   {
+    id: 3,
     title: 'Телевидение',
     links: [
       {
@@ -83,6 +85,7 @@ const nav = [
     ]
   },
   {
+    id: 4,
     title: 'Видеонаблюдение',
     links: [
       {
@@ -156,35 +159,40 @@ const navMenu = [
 const Footer = () => {
   return (
     <footer className="container-full">
-      <div className="mobile-block zi-1" />
       <div className="montain-texture-footer zi-2">
         <img src={TextureMountain} alt=""/>
       </div>
 
-      <div className="container zi-5 flex-jcsb">
+      <div className="container">
 
-        <div className="left column pt-10">
-          <div className="flex flex-aiс">
-            <img src={Logo} alt="" className="logo mr-4"/>
-            <p className="body body-2 font-color-w mt-3">
-              Мобильное приложение <br/>
-              “Мой ellсo”
-            </p>
+        <div className="left column pt-10 pr-15">
+          <div className="mobile-block" />
+          <div>
+            <div className="flex flex-aiс mobile-block-footer">
+              <span className="logo mr-4 zi-2">
+                <Logo fill="#FFFFFF" />
+              </span>
+              <p className="body body-2 font-color-w mt-2  zi-2">
+                Мобильное приложение <br/>
+                “Мой ellсo”
+              </p>
+            </div>
+            <div className="flex aic gap-6 mt-5 mobile-block-footer">
+              <img className="zi-2" src={GooglePlay} alt=""/>
+              <img className="zi-2" src={AppStore} alt=""/>
+            </div>
           </div>
-          <div className="flex aic gap-6 mt-5">
-            <img src={GooglePlay} alt=""/>
-            <img src={AppStore} alt=""/>
+          <div className="mockup__wrapper height-full">
+            <img className="mockup" src={PhoneMockup} alt=""/>
           </div>
-          <img className="mockup" src={PhoneMockup} alt=""/>
         </div>
 
-        <div className="flex column flex-jcsb pb-8">
-          <div className="flex">
+        <div className="right flex column flex-jcsb pb-8 pl-12">
+          <div className="nav-wrapper flex">
             <div className="links-block-wrapper pt-12">
-
               {
                 nav.map(item => (
-                  <div key={item.id} className="links-block flex column">
+                  <div key={`link-${item.id}`} className="links-block flex column">
                     <h4 className="mb-5 font-color-w">{ item.title }</h4>
 
                     <div className="flex column gap-3">
@@ -203,20 +211,25 @@ const Footer = () => {
                 ))
               }
             </div>
-            <div className="flex column gap-8 pt-12 pr-46 ml-24">
+            <div className="nav-wrapper__menu flex column gap-8 pt-12 ml-24">
               {
                 navMenu.map(item => (
-                  <p key={item.id} className="body body-8 font-color-w">{ item.title }</p>
+                  <p
+                    key={`nav-${item.id}`}
+                    className="body body-8 font-color-w"
+                  >
+                    { item.title }
+                  </p>
                 ))
               }
             </div>
           </div>
 
-          <div className="flex">
+          <div className="footer-bottom flex">
             <p className="footer-description body body-8 font-color-w opacity-10 mr-18">
               Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с Политикой конфиденциальности и Пользовательским соглашением
             </p>
-            <p className="body body-8 font-color-w opacity-10">© 2022 ПАО «ellko». 18+</p>
+            <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ПАО «ellko». 18+</p>
           </div>
         </div>
 

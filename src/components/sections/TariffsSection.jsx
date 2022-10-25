@@ -106,7 +106,9 @@ const TariffsSection = () => {
       <div className="container column">
         <h2 className="font-color-bl mb-15">Отправьте заявку на подключение уже сейчас</h2>
         <Tabs className="mb-8" tabs={tabs} />
-        <div className="flex flex-jcsb">
+      </div>
+      <div className="tariffs-list container">
+        <div className="tariffs-list__wrapper o-hidden width-full flex flex-jcsb hide-scrollbar">
           {
             tariffs.map(tariff => (
               <TariffCard

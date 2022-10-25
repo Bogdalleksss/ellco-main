@@ -28,7 +28,7 @@ const ESlider = () => {
   const [slides] = useState(initSlides)
 
   return (
-    <div className="slider" style={{ width: '750px' }}>
+    <div id="slider" className="slider">
       <Swiper
         slidesPerView={2}
         loop={true}

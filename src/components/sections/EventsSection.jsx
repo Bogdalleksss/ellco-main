@@ -40,15 +40,20 @@ const events = [
 ]
 
 const EventsSection = () => {
+  const screen = window.innerWidth;
+  const isTable = screen <= 1600 && screen > 480;
+  const isMobile = screen <= 480;
+  const slicesEvent = events.slice(0, isTable ? 4 : isMobile ? 3 : events.length);
+
   return (
     <section id="events">
       <div className="container column">
-        <h2 className="mb-12">События и акции</h2>
+        <h2 className="mb-12 font-color-bl">События и акции</h2>
 
         <div className="post-wrapper">
           {
-            events.map(event => (
-              <PostCard post={event} />
+            slicesEvent.map(event => (
+              <PostCard key={event.id} post={event} />
             ))
           }
         </div>

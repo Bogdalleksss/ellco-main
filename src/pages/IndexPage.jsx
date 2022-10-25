@@ -6,13 +6,19 @@ import IPTvSection from "../components/sections/IPTvSection";
 import VideoSurveillanceSection from "../components/sections/VideoSurveillanceSection";
 import EventsSection from "../components/sections/EventsSection";
 import Footer from "../components/Footer/Footer";
+import { isMobile } from "../utils/constants";
+import MainMobileSection from "../components/sections/MainMobileSection";
 
 const IndexPage = () => {
   return (
     <>
-      <div className="main-bg">
-        <Header />
-        <MainSection />
+      <div className={!isMobile ? 'main-bg' : ''}>
+        <Header mode={!isMobile ? 'light' : 'default'} />
+        {
+          isMobile
+            ? <MainMobileSection />
+            : <MainSection />
+        }
       </div>
       <TariffsSection />
       <MobileAppSection />

@@ -30,15 +30,15 @@ const TariffCard = ({ tariff }) => {
         <div className="tariff-card__advantages">
           <div className="flex flex-aic gap-2">
             <IconSpeed fill={isGame ? '#FFFFFF' : '#054FD6'} />
-            <p className="body body-2">{ speed } Мбит/с</p>
+            <p className="tariff-card__advantages__title body body-2">{ speed } Мбит/с</p>
           </div>
-          <p className="body body-7 opacity-10">скорость интернета</p>
+          <p className="tariff-card__advantages__content body body-7 opacity-10">скорость интернета</p>
         </div>
 
         <div className="tariff-card__advantages mb-6">
-          <div className="flex flex-aic gap-2">
+          <div className="tariff-card__advantages__title flex flex-aic gap-2">
             <IconPC fill={isGame ? '#FFFFFF' : '#054FD6'} />
-            <p className="body body-2">{ channels } каналов</p>
+            <p className="tariff-card__advantages__content body body-2">{ channels } каналов</p>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ const TariffCard = ({ tariff }) => {
         <div className="flex mb-2 flex-jcc">
           { discount ? <p className="price-old mr-3">{ discount }</p> : <></> }
           <p className="price mr-2">{ price }</p>
-          <p className="body body-7">руб./мес</p>
+          <p className="currency body body-7">руб./мес</p>
         </div>
         <Button className="width-full mb-1">Подключить</Button>
         <Button className="width-full mb-1" type="secondary">Подробнее</Button>

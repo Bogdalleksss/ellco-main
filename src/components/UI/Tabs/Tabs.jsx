@@ -8,6 +8,7 @@ const Tabs = ({ tabs, className }) => {
       {
         tabs.map(tab => (
           <div
+            key={tab.id}
             className={`tabs__tab pr-6 pl-6 pb-3 ${currentTab === tab.id ? 'active' : ''}`}
             onClick={() => updateCurrentTab(tab.id)}
           >

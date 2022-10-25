@@ -15,9 +15,9 @@ const ESliderCard = ({ id, title, content, img }) => {
       {
         !isSmall
           ? <h4 className="font-color-w mb-3">{ title }</h4>
-          : <p className="body body-3 font-color-w mb-3">{ title }</p>
+          : <p className="slider-card__title body body-3 font-color-w mb-3">{ title }</p>
       }
-      <p className={`body font-color-w ${isSmall ? 'body-7' : 'body-4'}`}>{ content }</p>
+      <p className={`body font-color-w ${isSmall ? 'body-7 slider-card__content' : 'body-4'}`}>{ content }</p>
     </div>
   )
 }
