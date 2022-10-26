@@ -1,4 +1,5 @@
 import MobileImage from '@/assets/img/mobile-main.png'
+import Fade from 'react-reveal/Fade';
 
 const labels = [
   {
@@ -81,32 +82,42 @@ const MainMobileSection = () => {
   return (
     <section id="main-mobile" className="main-mobile">
       <div className="container column">
-        <img className="mt-6 mb-4" src={MobileImage} alt=""/>
-        <h1 className="mb-4">Интернет безграничных возможностей в каждом уголке Дагестана</h1>
+        <Fade duration={1500}>
+          <img className="mt-6 mb-4" src={MobileImage} alt=""/>
+        </Fade>
+
+        <Fade bottom delay={200} duration={1500}>
+          <h1 className="mb-4">Интернет безграничных возможностей в каждом уголке Дагестана</h1>
+        </Fade>
+
         <div className="labels flex pr-20 mb-4">
-          { labels.map(label => (
-            <span
-              key={`label-${label.id}`}
-              style={getStyle(label.type, label.color)}
-              className="pt-1 pb-1 pr-2 pl-2"
-            >
-          { label.title }
-        </span>
+          { labels.map((label, idx) => (
+            <Fade bottom delay={300 * (idx + 1)} duration={1500}>
+              <span
+                key={`label-${label.id}`}
+                style={getStyle(label.type, label.color)}
+                className="pt-1 pb-1 pr-2 pl-2"
+              >
+                { label.title }
+              </span>
+            </Fade>
           )) }
         </div>
 
-        <div className="flex main-mobile-card__wrapper gap-4 hide-scrollbar">
-          {
-            cards.map(card => (
-              <MainCard
-                key={`card-${card.id}`}
-                title={card.title}
-                subtitle={card.subtitle}
-                action={card.action}
-              />
-            ))
-          }
-        </div>
+        <Fade bottom delay={100} duration={1500}>
+          <div className="flex main-mobile-card__wrapper gap-4 hide-scrollbar">
+            {
+              cards.map(card => (
+                <MainCard
+                  key={`card-${card.id}`}
+                  title={card.title}
+                  subtitle={card.subtitle}
+                  action={card.action}
+                />
+              ))
+            }
+          </div>
+        </Fade>
       </div>
     </section>
   )

@@ -4,6 +4,7 @@ import ESlider from "@/components/UI/Slider/ESlider";
 import GooglePlay from '@/assets/img/GooglePlay.svg'
 import AppStore from '@/assets/img/AppStore.svg'
 import IconStripes from "../icons/IconStripes";
+import Fade from 'react-reveal/Fade';
 
 const AppBlock = ({ className }) => {
   return (
@@ -25,21 +26,33 @@ const MainSection = () => {
       <div className="container">
         <div className="main__content fb-2 flex column flex-jcsb">
           <div className="main__wrapper pr-20 pt-8">
-            <h1 className="flex font-color-w mb-6">
-              <IconStripes />
-              <span>ellco — на связи с будущим</span>
-            </h1>
-            <p className="main__description body body-1 font-color-w mb-6">
-              Интернет безграничных возможностей <br/>
-              <span>в каждом уголке Дагестана</span>
-            </p>
-            <Button>Подключить</Button>
+            <Fade bottom duration={1500}>
+              <h1 className="flex font-color-w mb-6">
+                <IconStripes />
+                <span>ellco — на связи с будущим</span>
+              </h1>
+            </Fade>
+
+            <Fade bottom delay={100} duration={1500}>
+                <p className="main__description body body-1 font-color-w mb-6">
+                  Интернет безграничных возможностей <br/>
+                  <span>в каждом уголке Дагестана</span>
+                </p>
+            </Fade>
+
+            <Fade bottom delay={200} duration={1500}>
+              <Button>Подключить</Button>
+            </Fade>
           </div>
 
-          <AppBlock className="main__mobile-app" />
+          <Fade bottom delay={300} duration={1500}>
+            <AppBlock className="main__mobile-app" />
+          </Fade>
         </div>
         <div className="main__slider fb-2">
-          <ESlider />
+          <Fade duration={2000}>
+            <ESlider />
+          </Fade>
           <AppBlock className="main__mobile-app hidden" />
         </div>
       </div>
