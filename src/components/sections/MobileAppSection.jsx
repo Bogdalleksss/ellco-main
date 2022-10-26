@@ -3,6 +3,7 @@ import Button from "../UI/Button";
 import PhonesMockups from '@/assets/img/phones.png'
 import GooglePlayBtn from '@/assets/img/GooglePlay-btn.svg'
 import AppStoreBtn from '@/assets/img/AppStore-btn.svg'
+import IconArrowRight from "../icons/IconArrowRight";
 
 const MobileAppSection = () => {
   return (
@@ -17,7 +18,10 @@ const MobileAppSection = () => {
           <div className="buttons-wrapper flex gap-2">
             <img src={GooglePlayBtn} alt=""/>
             <img src={AppStoreBtn} alt=""/>
-            <Button type="outline">Подробнее</Button>
+            <Button type="outline">
+              <span>Подробнее</span>
+              <IconArrowRight fill="#FFC229" />
+            </Button>
           </div>
         </div>
         <img className="mockup" src={PhonesMockups} alt=""/>

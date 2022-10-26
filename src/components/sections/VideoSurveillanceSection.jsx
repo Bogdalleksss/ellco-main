@@ -2,6 +2,7 @@ import Button from "../UI/Button";
 
 import VideoSurveillanceMockup from '@/assets/img/video-camera.png'
 import VideoSurveillanceMockupAdapt from '@/assets/img/video-camera-2.png'
+import IconArrowRight from "../icons/IconArrowRight";
 
 const VideoSurveillanceSection = () => {
   return (
@@ -10,7 +11,10 @@ const VideoSurveillanceSection = () => {
         <div className="section__content fb-3">
           <h2 className="mb-6">Видеонаблюдение</h2>
           <p className="body body-9 mb-6 opacity-12">Удобный личный кабинет для мобильных устройств. Вы можете управлять счетами и услугами, контролировать расходы, безопасно пополнять баланс или найти ближайший офис на карте</p>
-          <Button>Узнать больше</Button>
+          <Button type="main button-main--short">
+            <span>Узнать больше</span>
+            <IconArrowRight fill="#000000" />
+          </Button>
         </div>
         <img className="adapt" src={VideoSurveillanceMockupAdapt} alt=""/>
       </div>

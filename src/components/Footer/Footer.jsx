@@ -1,8 +1,10 @@
-import TextureMountain from '@/assets/img/mountain-texture-footer.svg'
+import TextureMountain from '@/assets/img/mountain-texture-footer.svg';
 
-import GooglePlay from '@/assets/img/GooglePlay-Blue.svg'
-import AppStore from '@/assets/img/AppStore-Blue.svg'
-import PhoneMockup from '@/assets/img/footer-phone.png'
+import GooglePlay from '@/assets/img/GooglePlay-Blue.svg';
+import AppStore from '@/assets/img/AppStore-Blue.svg';
+import PhoneMockup from '@/assets/img/footer-phone.png';
+import VK from '@/assets/img/social-vk.svg';
+import TG from '@/assets/img/social-tg.svg';
 import Logo from "../Logo";
 
 const nav = [
@@ -110,7 +112,7 @@ const nav = [
       }
     ]
   },
-]
+];
 
 const navMenu = [
   {
@@ -153,7 +155,7 @@ const navMenu = [
     title: 'Наши агенты',
     link: ''
   },
-]
+];
 
 
 const Footer = () => {
@@ -225,15 +227,19 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="footer-bottom flex">
-            <p className="footer-description body body-8 font-color-w opacity-10 mr-18">
-              Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с Политикой конфиденциальности и Пользовательским соглашением
-            </p>
-            <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ПАО «ellko». 18+</p>
+          <div className="footer-bottom">
+            <div className="socials flex gap-2 opacity-10 mb-9">
+              <img src={VK} alt=""/>
+              <img src={TG} alt=""/>
+            </div>
+            <div className="footer-bottom flex">
+              <p className="footer-description body body-8 font-color-w opacity-10 mr-18">
+                Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с Политикой конфиденциальности и Пользовательским соглашением
+              </p>
+              <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ПАО «ellko». 18+</p>
+            </div>
           </div>
         </div>
-
-
       </div>
     </footer>
   )

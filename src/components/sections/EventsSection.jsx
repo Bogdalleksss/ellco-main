@@ -1,4 +1,6 @@
 import PostCard from "../UI/Cards/PostCard";
+import IconArrowRight from "../icons/IconArrowRight";
+import IconStripes from "../icons/IconStripes";
 
 const events = [
   {
@@ -48,7 +50,10 @@ const EventsSection = () => {
   return (
     <section id="events">
       <div className="container column">
-        <h2 className="mb-12 font-color-bl">События и акции</h2>
+        <h2 className="flex gap-3 font-color-bl mb-12">
+          <IconStripes fill="#054FD6"/>
+          <span className="flex pt-1">События и акции</span>
+        </h2>
 
         <div className="post-wrapper">
           {
@@ -57,6 +62,11 @@ const EventsSection = () => {
             ))
           }
         </div>
+
+        <a className="events__more body body-5 font-color-bl flex flex-aic flex-jcfe pt-2 pb-2 pr-4 pl-4 gap-2 mt-8" href="#">
+          <span>Смотреть еще</span>
+          <IconArrowRight  fill="#054FD6"/>
+        </a>
       </div>
     </section>
   )

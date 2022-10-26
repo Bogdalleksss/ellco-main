@@ -1,5 +1,6 @@
 import TariffCard from "../UI/Cards/TariffCard";
 import Tabs from "../UI/Tabs/Tabs";
+import IconStripes from "../icons/IconStripes";
 
 const tariffs = [
   {
@@ -104,7 +105,10 @@ const TariffsSection = () => {
   return (
     <section id="tariffs">
       <div className="container column">
-        <h2 className="font-color-bl mb-15">Отправьте заявку на подключение уже сейчас</h2>
+        <h2 className="flex gap-3 font-color-bl mb-15">
+          <IconStripes fill="#054FD6"/>
+          <span className="flex pt-1">Отправьте заявку на подключение уже сейчас</span>
+        </h2>
         <Tabs className="mb-8" tabs={tabs} />
       </div>
       <div className="tariffs-list container">

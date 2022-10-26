@@ -3,6 +3,7 @@ import ESlider from "@/components/UI/Slider/ESlider";
 
 import GooglePlay from '@/assets/img/GooglePlay.svg'
 import AppStore from '@/assets/img/AppStore.svg'
+import IconStripes from "../icons/IconStripes";
 
 const AppBlock = ({ className }) => {
   return (
@@ -24,9 +25,13 @@ const MainSection = () => {
       <div className="container">
         <div className="main__content fb-2 flex column flex-jcsb">
           <div className="main__wrapper pr-20 pt-8">
-            <h1 className="font-color-w mb-6">ellco — на связи с будущим</h1>
+            <h1 className="flex font-color-w mb-6">
+              <IconStripes />
+              <span>ellco — на связи с будущим</span>
+            </h1>
             <p className="main__description body body-1 font-color-w mb-6">
-              Интернет безграничных возможностей в каждом уголке Дагестана
+              Интернет безграничных возможностей <br/>
+              <span>в каждом уголке Дагестана</span>
             </p>
             <Button>Подключить</Button>
           </div>

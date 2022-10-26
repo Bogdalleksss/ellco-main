@@ -3,25 +3,49 @@
   border-radius: 12px;
   font-family: $font-second;
   line-height: 120%;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media (max-width: $media-large) {
+    height: 52px;
+  }
+
+  svg {
+    margin-left: 6px;
+
+    &.arrow {
+      width: 16px;
+      height: 10px;
+    }
+  }
 
   &-main {
-    padding: 20px 30px;
+    padding: 0 30px;
     background: $yellow;
     color: $black;
     font-size: 18px;
     line-height: 120%;
     font-weight: $weight-medium;
+
+    &--short {
+      height: 50px;
+    }
   }
 
   &-secondary {
-    padding: 14px 30px;
+    height: 47px;
+    padding: 0 30px;
     background: $grey;
     color: $blue;
     font-size: 16px;
   }
 
   &-outline {
-    padding: 15px 30px;
+    height: 50px;
+    padding: 0 30px;
     border: 1px solid $black;
     font-size: 16px;
     line-height: 120%;
@@ -147,6 +171,7 @@
       height: 40px;
       background: $white;
       border-radius: 10px;
+      cursor: pointer;
     }
 
     &__progress-bar {
@@ -210,7 +235,7 @@
     border-radius: 30px;
     overflow: hidden;
 
-    @media (max-width: $media-desktop-small) {
+    @media (max-width: $media-large) {
       min-width: 330px;
       max-width: 330px;
       min-height: 609px;
@@ -266,6 +291,10 @@
       .button-secondary {
         background: rgba(255, 255, 255, 0.1) !important;
         color: $white;
+
+        &:hover {
+          border: 1px solid $white;
+        }
       }
     }
 
@@ -353,7 +382,6 @@
       border: 1px solid rgba(75, 75, 75, 0.4);
       border-radius: 50px;
 
-
       &.active {
         border: 1px solid $blue !important;
       }
@@ -362,6 +390,8 @@
 
   &__tab {
     margin-bottom: -2px;
+    cursor: pointer;
+
     span {
       color: $grey-dark;
       opacity: 0.4;
