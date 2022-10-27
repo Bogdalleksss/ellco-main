@@ -2,13 +2,14 @@ import { useState } from "react";
 import { v4 } from "uuid";
 import IconArrowDown from "../icons/IconArrowDown";
 
-import DropDownLigth from '@/assets/img/button-dropdown.svg'
+import DropDownLight from '@/assets/img/button-dropdown.svg'
+import { Link } from "react-router-dom";
 
 const navLinks = [
   {
     id: v4(),
     name: 'Интернет',
-    link: '#',
+    link: '/rate',
   },
   {
     id: v4(),
@@ -18,12 +19,12 @@ const navLinks = [
   {
     id: v4(),
     name: 'Телевидение',
-    link: '#',
+    link: '/iptv',
   },
   {
     id: v4(),
     name: 'Телефония',
-    link: '#',
+    link: '/telephonia',
   },
   {
     id: v4(),
@@ -42,7 +43,7 @@ const navLinks = [
   },
 ]
 
-const HeaderNav = () => {
+const HeaderNav = ({ color='#FFFFFF' }) => {
   const screen = window.innerWidth;
   const isNotMobile = screen > 480;
 
@@ -54,18 +55,18 @@ const HeaderNav = () => {
     <nav className="header-menu">
       <ul className="flex flex-aic gap-10">
         { nav.map((link) => (
-          <a key={link.id} href={link.link}>
-            <li>{ link.name }</li>
-          </a>
+            <li key={link.id}>
+              <Link to={link.link}>{ link.name }</Link>
+            </li>
         )) }
 
         <li className="flex flex-aic">
           {
             screen <= 768 && isNotMobile
-              ? <img src={DropDownLigth} alt=""/>
+              ? <img src={DropDownLight} alt=""/>
               : <>
                   <span>Еще</span>
-                  <IconArrowDown />
+                  <IconArrowDown fill={color} />
                 </>
           }
         </li>

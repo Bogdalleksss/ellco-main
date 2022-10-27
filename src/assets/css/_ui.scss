@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: .5s;
 
   @media (max-width: $media-large) {
     height: 52px;
@@ -30,6 +31,10 @@
     line-height: 120%;
     font-weight: $weight-medium;
 
+    &:hover {
+      background: darken($yellow, 10%);
+    }
+
     &--short {
       height: 50px;
     }
@@ -41,6 +46,10 @@
     background: $grey;
     color: $blue;
     font-size: 16px;
+
+    &:hover {
+      background: darken($grey, 5%);
+    }
   }
 
   &-outline {
@@ -51,6 +60,10 @@
     line-height: 120%;
     color: $black;
     background: transparent;
+
+    &:hover {
+      background: darken($grey, 2%);
+    }
   }
 }
 
@@ -172,6 +185,11 @@
       background: $white;
       border-radius: 10px;
       cursor: pointer;
+      transition: .4s;
+
+      &:hover {
+        background: darken($white, 15%);
+      }
     }
 
     &__progress-bar {
@@ -202,7 +220,7 @@
       height: 586px;
 
       @media (max-width: $media-desktop-small) {
-        height: 302px;
+        height: 310px;
       }
     }
     //swiper-slide-next

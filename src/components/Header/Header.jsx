@@ -8,9 +8,11 @@ import IconSearch from "../icons/IconSearch";
 import IconMenuIcon from "../icons/IconMobileMenu";
 import IconClose from "../icons/IconClose";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ mode='default' }) => {
   const [ showMenu, updateShowMenu ] = useState(false);
+  const color = mode === 'default' ? '#2f51d2' : '#FFFFFF';
 
   return (
     <header className={`header container-full mode-${mode}`}>
@@ -18,7 +20,9 @@ const Header = ({ mode='default' }) => {
         <div className="container flex-jcsb flex-aic body body-6">
           <div className="flex">
             <div className="logo mr-20">
-              <Logo fill={mode === 'default' ? '#2f51d2' : '#FFFFFF'}/>
+              <Link to="/">
+                <Logo fill={color}/>
+              </Link>
             </div>
 
             <ul className="flex gap-6 ">
@@ -30,17 +34,19 @@ const Header = ({ mode='default' }) => {
             !isMobile
               ? <div className="top-links flex flex-aic gap-6">
                   <div className="link flex flex-aic">
-                    <IconMarkerMap />
+                    <IconMarkerMap fill={ color } />
                     <span>Город</span>
                   </div>
                   <div className="link">Оплата</div>
-                  <div className="link">Поддержка</div>
+                  <Link to="/support">
+                    <div className="link">Поддержка</div>
+                  </Link>
                   <div className="phone">+7 (8722) 555-222</div>
                 </div>
               : <div className="mobile flex flex-1 height-full flex-jcfe flex-aic gap-2">
                   <div className="flex">
-                    <IconProfile fill="#054FD6" />
-                    <IconSearch fill="#054FD6"/>
+                    <IconProfile fill={ color } />
+                    <IconSearch fill={ color }/>
                   </div>
                   <div
                     className="mobile__menu flex flex-aic height-full"
@@ -50,22 +56,21 @@ const Header = ({ mode='default' }) => {
                   </div>
                 </div>
           }
-
         </div>
       </div>
       {
         !isMobile
           ? <div className="header-row">
               <div className="bottom-links container flex-jcsb flex-aic body body-3">
-                <HeaderNav/>
+                <HeaderNav color={color}/>
 
                 <div className="actions flex flex-aic gap-10">
                   <div className="link flex flex-aic">
-                    <IconSearch />
+                    <IconSearch fill={ color } />
                     <span>Поиск</span>
                   </div>
                   <div className="link flex flex-aic">
-                    <IconProfile />
+                    <IconProfile fill={ color }/>
                     <span>Личный кабинет</span>
                   </div>
                 </div>

@@ -25,7 +25,6 @@ const IndexPage = () => {
       <IPTvSection />
       <VideoSurveillanceSection />
       <EventsSection />
-      <Footer />
     </>
   )
 }
