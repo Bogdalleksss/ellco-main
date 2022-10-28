@@ -29,7 +29,7 @@ const MainSection = () => {
             <Fade bottom duration={1500}>
               <h1 className="flex font-color-w mb-6">
                 <IconStripes />
-                <span>ellco — на связи с будущим</span>
+                <span>eIIco — на связи с будущим</span>
               </h1>
             </Fade>
 

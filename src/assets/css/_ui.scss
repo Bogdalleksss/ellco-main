@@ -428,70 +428,183 @@
 
 .post {
   &-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 461px 461px;
-
     row-gap: 30px;
     column-gap: 40px;
+    flex-wrap: wrap;
 
     @media (max-width: $media-desktop-small) {
-      grid-template-columns: 1fr 1fr;
+      //grid-template-columns: 1fr 1fr;
     }
   }
 
   &-card {
     box-shadow: 0px 8px 44px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    max-height: 461px;
+    height: 461px;
+    cursor: pointer;
 
     @media (max-width: $media-desktop-small) {
-      img {
+      .img {
         min-height: 320px !important;
+      }
+
+      &__wrapper {
+        flex-basis: calc((100% - 40px) / 2) !important;
       }
     }
 
     @media (max-width: $media-medium) {
-      max-height: 440px;
+      height: 440px;
 
-      img {
+      .img {
         min-height: 300px !important;
       }
     }
 
     @media (max-width: $media-small) {
-      max-height: 400px;
+      height: 400px;
 
-      img {
+      .img {
         min-height: 242px !important;
       }
     }
 
-    img {
-      width: 100%;
-      min-height: 300px;
-      border-radius: 20px;
+    &:hover {
+      .img {
+        transform: scale(1.1);
+      }
     }
 
-    &--large {
-      position: relative;
-      grid-column-start: 1;
-      grid-column-end: 3;
+    .img {
+      width: 100%;
+      min-height: 300px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: .6s;
 
-      img {
-        min-height: 100% !important;
-        max-height: 421px;
+      &-wrapper {
+        border-radius: 20px;
+        overflow: hidden;
       }
+    }
 
-      .content {
-        position: absolute;
-        bottom: 50px;
-        left: 50px;
-        max-width: 70%;
+    &__wrapper {
+      flex-basis: calc((100% - 120px) / 4);
 
-        * {
-          color: $white;
-        }
+      &:nth-child(5) {
+        position: relative;
+        flex-basis: calc((100% - 40px) / 2);
+
+        @include fillCard();
+      }
+    }
+  }
+}
+
+.checkbox {
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked+label::before {
+      border-color: $blue;
+      background-color: $blue;
+      background-image: url('./../img/Check.svg');
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid $blue;
+      border-radius: 5px;
+      margin-right: 0.5em;
+      margin-top: -4px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 90%;
+    }
+  }
+}
+
+.radio {
+  padding-left: 35px;
+  width: 100%;
+
+  label {
+    position: relative;
+    min-height: 25px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    @include b6();
+
+    color: $black;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -35px;
+      width: 25px;
+      height: 25px;
+      border: 1px solid $black;
+      background-color: #ffffff;
+      box-sizing: border-box;
+    }
+  }
+  input {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+
+    &:checked + label::after {
+      content: "";
+      position: absolute;
+      left: -30px;
+      width: 15px;
+      height: 15px;
+      background-color: $black;
+      border-radius: 100%;
+      box-sizing: border-box;
+    }
+
+    &:checked + label:before,
+    &:not(:checked) + label:before {
+      border-radius: 100%;
+    }
+  }
+}
+
+.input {
+  &-text {
+    width: 100%;
+    input {
+      font-family: $font-second;
+      font-weight: 400;
+      line-height: 120%;
+      width: 100%;
+      @include b2();
+      outline: none;
+
+      border: none;
+      border-bottom: 1px solid $blue-dark;
+
+      &::placeholder {
+        color: $blue-dark;
+        opacity: .5;
       }
     }
   }

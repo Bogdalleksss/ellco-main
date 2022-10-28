@@ -8,8 +8,12 @@ import EventsSection from "../components/sections/EventsSection";
 import Footer from "../components/Footer/Footer";
 import { isMobile } from "../utils/constants";
 import MainMobileSection from "../components/sections/MainMobileSection";
+import { useScrollToTop } from "../hooks";
+import OrderModal from "../components/modals/OrderModal";
 
 const IndexPage = () => {
+  useScrollToTop();
+
   return (
     <>
       <div className={!isMobile ? 'main-bg' : ''}>
@@ -25,6 +29,7 @@ const IndexPage = () => {
       <IPTvSection />
       <VideoSurveillanceSection />
       <EventsSection />
+      <Footer/>
     </>
   )
 }

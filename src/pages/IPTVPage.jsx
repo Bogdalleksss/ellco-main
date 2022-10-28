@@ -10,6 +10,8 @@ import Image from '@/assets/img/iptv-image.png';
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { isMobile } from "../utils/constants";
+import { useScrollToTop } from "../hooks";
+import Footer from "../components/Footer/Footer";
 
 const checklistInfo = [
   {
@@ -109,6 +111,8 @@ const tariffs = [
 ]
 
 const IPTVPage = () => {
+  useScrollToTop();
+
   return (
     <>
       <Header />
@@ -138,6 +142,7 @@ const IPTVPage = () => {
         tariffs={tariffs}
       />
       <EventsSection />
+      <Footer/>
     </>
   )
 }

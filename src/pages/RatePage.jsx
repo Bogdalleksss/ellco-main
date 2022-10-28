@@ -13,6 +13,8 @@ import Image from '@/assets/img/woman-yellow.png';
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { isMobile } from "../utils/constants";
+import { useScrollToTop } from "../hooks";
+import Footer from "../components/Footer/Footer";
 
 const checklistInfo = [
   {
@@ -112,6 +114,7 @@ const tariffs = [
 ]
 
 const RatePage = () => {
+  useScrollToTop();
 
   return (
     <>
@@ -153,6 +156,7 @@ const RatePage = () => {
         tariffs={tariffs}
       />
       <EventsSection />
+      <Footer/>
     </>
   )
 }

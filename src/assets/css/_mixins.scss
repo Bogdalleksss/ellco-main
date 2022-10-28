@@ -44,3 +44,48 @@
 @mixin b7() { font-size: 14px; }
 @mixin b8() { font-size: 14px; font-weight: $weight-medium; }
 @mixin b9() { font-size: 18px; }
+
+
+@mixin clearCard() {
+  .img {
+    width: 100%;
+    min-height: 300px !important;
+
+    &-wrapper {
+      height: auto;
+    }
+  }
+
+  .post-card .content {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+
+    * {
+      color: $blue;
+    }
+  }
+}
+@mixin fillCard() {
+  .post-card {
+    .img {
+      height: 100%;
+
+      &-wrapper {
+        height: 100%;
+      }
+    }
+
+    .content {
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      max-width: 70%;
+
+      * {
+        color: $white;
+      }
+    }
+  }
+}
