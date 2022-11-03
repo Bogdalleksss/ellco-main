@@ -68,21 +68,21 @@ const SupportSection = () => {
       <div className="support container">
         <div className="support-info flex column flex-jcsb mr-40">
           <div className="support-info__content">
-            <Fade bottom delay={200} duration={1500}>
+            <Fade bottom delay={200} duration={900}>
               <p className="body body-9 opacity-10 mb-8">Контакты и адреса наших офисов</p>
             </Fade>
             <div className="support-info__buttons flex column gap-4">
-              <Fade bottom delay={400} duration={1500}>
+              <Fade bottom delay={400} duration={900}>
                 <Button className="font-color-bl body body-1" type="button-secondary">company@ellco.ru</Button>
               </Fade>
-              <Fade bottom delay={600} duration={1500}>
+              <Fade bottom delay={600} duration={900}>
                 <Button className="font-color-bl body body-1" type="button-secondary">+7 (8722) 555–222 </Button>
               </Fade>
             </div>
           </div>
 
           { mediaPoint >= 1600
-            ? <Fade bottom delay={600} duration={1500}>
+            ? <Fade bottom delay={600} duration={900}>
               <Button>Скачать pdf файл реквизитов</Button>
             </Fade>
             : <></>
@@ -92,7 +92,7 @@ const SupportSection = () => {
           <ul className="width-full">
             {
               requisites.map((item, idx) => (
-                <Fade key={ item.id } bottom delay={800 + (100 * (idx + 1))} duration={1000}>
+                <Fade key={ item.id } bottom delay={200 * (idx + 1)} duration={1000}>
                   <li className="width-full flex flex-jcsb pb-4 mb-4">
                     <p className="body body-9">{ item.title }</p>
                     <p className="body body-9">{ item.data }</p>
@@ -103,7 +103,7 @@ const SupportSection = () => {
           </ul>
         </div>
         { mediaPoint < 1600
-          ? <Fade bottom delay={100 * requisites.length + 800} duration={1500}>
+          ? <Fade bottom delay={100 * requisites.length + 800} duration={900}>
             <Button>Скачать pdf файл реквизитов</Button>
           </Fade>
           : <></>

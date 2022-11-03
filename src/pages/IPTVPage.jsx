@@ -27,6 +27,7 @@ const checklistInfo = [
     content: 'Подберём тарифный план под потребности вашей семьи',
   }
 ]
+
 const advantagesList = [
   {
     id: 1,

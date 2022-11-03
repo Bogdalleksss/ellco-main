@@ -7,18 +7,18 @@ const BannerSection = ({ children, title, action, classNames, banner }) => {
   return (
     <main id="banner" className={classNames}>
       <div className="banner container-full">
-        <Fade duration={2000}>
-          <img src={banner} alt=""/>
-        </Fade>
+        { banner ? <Fade duration={ 2000 }>
+          <img className="banner-img" src={ banner } alt=""/>
+        </Fade> : <></> }
         <div className="container column flex-aifs">
           <TitleH1 color="#054FD6">{ title }</TitleH1>
 
           <div className="banner-content pl-6">
-            <Fade bottom delay={200} duration={1500}>
+            <Fade bottom delay={200} duration={900}>
               { children }
             </Fade>
 
-            <Fade bottom delay={400} duration={1500}>
+            <Fade bottom delay={400} duration={900}>
               <Button>{ action }</Button>
             </Fade>
           </div>

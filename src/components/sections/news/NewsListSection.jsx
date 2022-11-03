@@ -13,7 +13,7 @@ const NewsListSection = ({ news, className, children }) => {
         {
           news.map((news, idx) => (
             <div className={news.type === 'LARGE' ? 'post-card--large' : 'post-card__wrapper'}>
-              <Fade bottom text delay={200 * (idx + 1)} duration={1500}>
+              <Fade bottom text delay={200 * (idx + 1)} duration={900}>
                 <PostCard key={news.id} post={news} />
               </Fade>
             </div>

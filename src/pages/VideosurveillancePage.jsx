@@ -3,14 +3,14 @@ import EventsSection from "../components/sections/EventsSection";
 import BannerSection from "../components/sections/BannerSection";
 import InfoSection from "../components/sections/InfoSection";
 
-import Banner from '@/assets/img/banner/telephonia.png';
-import BannerMobile from '@/assets/img/banner/telephonia-mobile.png';
+import Banner from '@/assets/img/banner/video.png';
+import BannerMobile from '@/assets/img/banner/video-mobile.png';
 
 import Image from '@/assets/img/iptv-image.png';
 import AdvantagesSection from "../components/sections/AdvantagesSection";
-import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { isMobile } from "../utils/constants";
 import Footer from "../components/Footer/Footer";
+import CalculatorSection from "../components/sections/CalculatorSection";
 
 const checklistInfo = [
   {
@@ -49,78 +49,21 @@ const advantagesList = [
     description: 'В своём стремлении улучшить пользовательский опыт мы упускаем, что действия представителей оппозиции ',
   },
 ]
-const tariffs = [
-  {
-    id: 2,
-    title: 'Технологии развлечения',
-    speed: 150,
-    channels: 250,
-    price: 800,
-    discount: 1000,
-    availables: [
-      {
-        id: 1,
-        title: 'Технология GPON'
-      },
-      {
-        id: 2,
-        title: 'Подключение дополнительных услуг'
-      },
-    ]
-  },
-  {
-    id: 3,
-    title: 'Домашнее комбо',
-    speed: 200,
-    channels: 250,
-    price: 900,
-    availables: [
-      {
-        id: 1,
-        title: 'IPTV до 250 каналов'
-      },
-      {
-        id: 2,
-        title: 'Подключение дополнительных услуг'
-      },
-    ]
-  },
-  {
-    id: 4,
-    type: 'GAME',
-    title: 'Игровой',
-    speed: 250,
-    channels: 250,
-    price: 1500,
-    availables: [
-      {
-        id: 1,
-        title: 'IPTV до 250 каналов'
-      },
-      {
-        id: 2,
-        title: 'Технология GPON'
-      },
-      {
-        id: 3,
-        title: 'Подключение дополнительных услуг'
-      },
-    ]
-  }
-]
 
-const IPTVPage = () => {
+const VideosurveillancePage = () => {
   return (
     <>
       <Header />
       <BannerSection
         classNames="iptv-page"
-        title="IP Телефония"
-        action="Подключить за 750 руб./мес"
+        title="Системы видеонаблюдения"
+        action="Подключить"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">
-          Звонки в любую точку мира по выгодной цене
+          1. Подбор оптимальной конфигурации <br/>
+          2. Монтаж и настройка <br/>
+          3. Обслуживание <br/>
         </p>
       </BannerSection>
       <AdvantagesSection
@@ -134,14 +77,11 @@ const IPTVPage = () => {
          list={checklistInfo}
          image={Image}
        />
-      <AdditionalTariffsSection
-        title="Дополнительные тарифы"
-        tariffs={tariffs}
-      />
+      <CalculatorSection />
       <EventsSection />
       <Footer/>
     </>
   )
 }
 
-export default IPTVPage;
+export default VideosurveillancePage;

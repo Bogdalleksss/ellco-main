@@ -1,5 +1,4 @@
 import Header from "@/components/Header/Header";
-import TariffsSection from "../components/sections/TariffsSection";
 import EventsSection from "../components/sections/EventsSection";
 import BannerSection from "../components/sections/BannerSection";
 import IconSpeed from "../components/icons/IconSpeed";

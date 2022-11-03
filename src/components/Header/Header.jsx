@@ -1,22 +1,30 @@
 import HeaderNav from "./HeaderNav";
-
 import Logo from "../Logo";
 import { isMobile } from "../../utils/constants";
 import IconMarkerMap from "../icons/IconMarkerMap";
 import IconProfile from "../icons/IconProfile";
 import IconSearch from "../icons/IconSearch";
 import IconMenuIcon from "../icons/IconMobileMenu";
-import IconClose from "../icons/IconClose";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import HeaderMobileMenu from "./HeaderMobileMenu";
+import SearchModals from "../modals/SearchModals";
+
+
 
 const Header = ({ mode='default' }) => {
   const [ showMenu, updateShowMenu ] = useState(false);
-  const color = mode === 'default' ? '#2f51d2' : '#FFFFFF';
+  const [ showLocation, updateShowLocation ] = useState(false);
+  const color = mode === 'default' && !showLocation ? '#2f51d2' : '#FFFFFF';
+
+  const updateShowModals = (val, cb) => {
+    document.body.style = val ? 'overflow: hidden;' : '';
+    cb(val);
+  }
 
   return (
-    <header className={`header container-full mode-${mode}`}>
-      <div className="header-row">
+    <header className={`header container-full mode-${!showLocation ? mode : 'light'}`}>
+      <div className="header-row zi-5">
         <div className="container flex-jcsb flex-aic body body-6">
           <div className="flex">
             <div className="logo mr-20">
@@ -33,11 +41,13 @@ const Header = ({ mode='default' }) => {
           {
             !isMobile
               ? <div className="top-links flex flex-aic gap-6">
-                  <div className="link flex flex-aic">
+                  <div
+                    className="link flex flex-aic"
+                    onClick={() => updateShowModals(true, updateShowLocation)}
+                  >
                     <IconMarkerMap fill={ color } />
                     <span>Город</span>
                   </div>
-                  <div className="link">Оплата</div>
                   <Link to="/support">
                     <div className="link">Поддержка</div>
                   </Link>
@@ -60,7 +70,7 @@ const Header = ({ mode='default' }) => {
       </div>
       {
         !isMobile
-          ? <div className="header-row">
+          ? <div className="header-row zi-5">
               <div className="bottom-links container flex-jcsb flex-aic body body-3">
                 <HeaderNav color={color}/>
 
@@ -76,46 +86,20 @@ const Header = ({ mode='default' }) => {
                 </div>
               </div>
             </div>
-          : <div className={`mobile-menu ${showMenu ? 'mobile-menu--open' : ''}`}>
-            <div className="container column">
-              <div className="flex flex-aic flex-jcsb width-full">
-            <span className="logo">
-              <Logo/>
-            </span>
-                <span onClick={() => updateShowMenu(false)}>
-                <IconClose />
-            </span>
-              </div>
-              <div className="mobile-menu__top flex gap-2 mt-6">
-                <a className="body body-8 active flex flex-aic" href="#">Для меня</a>
-                <a className="body body-8 flex flex-aic" href="#">Для бизнеса</a>
-              </div>
-              <div className="mobile-menu__nav mt-10">
-                <HeaderNav/>
-              </div>
-              <div className="mobile-menu__actions mt-8 flex column gap-4">
-                <div className="link flex flex-aic">
-                  <IconSearch fill="#054FD6" />
-                  <span className="body body-3">Поиск</span>
-                </div>
-                <div className="link flex flex-aic">
-                  <IconProfile fill="#054FD6" />
-                  <span className="body body-3">Личный кабинет</span>
-                </div>
-              </div>
-              <div className="mobile-menu__links mt-8">
-                <div className="top-links flex flex-aifs column gap-4">
-                  <div className="link flex flex-aic body body-6">
-                    <IconMarkerMap fill="#054FD6" />
-                    <span>Город</span>
-                  </div>
-                  <div className="link body body-6">Оплата</div>
-                  <div className="link body body-6">Поддержка</div>
-                  <div className="phone body body-6">+7 (8722) 555-222</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          : <HeaderMobileMenu
+              showMenu={showMenu}
+              updateShowMenu={updateShowMenu}
+              updateShowModal={(val) => updateShowModals(val, updateShowLocation)}
+            />
+      }
+
+      {
+        <SearchModals
+            className={!showLocation ? 'hidden-search' : '' }
+            isShow={showLocation}
+            placeholder="Ваш город..."
+            close={() => updateShowModals(false, updateShowLocation)}
+        />
       }
     </header>
   )

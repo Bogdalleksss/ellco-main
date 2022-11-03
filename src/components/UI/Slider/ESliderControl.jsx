@@ -12,7 +12,6 @@ const ESliderControl = ({ slides }) => {
 
   useEffect(() => {
     setIndex();
-  // eslint-disable-next-line
   }, [])
 
   const nextSlide = () => {

@@ -14,7 +14,7 @@ const EventsSection = () => {
   return (
     <section id="events">
       <div className="container column">
-        <Fade bottom text duration={1500}>
+        <Fade bottom text duration={900}>
           <h2 className="flex gap-3 font-color-bl mb-12">
             <IconStripes fill="#054FD6"/>
             <span className="flex pt-1">События и акции</span>
@@ -25,7 +25,7 @@ const EventsSection = () => {
           {
             slicesEvent.map((event, idx) => (
               <div className={'post-card__wrapper'}>
-                <Fade bottom text delay={110 * (idx + 1)} duration={1500}>
+                <Fade bottom text delay={110 * (idx + 1)} duration={900}>
                   <PostCard key={event.id} post={event} />
                 </Fade>
               </div>

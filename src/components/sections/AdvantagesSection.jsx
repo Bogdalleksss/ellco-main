@@ -21,7 +21,7 @@ const AdvantagesSection = ({ title, list, classNames }) => {
                   className="advantages-content__icon flex flex-aic flex-jcc"
                   style={{ background: item.color }}
                 >
-                  <img src={getIcon(item.icon)} alt=""/>
+                  { item.icon ? <img src={ getIcon(item.icon) } alt=""/> : <span>{ item.content }</span> }
                 </span>
 
                 <div className="advantages-content__block__content flex column">

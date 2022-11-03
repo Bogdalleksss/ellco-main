@@ -26,26 +26,26 @@ const MainSection = () => {
       <div className="container">
         <div className="main__content fb-2 flex column flex-jcsb">
           <div className="main__wrapper pr-20 pt-8">
-            <Fade bottom duration={1500}>
+            <Fade bottom duration={900}>
               <h1 className="flex font-color-w mb-6">
                 <IconStripes />
                 <span>eIIco — на связи с будущим</span>
               </h1>
             </Fade>
 
-            <Fade bottom delay={100} duration={1500}>
+            <Fade bottom delay={100} duration={900}>
                 <p className="main__description body body-1 font-color-w mb-6">
                   Интернет безграничных возможностей <br/>
                   <span>в каждом уголке Дагестана</span>
                 </p>
             </Fade>
 
-            <Fade bottom delay={200} duration={1500}>
+            <Fade bottom delay={200} duration={900}>
               <Button>Подключить</Button>
             </Fade>
           </div>
 
-          <Fade bottom delay={300} duration={1500}>
+          <Fade bottom delay={300} duration={900}>
             <AppBlock className="main__mobile-app" />
           </Fade>
         </div>

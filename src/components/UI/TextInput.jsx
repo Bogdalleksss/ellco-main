@@ -1,8 +1,11 @@
-const TextInput = ({ label, placeholder }) => {
+const TextInput = ({ label, placeholder, prepend }) => {
   return (
     <div className="input-text">
-      <label className="body body-7 font-color-bld opacity-10">{ label }</label>
-      <input className="pt-2 pb-2" placeholder={placeholder} type="text"/>
+      { label ? <label className="body body-7 font-color-bld opacity-10">{ label }</label> :<></> }
+      <div className={ `flex flex-aic ${prepend ? 'prepend-wrapper' : ''}` }>
+        { prepend ? <div className="prepend">{ prepend }</div> : <></> }
+        <input className="pt-2 pb-2" placeholder={placeholder} type="text"/>
+      </div>
     </div>
   )
 }

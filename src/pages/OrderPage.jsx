@@ -1,4 +1,4 @@
-import OrderModal from "../components/modals/OrderModal";
+import OrderModal from "../components/modals/Order/OrderModal";
 
 const OrderPage = ({  }) => {
   return (

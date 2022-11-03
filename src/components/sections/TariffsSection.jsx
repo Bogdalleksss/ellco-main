@@ -1,4 +1,4 @@
-import TariffCard from "../UI/Cards/TariffCard";
+import TariffCard from "../UI/Cards/Tariff/TariffCard";
 import Tabs from "../UI/Tabs/Tabs";
 import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
@@ -106,21 +106,21 @@ const TariffsSection = () => {
   return (
     <section id="tariffs">
       <div className="container column">
-        <Fade bottom text duration={1500}>
+        <Fade bottom text duration={900}>
           <h2 className="flex gap-3 font-color-bl mb-15">
             <IconStripes fill="#054FD6"/>
             <span className="flex pt-1">Отправьте заявку на подключение уже сейчас</span>
           </h2>
         </Fade>
-        <Fade bottom text duration={1500}>
+        <Fade bottom text duration={900}>
           <Tabs className="mb-8" tabs={tabs} />
         </Fade>
       </div>
       <div className="tariffs-list container">
-        <div className="tariffs-list__wrapper o-hidden width-full flex flex-jcsb hide-scrollbar">
+        <div className="tariffs-list__wrapper o-hidden width-full flex gap-4 hide-scrollbar">
           {
             tariffs.map((tariff, idx) => (
-              <Fade bottom delay={200 * (idx + 1)} duration={1500}>
+              <Fade bottom delay={200 * (idx + 1)} duration={900}>
                 <TariffCard
                   key={tariff.id}
                   tariff={tariff}

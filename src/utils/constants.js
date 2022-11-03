@@ -1,4 +1,4 @@
-export const isMobile = window.innerWidth <= 480;
+export const isMobile = window.innerWidth < 768;
 export const mediaPoints = [1600, 1024, 768, 480, 360];
 
 export const events = [

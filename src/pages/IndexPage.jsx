@@ -9,7 +9,7 @@ import Footer from "../components/Footer/Footer";
 import { isMobile } from "../utils/constants";
 import MainMobileSection from "../components/sections/MainMobileSection";
 import { useScrollToTop } from "../hooks";
-import OrderModal from "../components/modals/OrderModal";
+import OrderModal from "../components/modals/Order/OrderModal";
 
 const IndexPage = () => {
   useScrollToTop();

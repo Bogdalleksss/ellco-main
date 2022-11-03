@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { v4 } from "uuid";
-import IconArrowDown from "../icons/IconArrowDown";
-
-import DropDownLight from '@/assets/img/button-dropdown.svg'
 import { Link } from "react-router-dom";
+import HeaderDropdown from "./HeaderDropdown";
+import { useScreen } from "../../hooks/screen";
 
 const navLinks = [
   {
@@ -14,7 +13,7 @@ const navLinks = [
   {
     id: v4(),
     name: 'Видеонаблюдение',
-    link: '#',
+    link: '/videosurveillance',
   },
   {
     id: v4(),
@@ -24,12 +23,12 @@ const navLinks = [
   {
     id: v4(),
     name: 'Телефония',
-    link: '/telephonia',
+    link: '/telephony',
   },
   {
     id: v4(),
     name: 'Оборудование',
-    link: '#',
+    link: '/',
   },
   {
     id: v4(),
@@ -43,32 +42,26 @@ const navLinks = [
   },
 ]
 
-const HeaderNav = ({ color='#FFFFFF' }) => {
-  const screen = window.innerWidth;
-  const isNotMobile = screen > 480;
+const HeaderNav = ({ color='#FFFFFF', closeMobile }) => {
+  const { mediaPoint } = useScreen();
 
-  console.log(isNotMobile);
-
-  const [nav] = useState(isNotMobile ? navLinks.slice(0, 4) : navLinks);
+  const [nav] = useState(mediaPoint > 480 ? navLinks.slice(0, 4) : navLinks);
 
   return (
     <nav className="header-menu">
       <ul className="flex flex-aic gap-10">
         { nav.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} onClick={() => closeMobile()}>
               <Link to={link.link}>{ link.name }</Link>
             </li>
         )) }
 
         <li className="flex flex-aic">
-          {
-            screen <= 768 && isNotMobile
-              ? <img src={DropDownLight} alt=""/>
-              : <>
-                  <span>Еще</span>
-                  <IconArrowDown fill={color} />
-                </>
-          }
+          <HeaderDropdown
+            color={color}
+            links={navLinks.slice(4, navLinks.length)}
+            light={color === '#FFFFFF'}
+          />
         </li>
       </ul>
     </nav>

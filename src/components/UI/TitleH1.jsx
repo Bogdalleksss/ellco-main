@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 
 const TitleH1 = ({ children, color = '#054FD6', className = '' }) => {
   return (
-    <Fade bottom duration={1500}>
+    <Fade bottom duration={900}>
       <h1
         style={{ color }}
         className={`flex ${className}`}

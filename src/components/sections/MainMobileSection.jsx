@@ -82,17 +82,17 @@ const MainMobileSection = () => {
   return (
     <section id="main-mobile" className="main-mobile">
       <div className="container column">
-        <Fade duration={1500}>
+        <Fade duration={900}>
           <img className="mt-6 mb-4" src={MobileImage} alt=""/>
         </Fade>
 
-        <Fade bottom delay={200} duration={1500}>
+        <Fade bottom delay={200} duration={900}>
           <h1 className="mb-4">Интернет безграничных возможностей в каждом уголке Дагестана</h1>
         </Fade>
 
         <div className="labels flex pr-20 mb-4">
           { labels.map((label, idx) => (
-            <Fade bottom delay={300 * (idx + 1)} duration={1500}>
+            <Fade bottom delay={300 * (idx + 1)} duration={900}>
               <span
                 key={`label-${label.id}`}
                 style={getStyle(label.type, label.color)}
@@ -104,7 +104,7 @@ const MainMobileSection = () => {
           )) }
         </div>
 
-        <Fade bottom delay={100} duration={1500}>
+        <Fade bottom delay={100} duration={900}>
           <div className="flex main-mobile-card__wrapper gap-4 hide-scrollbar">
             {
               cards.map(card => (

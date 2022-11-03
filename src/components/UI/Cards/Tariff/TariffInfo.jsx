@@ -1,6 +1,6 @@
-import IconCheckMark from "../icons/IconCheckMark";
-import IconSpeed from "../icons/IconSpeed";
-import IconPC from "../icons/IconPC";
+import IconCheckMark from "../../../icons/IconCheckMark";
+import IconSpeed from "../../../icons/IconSpeed";
+import IconPC from "../../../icons/IconPC";
 
 const TariffInfo = ({ title, speed, channels, availables, isGame}) => {
   return (
