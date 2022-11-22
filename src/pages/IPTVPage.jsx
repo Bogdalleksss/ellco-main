@@ -12,6 +12,7 @@ import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSe
 import { isMobile } from "../utils/constants";
 import { useScrollToTop } from "../hooks";
 import Footer from "../components/Footer/Footer";
+import { useSelector } from "react-redux";
 
 const checklistInfo = [
   {
@@ -51,68 +52,10 @@ const advantagesList = [
     description: 'В своём стремлении улучшить пользовательский опыт мы упускаем, что действия представителей оппозиции ',
   },
 ]
-const tariffs = [
-  {
-    id: 2,
-    title: 'Технологии развлечения',
-    speed: 150,
-    channels: 250,
-    price: 800,
-    discount: 1000,
-    availables: [
-      {
-        id: 1,
-        title: 'Технология GPON'
-      },
-      {
-        id: 2,
-        title: 'Подключение дополнительных услуг'
-      },
-    ]
-  },
-  {
-    id: 3,
-    title: 'Домашнее комбо',
-    speed: 200,
-    channels: 250,
-    price: 900,
-    availables: [
-      {
-        id: 1,
-        title: 'IPTV до 250 каналов'
-      },
-      {
-        id: 2,
-        title: 'Подключение дополнительных услуг'
-      },
-    ]
-  },
-  {
-    id: 4,
-    type: 'GAME',
-    title: 'Игровой',
-    speed: 250,
-    channels: 250,
-    price: 1500,
-    availables: [
-      {
-        id: 1,
-        title: 'IPTV до 250 каналов'
-      },
-      {
-        id: 2,
-        title: 'Технология GPON'
-      },
-      {
-        id: 3,
-        title: 'Подключение дополнительных услуг'
-      },
-    ]
-  }
-]
 
 const IPTVPage = () => {
   useScrollToTop();
+  const tariffs = useSelector(state => state.tariffs.items.filter(tariff => ['standard'].includes(tariff.type)));
 
   return (
     <>
@@ -139,7 +82,7 @@ const IPTVPage = () => {
          image={Image}
        />
       <AdditionalTariffsSection
-        title="Дополнительные тарифы"
+        title="Тарифы"
         tariffs={tariffs}
       />
       <EventsSection />

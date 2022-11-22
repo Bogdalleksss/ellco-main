@@ -2,7 +2,7 @@ import IconCheckMark from "../../../icons/IconCheckMark";
 import IconSpeed from "../../../icons/IconSpeed";
 import IconPC from "../../../icons/IconPC";
 
-const TariffInfo = ({ title, speed, channels, availables, isGame}) => {
+const TariffInfo = ({ title = "", speed, channels, tags, isGame }) => {
   return (
     <div className="tariff-card__info width-full zi-2">
       <h3 className="mb-4">{ title }</h3>
@@ -23,10 +23,10 @@ const TariffInfo = ({ title, speed, channels, availables, isGame}) => {
       </div>
 
       {
-        availables.map(available => (
-          <div key={available.id} className="tariff-card__available flex flex-aic mb-3 gap-3">
+        tags?.map((tag, idx) => (
+          <div key={idx} className="tariff-card__available flex flex-aic mb-3 gap-3">
             <IconCheckMark/>
-            <p className="body body-6 opacity-10">{ available.title }</p>
+            <p className="body body-6 opacity-10">{ tag }</p>
           </div>
         ))
       }

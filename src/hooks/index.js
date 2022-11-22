@@ -35,3 +35,15 @@ export const useOnClickOutside = (ref, handler) => {
     [ref, handler]
   );
 }
+
+export const useFormatDate = () => {
+  return (date) => {
+    const newDate = new Date(date);
+
+    return newDate.toLocaleString('ru', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }
+}

@@ -14,6 +14,15 @@
     height: 52px;
   }
 
+  &.disabled {
+    cursor: auto;
+    opacity: 50%;
+
+    &:hover {
+      background: $yellow;
+    }
+  }
+
   svg {
     margin-left: 6px;
 
@@ -465,6 +474,7 @@
       &-info {
         padding-bottom: 12px;
         margin-bottom: 12px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -540,10 +550,16 @@
   &-wrapper {
     row-gap: 30px;
     column-gap: 40px;
-    flex-wrap: wrap;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(400px, 460px);
 
     @media (max-width: $media-desktop-small) {
-      //grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $media-medium) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -559,7 +575,7 @@
       }
 
       &__wrapper {
-        flex-basis: calc((100% - 40px) / 2) !important;
+        //flex-basis: calc((100% - 40px) / 2) !important;
       }
     }
 
@@ -600,13 +616,24 @@
     }
 
     &__wrapper {
-      flex-basis: calc((100% - 120px) / 4);
+      //flex-basis: calc((100% - 120px) / 4);
+      min-height: 400px;
 
-      &:nth-child(5) {
-        position: relative;
-        flex-basis: calc((100% - 40px) / 2);
-
+      .react-reveal:not(h1) {
+        height: 100%;
+      }
+      &.full-card {
         @include fillCard();
+
+        &--start {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+
+        &--end {
+          grid-column-start: 3;
+          grid-column-end: 5;
+        }
       }
     }
   }
@@ -859,6 +886,50 @@
         }
       }
 
+      .tariff-card {
+        &__available {
+          background: transparent;
+          margin-bottom: 0;
+          padding: 7px 0;
+
+          img {
+            filter: brightness(0) invert(1);
+          }
+
+          p {
+            @include b6();
+          }
+        }
+
+        &__advantages {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          &.mb-6 {
+            margin-bottom: 14px !important;
+          }
+          &__title {
+            font-size: 20px !important;
+          }
+
+          path {
+            fill: #FFFFFF !important;
+          }
+
+          img {
+            filter: brightness(0) invert(1);
+          }
+        }
+
+        &__phone {
+          &-info {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+
       * {
         color: $white;
       }
@@ -866,6 +937,7 @@
 
     &__card {
       position: relative;
+      cursor: pointer;
 
       span {
         position: absolute;
@@ -931,7 +1003,7 @@
     .links {
       position: absolute;
       top: 130%;
-      width: 160px;
+      width: 200px;
       gap: 5px !important;
 
       a {
@@ -949,6 +1021,193 @@
         background: $blue;
         transition: .5s;
         color: $white;
+      }
+    }
+  }
+}
+
+.stock {
+  &-card {
+    padding: 140px 0;
+    padding-left: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    background: #E7EDFB;
+    cursor: pointer;
+
+
+    &.large, &.medium, &.small {
+      height: 100%;
+      h1 {
+        svg {
+          width: 18px;
+          height: 30px;
+        }
+        span {
+          font-size: 24px !important;
+        }
+      }
+
+      p {
+        @include b6();
+      }
+    }
+
+    &.large {
+      padding: 60px 0 !important;
+      padding-left: 50px !important;
+
+      .img {
+        position: absolute;
+        width: 300px !important;
+        right: 70px !important;
+      }
+    }
+
+    &.medium {
+      padding: 0 50px;
+
+      .img {
+        width: 280px !important;
+        right: 20px !important;
+      }
+
+      p {
+        width: 50%;
+      }
+    }
+
+    &.small {
+      background: $white !important;
+      padding: 20px !important;
+      width: 100%;
+      box-shadow: 0px 8px 44px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+
+      &:hover {
+        .img {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .img {
+        position: relative !important;
+        width: 100% !important;
+        height: 300px !important;
+        background: #E7EDFB;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        justify-content: center !important;
+
+        img {
+          width: 250px !important;
+          pointer-events: none;
+          transition: .4s;
+        }
+
+        label {
+          position: absolute;
+          margin: 0;
+          bottom: 8px;
+          left: 8px;
+        }
+      }
+
+      p {
+        width: 100%;
+        padding-right: 30px;
+      }
+
+      button {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      width: 480px;
+      height: 100%;
+      //right: 100px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h1 {
+      align-items: center;
+      span {
+        @include h5($blue);
+        margin-top: 10px;
+      }
+    }
+
+    label {
+      height: 33px;
+      background: $green;
+      border-radius: 35px;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-complete {
+    background: rgba(0, 0, 79, 0.6);
+
+    h3 {
+      width: 80% !important;
+      font-size: 24px !important;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__dialog {
+    padding: 50px 40px;
+    background: $blue;
+    border: 4px solid $blue-light;
+    border-radius: 20px;
+    width: 450px;
+
+    * {
+      color: $white;
+    }
+
+    a {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px;
+      margin: 0 auto;
+      border-radius: 50px;
+      border: 1px solid $white;
+      text-decoration: none;
+      gap: 7.5px;
+      @include b5();
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      svg {
+        transform: rotateZ(180deg);
+        width: 12px;
+        height: 7.5px;
       }
     }
   }

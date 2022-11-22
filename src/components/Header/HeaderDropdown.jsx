@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import IconArrowDown from "../icons/IconArrowDown";
 import DropDownLight from '@/assets/img/button-dropdown.svg'
 import DropDown from '@/assets/img/button-arrow--dark.svg'
-import { useScreen } from "../../hooks/screen";
+import { useScreen } from "../../hooks/useScreen";
 import { Link } from "react-router-dom";
 import { useOnClickOutside } from "../../hooks";
 

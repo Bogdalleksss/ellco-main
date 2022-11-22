@@ -18,7 +18,7 @@ const AdditionalTariffsSection = ({ tariffs, title }) => {
         <div className="tariffs-list__wrapper o-hidden width-full flex hide-scrollbar gap-4">
           {
             tariffs.map((tariff, idx) => (
-              <Fade bottom delay={200 * (idx + 1)} duration={900}>
+              <Fade key={tariff._id} bottom delay={200 * (idx + 1)} duration={900}>
                 <TariffCard
                   key={tariff.id}
                   tariff={tariff}

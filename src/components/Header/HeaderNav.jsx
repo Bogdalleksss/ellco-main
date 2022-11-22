@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 } from "uuid";
 import { Link } from "react-router-dom";
 import HeaderDropdown from "./HeaderDropdown";
-import { useScreen } from "../../hooks/screen";
+import { useScreen } from "../../hooks/useScreen";
 
 const navLinks = [
   {
@@ -27,18 +27,13 @@ const navLinks = [
   },
   {
     id: v4(),
-    name: 'Оборудование',
-    link: '/',
+    name: 'KION',
+    link: '/kion',
   },
   {
     id: v4(),
-    name: 'Настройки роутера',
-    link: '#',
-  },
-  {
-    id: v4(),
-    name: 'Памятка абоненту',
-    link: '#',
+    name: 'Смотрешка',
+    link: '/smotreshka',
   },
 ]
 

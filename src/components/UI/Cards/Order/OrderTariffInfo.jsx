@@ -1,34 +1,37 @@
 import React from 'react';
-import IconSpeed from "../../../icons/IconSpeed";
-import IconPC from "../../../icons/IconPC";
-import IconCheckMark from "../../../icons/IconCheckMark";
+import TariffInfo from "../Tariff/TariffInfo";
+import TariffInfoKion from "../Tariff/TariffInfoKion";
+import TariffInfoSmotreshka from "../Tariff/TariffInfoSmotreshka";
+import TariffInfoPhone from "../Tariff/TariffInfoPhone";
 
-const OrderTariffInfo = ({ active }) => {
+const OrderTariffInfo = ({ active, tariff }) => {
+  console.log(tariff.type === 'smotroshka');
   return (
     <div className="order-tariff-info">
-      <div className="order-tariff-info__item">
-        <div className="flex flex-aic gap-2">
-          <IconSpeed fill={active ? '#FFFFFF' : '#054FD6'} />
-          <p className="order-tariff-info__item__title body body-2">70 Мбит/с</p>
-        </div>
-        <p className="order-tariff-info__item__content body body-7 opacity-10">скорость интернета</p>
-      </div>
-
-      <div className="order-tariff-info__item mb-6">
-        <div className="order-tariff-info__item__title flex flex-aic gap-2">
-          <IconPC fill={active ? '#FFFFFF' : '#054FD6'} />
-          <p className="order-tariff-info__item__title body body-2">250 каналов</p>
-        </div>
-      </div>
-
-      <div className="order-tariff-info__available flex flex-aic mb-3 gap-3">
-        <IconCheckMark/>
-        <p className="body body-6 opacity-10">IPTV до 250 каналов</p>
-      </div>
-      <div className="order-tariff-info__available flex flex-aic mb-3 gap-3">
-        <IconCheckMark/>
-        <p className="body body-6 opacity-10">Технология GPON</p>
-      </div>
+      {
+        tariff.type === 'kion'
+          ? <TariffInfoKion
+              kion={tariff.kionServiceDescription}
+              mts={tariff.mtsServiceDescription}
+            />
+          : tariff.type === 'smotroshka'
+            ? <TariffInfoSmotreshka
+                channels={tariff.channelsCount}
+                tags={tariff.tags}
+                movies={tariff.externalServices}
+              />
+            : tariff.type === 'telephony'
+              ? <TariffInfoPhone
+                  firstMinutePrice={tariff.firstMinutePrice}
+                  localTelephoneСonnectionsType={tariff.localTelephoneСonnectionsType}
+                />
+              : <TariffInfo
+                  speed={tariff.speedMbs}
+                  channels={tariff.channelsCount}
+                  tags={tariff.tags}
+                  isGame={active}
+                />
+      }
     </div>
   );
 };

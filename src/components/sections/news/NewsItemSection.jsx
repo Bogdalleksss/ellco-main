@@ -1,4 +1,4 @@
-import { useScreen } from "../../../hooks/screen";
+import { useScreen } from "../../../hooks/useScreen";
 
 const NewsItemSection = ({ content, className }) => {
   const { mediaPoint } = useScreen();

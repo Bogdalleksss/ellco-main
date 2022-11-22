@@ -18,7 +18,7 @@ const InfoSection = ({ title, description, list, classNames, image, withoutButto
               ? <ul className="mb-6 flex column gap-2">
                   {
                     list.map((item, idx) => (
-                      <Fade bottom delay={400 * (idx + 1)} duration={1000}>
+                      <Fade key={idx} bottom delay={400 * (idx + 1)} duration={1000}>
                         <li key={item.id} className="flex gap-2 pt-3 pb-3 pr-4 pl-4 flex-aic">
                           <IconCheckMark />
                           <p className="body body-6 flex-1 opacity-10 font-color-bld">{ item.content }</p>

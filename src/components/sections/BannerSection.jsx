@@ -1,8 +1,9 @@
 import Button from "../UI/Button";
 import TitleH1 from "../UI/TitleH1";
 import Fade from 'react-reveal/Fade';
+import React from "react";
 
-const BannerSection = ({ children, title, action, classNames, banner }) => {
+const BannerSection = ({ children, title, action, classNames, banner, date }) => {
 
   return (
     <main id="banner" className={classNames}>
@@ -11,6 +12,7 @@ const BannerSection = ({ children, title, action, classNames, banner }) => {
           <img className="banner-img" src={ banner } alt=""/>
         </Fade> : <></> }
         <div className="container column flex-aifs">
+          {date && <label className="body body-7 font-color-w zi-2 mb-3 ml-6 pr-2 pl-2 flex flex-aic">{ date }</label> }
           <TitleH1 color="#054FD6">{ title }</TitleH1>
 
           <div className="banner-content pl-6">

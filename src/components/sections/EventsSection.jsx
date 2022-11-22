@@ -4,12 +4,10 @@ import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
 import { events } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const EventsSection = () => {
-  const screen = window.innerWidth;
-  const isTable = screen <= 1600 && screen > 480;
-  const isMobile = screen <= 480;
-  const slicesEvent = events.slice(0, isTable ? 4 : isMobile ? 3 : events.length);
+  const news = useSelector(state => state.news.items);
 
   return (
     <section id="events">
@@ -23,8 +21,8 @@ const EventsSection = () => {
 
         <div className="post-wrapper flex">
           {
-            slicesEvent.map((event, idx) => (
-              <div className={'post-card__wrapper'}>
+            news.map((event, idx) => (
+              <div key={event._id} className={'post-card__wrapper'}>
                 <Fade bottom text delay={110 * (idx + 1)} duration={900}>
                   <PostCard key={event.id} post={event} />
                 </Fade>

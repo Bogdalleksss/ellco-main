@@ -9,6 +9,7 @@ import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { useScrollToTop } from "../hooks";
 import Footer from "../components/Footer/Footer";
+import { useSelector } from "react-redux";
 
 const checklistInfo = [
   {
@@ -50,43 +51,10 @@ const advantagesList = [
     description: '',
   },
 ]
-const tariffs = [
-  {
-    id: 2,
-    type: 'KION',
-    title: 'KION + МТС PREMIUM',
-    price: 249,
-    free_month: true,
-    available: [
-      {
-        id: 12,
-        image: 'kion',
-        content: 'Оригинальные сериалы KION, тысячи фильмов, мультфильмов, более 210 ТВ-каналов'
-      },
-      {
-        id: 13,
-        image: 'mtc',
-        content: '50 ГБ интернета, музыка, кешбэк, выгодные предложения от партнеров и многое другое.'
-      }
-    ]
-  },
-  {
-    id: 3,
-    type: 'KION',
-    title: 'KION 12 месяцев',
-    price: 1890,
-    available: [
-      {
-        id: 12,
-        image: 'kion',
-        content: 'Кинохиты и эксклюзивные премьеры, оригинальные фильмы и сериалы, доступные только на KION, 210+ TB-каналов в удобном и более выгодном формате. '
-      },
-    ]
-  },
-]
 
 const KionPage = () => {
   useScrollToTop();
+  const tariffs = useSelector(state => state.tariffs.items.filter(tariff => ['kion'].includes(tariff.type)));
 
   return (
     <>
@@ -106,7 +74,7 @@ const KionPage = () => {
         classNames="movie-sm movie-kion"
       />
       <AdditionalTariffsSection
-        title="Дополнительные тарифы"
+        title="Тарифы"
         tariffs={tariffs}
       />
       <EventsSection />

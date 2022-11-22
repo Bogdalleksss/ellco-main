@@ -1,7 +1,7 @@
 import TitleH1 from "../UI/TitleH1";
 import Button from "../UI/Button";
 import { v4 } from "uuid";
-import { useScreen } from "../../hooks/screen";
+import { useScreen } from "../../hooks/useScreen";
 import Fade from 'react-reveal/Fade';
 
 const requisites = [

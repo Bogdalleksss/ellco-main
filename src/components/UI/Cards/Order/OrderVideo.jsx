@@ -3,14 +3,14 @@ import Button from "../../Button";
 import OrderVideoInfo from "./OrderVideoInfo";
 import OrderVideoEdit from "./OrderVideoEdit";
 
-const OrderVideo = () => {
+const OrderVideo = ({ cams }) => {
   const [showEdit, updateShowEdit] = useState(false);
   return (
     <div className="pt-4 pb-4 pl-4 pr-4">
       {
         showEdit
-          ? <OrderVideoEdit />
-          : <OrderVideoInfo />
+          ? <OrderVideoEdit cams={cams} />
+          : <OrderVideoInfo cams={cams} />
       }
 
       <Button

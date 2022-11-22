@@ -5,25 +5,48 @@ import IconMarkerMap from "../icons/IconMarkerMap";
 import IconProfile from "../icons/IconProfile";
 import IconSearch from "../icons/IconSearch";
 import IconMenuIcon from "../icons/IconMobileMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import HeaderMobileMenu from "./HeaderMobileMenu";
 import SearchModals from "../modals/SearchModals";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { searchLocation, setLocation } from "../../store/location";
+import { searchPages } from "../../store/search";
 
 const Header = ({ mode='default' }) => {
-  const [ showMenu, updateShowMenu ] = useState(false);
-  const [ showLocation, updateShowLocation ] = useState(false);
-  const color = mode === 'default' && !showLocation ? '#2f51d2' : '#FFFFFF';
+  const dispatch = useDispatch();
+  const [showMenu, updateShowMenu] = useState(false);
+  const [showLocation, updateShowLocation] = useState(false);
+  const [showSearch, updateShowSearch] = useState(false);
+  const color = mode === 'default' && !showLocation && !showSearch ? '#2f51d2' : '#FFFFFF';
+  const location = useSelector(state => state.location.location);
+
+  const locationMatchies = useSelector(state => state.location.locations);
+  const searchMatchies = useSelector(state => state.search.results);
+
+  useEffect(() => {
+    if (showSearch) updateShowLocation(false);
+  }, [showSearch]);
+
+  useEffect(() => {
+    if (showLocation) updateShowSearch(false);
+  }, [showLocation]);
+
+  const selectCity = (data) => {
+    dispatch(setLocation(data));
+    updateShowModals(false, updateShowLocation);
+  }
 
   const updateShowModals = (val, cb) => {
     document.body.style = val ? 'overflow: hidden;' : '';
     cb(val);
   }
 
+  const onSearchLocation = (q) => dispatch(searchLocation(q));
+  const onSearchPages = (q) => dispatch(searchPages(q));
+
   return (
-    <header className={`header container-full mode-${!showLocation ? mode : 'light'}`}>
+    <header className={`header container-full mode-${!showLocation && !showSearch ? mode : 'light'}`}>
       <div className="header-row zi-5">
         <div className="container flex-jcsb flex-aic body body-6">
           <div className="flex">
@@ -46,7 +69,7 @@ const Header = ({ mode='default' }) => {
                     onClick={() => updateShowModals(true, updateShowLocation)}
                   >
                     <IconMarkerMap fill={ color } />
-                    <span>Город</span>
+                    <span>{ location.title ? location.title : 'Город' }</span>
                   </div>
                   <Link to="/support">
                     <div className="link">Поддержка</div>
@@ -75,7 +98,7 @@ const Header = ({ mode='default' }) => {
                 <HeaderNav color={color}/>
 
                 <div className="actions flex flex-aic gap-10">
-                  <div className="link flex flex-aic">
+                  <div onClick={() => updateShowModals(true, updateShowSearch)} className="link flex flex-aic">
                     <IconSearch fill={ color } />
                     <span>Поиск</span>
                   </div>
@@ -93,14 +116,25 @@ const Header = ({ mode='default' }) => {
             />
       }
 
-      {
-        <SearchModals
-            className={!showLocation ? 'hidden-search' : '' }
-            isShow={showLocation}
-            placeholder="Ваш город..."
-            close={() => updateShowModals(false, updateShowLocation)}
-        />
-      }
+      <SearchModals
+          className={!showLocation ? 'hidden-search' : '' }
+          isShow={showLocation}
+          placeholder="Ваш город..."
+          close={() => updateShowModals(false, updateShowLocation)}
+          matchies={locationMatchies}
+          onSearch={(q) => onSearchLocation(q)}
+          onSelect={(val) => selectCity(val)}
+      />
+      <SearchModals
+        className={ `search-page ${!showSearch ? 'hidden-search' : ''}` }
+        isShow={showSearch}
+        type="pages"
+        placeholder="Поиск"
+        close={() => updateShowModals(false, updateShowSearch)}
+        matchies={searchMatchies}
+        onSearch={(q) => onSearchPages(q)}
+        onSelect={(val) => selectCity(val)}
+      />
     </header>
   )
 }

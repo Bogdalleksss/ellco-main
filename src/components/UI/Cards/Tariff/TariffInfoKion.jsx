@@ -1,18 +1,25 @@
-const TariffInfoKion = ({ title, available}) => {
-  const getImage = (image) => {
-    return require(`@/assets/img/available/${image}.svg`);
-  }
+import MTS from '@/assets/img/available/mts.svg'
+import KION from '@/assets/img/available/kion.svg'
+
+const TariffInfoKion = ({ title, kion, mts}) => {
+
   return (
     <div className="tariff-card__info tariff-card__kion width-full zi-2">
       <h3 className="mb-4">{ title }</h3>
 
       {
-        available.map(available => (
-          <div key={available.id} className="tariff-card__available flex flex-aic mb-3 gap-3">
-            <img src={getImage(available.image)} alt=""/>
-            <p className="body body-2">{ available.content }</p>
+        kion
+        && <div className="tariff-card__available flex flex-aic mb-3 gap-3">
+            <img src={KION} alt=""/>
+            <p className="body body-2">{ kion }</p>
           </div>
-        ))
+      }
+      {
+        mts
+        && <div className="tariff-card__available flex flex-aic mb-3 gap-3">
+            <img src={MTS} alt=""/>
+            <p className="body body-2">{ mts }</p>
+          </div>
       }
     </div>
   )

@@ -16,7 +16,7 @@ const AdvantagesSection = ({ title, list, classNames }) => {
         <div className="advantages-content flex width-full flex-jcsb flex-aic gap-12">
           {
             list.map(item => (
-              <div className="advantages-content__block flex column flex-aic ta-c">
+              <div key={item.id} className="advantages-content__block flex column flex-aic ta-c">
                 <span
                   className="advantages-content__icon flex flex-aic flex-jcc"
                   style={{ background: item.color }}

@@ -3,14 +3,25 @@ import BannerSection from "../components/sections/BannerSection";
 import Footer from "../components/Footer/Footer";
 
 import stock from '@/assets/img/rate-percent.svg';
-import Banner from '@/assets/img/banner/stock-mobile.png'
 
-import { useScrollToTop } from "../hooks";
-import Image from '@/assets/img/woman-blue.png';
+import { useFormatDate, useScrollToTop } from "../hooks";
 import InfoSection from "../components/sections/InfoSection";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
+import { useEffect } from "react";
+import { promotionsFetchOne } from "../store/promotions";
+import { getImage } from "../utils";
 
 const StockPage = () => {
   useScrollToTop();
+  const dispatch = useDispatch();
+  const formatDate = useFormatDate();
+  const promo = useSelector(state => state.promotions.item);
+  const { id } = useParams()
+
+  useEffect(() => {
+    dispatch(promotionsFetchOne(id));
+  }, [id])
 
   return (
     <>
@@ -19,19 +30,17 @@ const StockPage = () => {
         classNames="stock-page"
         title="Выгодное предложение"
         action="Перейти к оплате"
-        banner={Banner}
+        date={formatDate(promo?.createdAt)}
       >
-        <p className="body body-3 opacity-10">
-          Оплати сразу 3 месяца и получи 4 в подарок!
-        </p>
+        <p className="body body-3 opacity-10">{promo?.annonce}</p>
         <img className="stock" src={stock} alt=""/>
       </BannerSection>
       <InfoSection
-        title="Оплачивайте интернет выгодно"
+        title={promo?.title}
         classNames="info-stock"
-        description="Проверьте техническую возможность подключения интернета для частного дома прямо на этой странице, оставьте свои данные. Мы свяжемся с вами в ближайшее время"
+        description={promo?.description}
         withoutButton={true}
-        image={Image}
+        image={getImage(promo?.image)}
       />
       <Footer/>
     </>

@@ -11,6 +11,7 @@ import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { isMobile } from "../utils/constants";
 import Footer from "../components/Footer/Footer";
+import { useSelector } from "react-redux";
 
 const checklistInfo = [
   {
@@ -49,22 +50,10 @@ const advantagesList = [
     description: 'В своём стремлении улучшить пользовательский опыт мы упускаем, что действия представителей оппозиции ',
   },
 ]
-const tariffs = [
-  {
-    id: 2,
-    type: 'PHONE',
-    title: 'Тарифный план «Стандартный»',
-    price: 170,
-  },
-  {
-    id: 3,
-    type: 'PHONE',
-    title: 'Тарифный план «Стандартный»',
-    price: 204,
-  },
-]
 
 const TelephonyPage = () => {
+  const tariffs = useSelector(state => state.tariffs.items.filter(tariff => ['telephony'].includes(tariff.type)));
+
   return (
     <>
       <Header />
@@ -90,7 +79,7 @@ const TelephonyPage = () => {
          image={Image}
        />
       <AdditionalTariffsSection
-        title="Дополнительные тарифы"
+        title="Тарифы"
         tariffs={tariffs}
       />
       <EventsSection />

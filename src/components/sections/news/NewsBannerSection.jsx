@@ -2,7 +2,9 @@ import TitleH1 from "../../UI/TitleH1";
 import Button from "../../UI/Button";
 
 import Banner from '@/assets/img/rate-percent.svg'
-import { useScreen } from "../../../hooks/screen";
+import { useScreen } from "../../../hooks/useScreen";
+
+
 
 const NewsBannerSection = () => {
   const { mediaPoint } = useScreen();

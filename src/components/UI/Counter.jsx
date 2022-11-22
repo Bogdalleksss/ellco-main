@@ -1,33 +1,29 @@
-import { useState } from "react";
 import MinusIcon from "../icons/MinusIcon";
 import PlusIcon from "../icons/PlusIcon";
 
-const Counter = ({ className = '' }) => {
-  const [count, updateCount] = useState(0);
-
-  const max = 5;
-  const min = 0;
-
+const Counter = ({ className = '', value, onChange, disabled, max = 100, min = 0 }) => {
   const counting = (num) => {
     if (num > max || num < min) return
 
-    updateCount(num);
+    onChange(num);
   }
 
   return (
-    <div className="counter flex flex-aic gap-2">
+    <div className={`counter flex flex-aic gap-2 ${className} ${disabled && 'opacity-10'}`}>
       <button
         className="flex flex-aic flex-jcc"
-        onClick={() => counting(count - 1)}
+        disabled={disabled}
+        onClick={() => counting(value - 1)}
       >
         <MinusIcon />
       </button>
       <div className="counter__num flex flex-aic flex-jcc body body-9 font-color-bld">
-        { count }
+        { value }
       </div>
       <button
         className="flex flex-aic flex-jcc"
-        onClick={() => counting(count + 1)}
+        disabled={disabled}
+        onClick={() => counting(value + 1)}
       >
         <PlusIcon />
       </button>

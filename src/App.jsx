@@ -17,15 +17,29 @@ import StockPage from "./pages/StockPage";
 import SmotreshkaPage from "./pages/SmotreshkaPage";
 import KionPage from "./pages/KionPage";
 import VideosurveillancePage from "./pages/VideosurveillancePage";
+import { useDispatch, useSelector } from "react-redux";
+import { newsFetch } from "./store/news";
+import { promotionsFetch } from "./store/promotions";
+import { tariffsFetch } from "./store/tariffs";
+import { fetchCamsSettings } from "./store/settings";
 
 const withoutFooterPages = ['/rate']
 
 const App = () => {
+  const dispatch = useDispatch();
   const [ withoutFooter, updateWithoutFooter ] = useState(true);
+  const location = useSelector(state => state.location.location)
 
   useEffect(() => {
     updateWithoutFooter(withoutFooterPages.includes(window.location.pathname));
   }, [window.location.pathname])
+
+  useEffect(() => {
+    dispatch(newsFetch());
+    dispatch(promotionsFetch());
+    dispatch(tariffsFetch(location.id));
+    dispatch(fetchCamsSettings());
+  }, [])
 
   return (
     <>
@@ -42,7 +56,7 @@ const App = () => {
         <Route path="/videosurveillance">
           <VideosurveillancePage />
         </Route>
-        <Route path="/stock">
+        <Route path="/stocks/:id">
           <StockPage />
         </Route>
         <Route path="/smotreshka">
@@ -57,10 +71,10 @@ const App = () => {
         <Route exact path="/news">
           <NewsPage />
         </Route>
-        <Route path="/news/post/:id">
+        <Route path="/news/:id">
           <NewsItemPage />
         </Route>
-        <Route exact path="/order">
+        <Route exact path="/order/:id">
           <OrderPage />
         </Route>
         <Route path="/">

@@ -10,6 +10,7 @@ import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { useScrollToTop } from "../hooks";
 import Footer from "../components/Footer/Footer";
+import { useSelector } from "react-redux";
 
 const checklistInfo = [
   {
@@ -49,98 +50,9 @@ const advantagesList = [
   },
 ]
 
-const tariffs = [
-  {
-    id: 2,
-    type: 'SMOTR',
-    title: 'Стандарт',
-    channels: 255,
-    price: 199,
-    availables: [
-      {
-        id: 1,
-        title: 'Количество HD каналов: 69'
-      },
-      {
-        id: 2,
-        title: 'Количество 4К каналов: 1'
-      },
-      {
-        id: 3,
-        title: 'Количество устройств: 5'
-      },
-    ]
-  },
-  {
-    id: 3,
-    type: 'SMOTR',
-    title: 'Оптима',
-    movie: 'PREMIER',
-    channels: 318,
-    price: 449,
-    availables: [
-      {
-        id: 1,
-        title: 'Количество HD каналов: 100'
-      },
-      {
-        id: 2,
-        title: 'Количество 4К каналов: 8'
-      },
-      {
-        id: 3,
-        title: 'Количество устройств: 5'
-      },
-    ]
-  },
-  {
-    id: 4,
-    type: 'SMOTR',
-    title: 'Эксклюзив',
-    movie: 'PREMIER, more.tv',
-    channels: 334,
-    price: 749,
-    availables: [
-      {
-        id: 1,
-        title: 'Количество HD каналов: 115'
-      },
-      {
-        id: 2,
-        title: 'Количество 4К каналов: 8'
-      },
-      {
-        id: 3,
-        title: 'Количество устройств: 5'
-      },
-    ]
-  },
-  {
-    id: 5,
-    type: 'SMOTR',
-    title: 'Эксклюзив + Кино',
-    movie: 'PREMIER, more.tv, START, AMEDIATEKA',
-    channels: 334,
-    price: 999,
-    availables: [
-      {
-        id: 1,
-        title: 'Количество HD каналов: 115'
-      },
-      {
-        id: 2,
-        title: 'Количество 4К каналов: 8'
-      },
-      {
-        id: 3,
-        title: 'Количество устройств: 5'
-      },
-    ]
-  }
-]
-
 const SmotreshkaPage = () => {
   useScrollToTop();
+  const tariffs = useSelector(state => state.tariffs.items.filter(tariff => ['smotroshka'].includes(tariff.type)));
 
   return (
     <>
@@ -159,7 +71,7 @@ const SmotreshkaPage = () => {
         classNames="movie-sm"
       />
       <AdditionalTariffsSection
-        title="Дополнительные тарифы"
+        title="Тарифы"
         tariffs={tariffs}
       />
       <EventsSection />
