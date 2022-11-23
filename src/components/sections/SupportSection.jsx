@@ -104,7 +104,7 @@ const SupportSection = () => {
         </div>
         { mediaPoint < 1600
           ? <Fade bottom delay={100 * requisites.length + 800} duration={900}>
-            <Button>Скачать pdf файл реквизитов</Button>
+            <Button>Скачать PDF-файл с реквизитами</Button>
           </Fade>
           : <></>
         }

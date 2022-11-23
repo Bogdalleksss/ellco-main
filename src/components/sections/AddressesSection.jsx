@@ -1,5 +1,3 @@
-import TitleH1 from "../UI/TitleH1";
-import Button from "../UI/Button";
 import { v4 } from "uuid";
 import { useScreen } from "../../hooks/useScreen";
 import Fade from 'react-reveal/Fade';
@@ -12,11 +10,11 @@ const addresses = [
   {
     id: v4(),
     title: 'Главный офис',
-    name: 'г.Махачкала, пр. И.Шамиля, 2 «В»',
+    name: 'г. Махачкала, пр. И. Шамиля, 2В',
     working_time: {
-      days: 'ПН-ВС',
+      days: 'ПН–ВС',
       time: {
-        start: '09:00',
+        start: '9:00',
         end: '18:00',
       }
     }
@@ -24,11 +22,11 @@ const addresses = [
   {
     id: v4(),
     title: 'Дополнительный офис:',
-    name: 'г. Махачкала, пр. А.Акушинского, 88«Е»',
+    name: 'г. Махачкала, пр. А. Акушинского, 88Е',
     working_time: {
-      days: 'ПН-ВС',
+      days: 'ПН–ВС',
       time: {
-        start: '09:00',
+        start: '9:00',
         end: '18:00',
       }
     }
@@ -36,27 +34,15 @@ const addresses = [
   {
     id: v4(),
     title: 'Главный офис:',
-    name: 'г.Каспийск, ул.Ленина 37',
+    name: 'г. Каспийск, ул. Ленина, 37',
     working_time: {
-      days: 'ПН-ВС',
+      days: 'ПН–ВС',
       time: {
-        start: '09:00',
+        start: '9:00',
         end: '19:00',
       }
     },
     weekends: 'СБ',
-  },
-  {
-    id: v4(),
-    title: 'Дополнительный офис:',
-    name: 'г. Махачкала, пр. А.Акушинского, 88«Е»',
-    working_time: {
-      days: 'ПН-ВС',
-      time: {
-        start: '09:00',
-        end: '18:00',
-      }
-    }
   },
 ]
 

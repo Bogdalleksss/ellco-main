@@ -67,7 +67,7 @@ const TariffCard = ({ tariff }) => {
         <div className="flex mb-2 flex-jcc">
           { newPrice ? <p className="price-old mr-3">{ newPrice }</p> : <></> }
           <p className="price mr-2">{ price }</p>
-          <p className="currency body body-7">руб./мес</p>
+          <p className="currency body body-7">руб/мес</p>
         </div>
         <Button
           className="width-full mb-1"

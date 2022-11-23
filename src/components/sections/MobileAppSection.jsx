@@ -14,7 +14,7 @@ const MobileAppSection = () => {
           <Fade bottom duration={900}>
             <h2 className="mb-6">
               Мобильное приложение <br/>
-              <span className="font-color-yl">«Мой ellсo»</span>
+              <span className="font-color-yl">«Мой EIIсo»</span>
             </h2>
           </Fade>
           <Fade bottom delay={100} duration={900}>

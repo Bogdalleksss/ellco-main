@@ -12,7 +12,7 @@ const labels = [
     id: 2,
     type: 'fill',
     color: '#45CC63',
-    title: '+tv',
+    title: 'IPTV',
   },
   {
     id: 3,
@@ -24,13 +24,7 @@ const labels = [
     id: 4,
     type: 'outline',
     color: '#45CC63',
-    title: 'IP',
-  },
-  {
-    id: 5,
-    type: 'outline',
-    color: '#054FD6',
-    title: 'Телефония',
+    title: 'IP-телефония',
   },
 ];
 

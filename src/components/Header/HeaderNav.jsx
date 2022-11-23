@@ -17,7 +17,7 @@ const navLinks = [
   },
   {
     id: v4(),
-    name: 'Телевидение',
+    name: 'IPTV',
     link: '/iptv',
   },
   {
@@ -40,7 +40,7 @@ const navLinks = [
 const HeaderNav = ({ color='#FFFFFF', closeMobile }) => {
   const { mediaPoint } = useScreen();
 
-  const [nav] = useState(mediaPoint > 480 ? navLinks.slice(0, 4) : navLinks);
+  const [nav] = useState(navLinks);
 
   return (
     <nav className="header-menu">
@@ -52,11 +52,11 @@ const HeaderNav = ({ color='#FFFFFF', closeMobile }) => {
         )) }
 
         <li className="flex flex-aic">
-          <HeaderDropdown
-            color={color}
-            links={navLinks.slice(4, navLinks.length)}
-            light={color === '#FFFFFF'}
-          />
+          {/*<HeaderDropdown*/}
+          {/*  color={color}*/}
+          {/*  links={navLinks.slice(4, navLinks.length)}*/}
+          {/*  light={color === '#FFFFFF'}*/}
+          {/*/>*/}
         </li>
       </ul>
     </nav>
