@@ -1409,7 +1409,7 @@ footer {
         font-size: 24px !important;
 
         span {
-          margin-top: 9px !important;
+          padding-top: 5px !important;
         }
       }
     }
@@ -1495,6 +1495,10 @@ footer {
     h1 {
       z-index: 3;
       @include h5($blue);
+
+      span {
+        padding-top: 13px;
+      }
     }
     &-content {
       z-index: 3;
