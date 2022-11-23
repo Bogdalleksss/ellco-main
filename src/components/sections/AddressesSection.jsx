@@ -1,16 +1,19 @@
 import { v4 } from "uuid";
 import { useScreen } from "../../hooks/useScreen";
 import Fade from 'react-reveal/Fade';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
-import Map from '@/assets/img/map.png'
 import IconStripes from "../icons/IconStripes";
 import IconMarkerMap from "../icons/IconMarkerMap";
+import { useState } from "react";
+import MapMarker from '@/assets/img/map-marker.svg';
 
 const addresses = [
   {
     id: v4(),
     title: 'Главный офис',
-    name: 'г. Махачкала, пр. И. Шамиля, 2В',
+    name: 'г.  , пр. И. Шамиля, 2В',
+    coords: [42.982618, 47.469702],
     working_time: {
       days: 'ПН–ВС',
       time: {
@@ -23,6 +26,7 @@ const addresses = [
     id: v4(),
     title: 'Дополнительный офис:',
     name: 'г. Махачкала, пр. А. Акушинского, 88Е',
+    coords: [42.978931, 47.449444],
     working_time: {
       days: 'ПН–ВС',
       time: {
@@ -35,6 +39,7 @@ const addresses = [
     id: v4(),
     title: 'Главный офис:',
     name: 'г. Каспийск, ул. Ленина, 37',
+    coords: [42.899307, 47.627742],
     working_time: {
       days: 'ПН–ВС',
       time: {
@@ -48,6 +53,13 @@ const addresses = [
 
 const SupportSection = () => {
   const { mediaPoint } = useScreen();
+  const [ location, updateLocation ] = useState(addresses[0]);
+
+  const mapState = () => ({
+    center: location.coords,
+    zoom: 18,
+    behaviors: []
+  });
 
   return (
     <section id="addresses">
@@ -66,7 +78,11 @@ const SupportSection = () => {
               <div className="addresses-list__wrapper">
                 {
                   addresses.map(address => (
-                    <div key={address.id} className="addresses-list__block pb-6 mb-6">
+                    <div
+                      key={address.id}
+                      className={`addresses-list__block pb-6 mb-6 ${location.id === address.id && 'active'}`}
+                      onClick={() => updateLocation(address)}
+                    >
                       <p className="body body-6 font-color-bl mb-1">{ address.title }</p>
                       <h4 className="font-color-bl mb-3">
                         <span>
@@ -93,9 +109,32 @@ const SupportSection = () => {
             </Fade>
           </div>
         </div>
-        <Fade bottom delay={200} duration={900}>
-          <div className="map flex-1 height-full" style={{ background: `url(${Map})` }} />
-        </Fade>
+        {
+          location && <Fade bottom delay={200} duration={900}>
+            <div className="map flex-1 height-full">
+              <YMaps>
+                <Map
+                  width="100%"
+                  height="511px"
+                  state={mapState()}
+                >
+
+                  <Placemark
+                    geometry={location.coords}
+                    options={{
+                      iconLayout: 'default#image',
+                      iconImageHref: MapMarker,
+                      iconImageSize: [30, 42],
+                      iconImageOffset: [-3, -42]
+                    }}
+                  />
+
+                </Map>
+              </YMaps>
+            </div>
+            {/*<div className="map flex-1 height-full" style={{ background: `url(${Map})` }} />*/}
+          </Fade>
+        }
       </div>
     </section>
   )

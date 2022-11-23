@@ -1992,6 +1992,13 @@ footer {
       background-size: cover !important;
       background-position: center !important;
       border-radius: 20px;
+      overflow: hidden;
+
+      .ymaps-2-1-79 {
+        &-ground-pane {
+          //filter: sepia(9%) hue-rotate(155deg) saturate(240%);
+        }
+      }
     }
   }
 }

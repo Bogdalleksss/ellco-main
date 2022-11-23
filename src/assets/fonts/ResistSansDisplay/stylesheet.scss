@@ -1,26 +1,26 @@
 @font-face {
   font-family: 'Resist Sans Display';
-  src: url('ResistSansDisplay-Regular.ttf');
-  src: url('ResistSansDisplay-Regular.woff2') format('woff2'),
+  src: url('ResistSansDisplay-Regular.eot');
+  src: url('ResistSansDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+      url('ResistSansDisplay-Regular.woff2') format('woff2'),
       url('ResistSansDisplay-Regular.woff') format('woff'),
-      url('ResistSansDisplay-Regular.ttf') format('ttf'),
-      url('ResistSansDisplay-Regular.eot') format('eot');
+      url('ResistSansDisplay-Regular.ttf') format('truetype');
 }
 @font-face {
   font-weight: $weight-light;
-  src: url('ResistSansDisplay-Light.ttf');
-  src: url('ResistSansDisplay-Light.woff2') format('woff2'),
+  src: url('ResistSansDisplay-Light.eot');
+  src: url('ResistSansDisplay-Light.eot?#iefix') format('embedded-opentype'),
+      url('ResistSansDisplay-Light.woff2') format('woff2'),
       url('ResistSansDisplay-Light.woff') format('woff'),
-      url('ResistSansDisplay-Light.ttf') format('ttf'),
-      url('ResistSansDisplay-Light.eot') format('eot');
+      url('ResistSansDisplay-Light.ttf') format('truetype');
   font-family: $font-main;
 }
 @font-face {
   font-family: $font-main;
   src: url('ResistSansDisplay-Medium.ttf');
-  src: url('ResistSansDisplay-Medium.woff2') format('woff2'),
+  src: url('ResistSansDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+      url('ResistSansDisplay-Medium.woff2') format('woff2'),
       url('ResistSansDisplay-Medium.woff') format('woff'),
-      url('ResistSansDisplay-Medium.ttf') format('ttf'),
-      url('ResistSansDisplay-Medium.eot') format('eot');
+      url('ResistSansDisplay-Medium.ttf') format('truetype');
   font-weight: $weight-medium;
 }

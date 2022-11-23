@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import App from './App';
 import { store } from "./store";
 
+// import 'normalize.css';
 import 'swiper/css';
 import '@/assets/css/style.scss';
 
