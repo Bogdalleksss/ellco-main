@@ -21,6 +21,26 @@
         }
       }
     }
+
+    #modal {
+      &-order {
+        &-search {
+          svg {
+            top: 12px !important;
+          }
+        }
+      }
+    }
+
+    #support {
+      .support {
+        h1 {
+          span {
+            padding-top: 9px !important;
+          }
+        }
+      }
+    }
   }
   @media (min-width: $media-desktop-small) {
     section {
@@ -45,11 +65,21 @@
         }
       }
     }
+
+    #modal {
+      &-order {
+        &-search {
+          svg {
+            top: 23px !important;
+          }
+        }
+      }
+    }
   }
 
   .button {
     span {
-      margin-top: 0;
+      margin-top: 0 !important;
       span {
         margin-top: -8px !important;
 
@@ -212,16 +242,6 @@
             }
           }
         }
-      }
-    }
-
-    &-search {
-      a {
-        margin-top: 0 !important;
-      }
-
-      svg {
-        top: 16px !important;
       }
     }
   }
