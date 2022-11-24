@@ -1,0 +1,74 @@
+.windows {
+  @media (max-width: $media-desktop-small) {
+    section {
+      h1 {
+        span {
+          margin-top: -6px !important;
+        }
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, p, span, a, b, i, li {
+    padding-top: -5px !important;
+  }
+
+  .main {
+    &__description {
+      span {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  section {
+    h1 {
+      span {
+        margin-top: -10px !important;
+      }
+    }
+  }
+
+  #banner {
+    .banner {
+      padding-top: 7px !important;
+    }
+  }
+
+  .slider-control {
+    &__progress-bar {
+      span {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  .tariff {
+    &-card {
+      &__advantages {
+        &__content {
+          margin-top: 0 !important;
+        }
+      }
+
+      .price {
+        &-old {
+          &::after {
+            margin-top: 4px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .tabs {
+    &-box {
+      &__tab {
+        span {
+          display: inline-block;
+          margin-top: -3px;
+        }
+      }
+    }
+  }
+}

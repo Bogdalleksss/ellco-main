@@ -5,7 +5,9 @@ const Button = ({ children, type='main', className, onClick, disabled }) => {
       disabled={disabled}
       onClick={() => onClick()}
     >
-      { children }
+      <span>
+        { children }
+      </span>
     </button>
   )
 }

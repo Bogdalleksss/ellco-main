@@ -36,7 +36,9 @@ const MainSection = () => {
             <Fade bottom delay={100} duration={900}>
                 <p className="main__description body body-1 font-color-w mb-6">
                   Интернет безграничных возможностей <br/>
-                  <span>в каждом уголке Дагестана</span>
+                  <div className="main__description-selected-text">
+                    <span>в каждом уголке Дагестана</span>
+                  </div>
                 </p>
             </Fade>
 

@@ -39,10 +39,12 @@ const App = () => {
     dispatch(promotionsFetch());
     dispatch(tariffsFetch(location.id));
     dispatch(fetchCamsSettings());
-  }, [])
+  }, []);
+
+  console.log(navigator.appVersion.indexOf('Win') !== -1)
 
   return (
-    <>
+    <div className={navigator.appVersion.indexOf('Win') !== -1 && 'windows'}>
       <Switch>
         <Route path="/rate">
           <RatePage />
@@ -81,7 +83,7 @@ const App = () => {
           <IndexPage />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 }
 
