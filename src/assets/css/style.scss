@@ -1575,6 +1575,9 @@ footer {
     padding-bottom: 0px;
 
     @media (max-width: $media-desktop-small) {
+      label {
+        display: none;
+      }
       .banner {
         .container {
           padding: 107px 0;
@@ -1591,7 +1594,7 @@ footer {
     }
 
     @media (max-width: $media-medium) {
-      padding-bottom: 50px;
+      padding-bottom: 0px;
       .banner {
         .container {
           padding: 0 20px !important;
@@ -1601,6 +1604,16 @@ footer {
         }
         &-img {
           display: block !important;
+
+          &__wrapper {
+            padding: 20px 0;
+            background: #E7EDFB;
+            margin-bottom: 20px;
+
+            img {
+              margin-bottom: 0;
+            }
+          }
         }
       }
     }
@@ -2643,7 +2656,11 @@ footer {
 
       &-content {
         padding-left: 0 !important;
-        margin-top: 40px;
+        margin-top: 0px;
+
+        h2 {
+          margin-bottom: 20px;
+        }
       }
     }
   }

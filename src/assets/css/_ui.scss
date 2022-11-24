@@ -767,11 +767,12 @@
     input {
       font-family: $font-second;
       font-weight: 400;
-      line-height: 120%;
+      line-height: 100%;
       width: 100%;
       @include b2();
       outline: none;
       background: transparent;
+      padding-bottom: 10px;
 
       border: none;
       border-bottom: 1px solid $blue-dark;

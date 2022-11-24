@@ -30,6 +30,8 @@ const StockPage = () => {
         classNames="stock-page"
         title="Выгодное предложение"
         date={formatDate(promo?.createdAt)}
+        type="stock"
+        banner={stock}
       >
         <p className="body body-3 opacity-10">{promo?.annonce}</p>
         <img className="stock" src={stock} alt=""/>
