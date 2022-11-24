@@ -173,7 +173,9 @@ const OrderModal = () => {
             />
           </div>
 
-          <p className="body body-7 mt-8 font-color-bld opacity-10">Подключение</p>
+          <p className="body body-7 mt-8 font-color-bld opacity-10" style={{
+            marginTop: '40px !important'
+          }}>Подключение</p>
           <div className="form-radio flex flex-aic flex-jcfs gap-10 mt-2 mb-8">
             <RadioButton
               id="private"
@@ -197,13 +199,23 @@ const OrderModal = () => {
 
           <div className="price-wrapper flex column flex-aifs gap-1 mb-8">
             <p className="body body-6">
-              Стоимость тарифа в месяц — { getMonthPrice() } ₽
+              <span>
+                Стоимость тарифа в месяц — { getMonthPrice() } ₽
+              </span>
             </p>
             <p className="body body-6">
-              Дополнительно в месяц — { getAddMonthPrice() } ₽
+              <span>
+                Дополнительно в месяц — { getAddMonthPrice() } ₽
+              </span>
             </p>
-            { type === 'ellco' && !!camsForBuyTotal && <p className="body body-6">Разовый платеж — { getFirstPrice() } ₽</p> }
-            <p className="body body-6 font-color-w total">К оплате — { getTotalPrice() } ₽</p>
+            { type === 'ellco' && !!camsForBuyTotal
+                && <p className="body body-6">
+                    <span>
+                      Разовый платеж — { getFirstPrice() } ₽
+                    </span>
+                  </p>
+            }
+              <p className="body body-6 font-color-w total"> <span>К оплате — { getTotalPrice() } ₽</span></p>
           </div>
 
           <Checkbox

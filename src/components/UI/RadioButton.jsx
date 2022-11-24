@@ -10,7 +10,11 @@ const RadioButton = ({ id, label, name, className, value, onChange, checked, dis
         onChange={val => onChange(val.target.value)}
         disabled={disabled}
       />
-      <label htmlFor={id} className="body body-9 font-color-bl">{ label }</label>
+      <label htmlFor={id} className="body body-9 font-color-bl">
+        <span>
+          { label }
+        </span>
+      </label>
     </div>
   )
 }

@@ -6,6 +6,18 @@
           margin-top: -6px !important;
         }
       }
+
+      h2 {
+        padding-top: 3px !important;
+      }
+    }
+
+    .main {
+      &__description {
+        &-selected-text {
+          height: 24px !important;
+        }
+      }
     }
   }
 
@@ -18,14 +30,25 @@
       span {
         //margin-top: 0 !important;
       }
+      &-selected-text {
+        height: 20px !important;
+
+        span {
+          margin-top: -9px !important;
+        }
+      }
     }
   }
 
   section {
     h1 {
       span {
-        margin-top: -10px !important;
+        margin-top: -5px !important;
       }
+    }
+
+    h2 {
+      padding-top: 4px !important;
     }
   }
 
@@ -66,7 +89,79 @@
       &__tab {
         span {
           display: inline-block;
-          margin-top: -3px;
+          margin-top: -3px !important;
+        }
+      }
+    }
+  }
+
+  #support {
+    .support-requisites {
+      ul {
+        li {
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+
+  #addresses {
+    .addresses {
+      &-list {
+        &__block {
+          h4 {
+            span {
+              margin-top: 8px !important;
+            }
+          }
+
+          &__time {
+            margin-top: 5px !important;
+          }
+        }
+      }
+    }
+  }
+
+  #modal {
+    &-order {
+      .modal {
+        &-order {
+          p {
+            margin-top: auto !important;
+          }
+
+          h5 {
+            span {
+              padding-top: 5px !important;
+            }
+          }
+
+          .order {
+            &-category {
+              &__block {
+                margin-top: -1px;
+              }
+              &__tariff {
+                h4 {
+                  &.mt-8 {
+                    margin-top: 40px !important;
+                  }
+                }
+              }
+              &__info {
+                &__title {
+                  padding-bottom: 5px;
+                }
+              }
+            }
+          }
+
+          p {
+            &.mt-8 {
+              margin-top: 40px !important;
+            }
+          }
         }
       }
     }
