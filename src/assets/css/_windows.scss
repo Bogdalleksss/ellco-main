@@ -8,7 +8,9 @@
       }
 
       h2 {
-        padding-top: 3px !important;
+        span {
+          padding-top: 3px !important;
+        }
       }
     }
 
@@ -20,8 +22,23 @@
       }
     }
   }
+  @media (min-width: $media-desktop-small) {
+    section {
+      h1 {
+        span {
+          margin-top: -12px !important;
+        }
+      }
 
-  h1, h2, h3, h4, h5, p, span, a, b, i, li {
+      h2 {
+        span {
+          padding-top: 0px !important;
+        }
+      }
+    }
+  }
+
+    h1, h2, h3, h4, h5, p, span, a, b, i, li {
     margin-top: -5px !important;
   }
 
@@ -40,21 +57,13 @@
     }
   }
 
-  section {
-    h1 {
-      span {
-        margin-top: -5px !important;
-      }
-    }
-
-    h2 {
-      padding-top: 4px !important;
-    }
-  }
-
   #banner {
     .banner {
-      padding-top: 7px !important;
+      h1 {
+        span {
+          padding-top: 7px !important;
+        }
+      }
     }
   }
 
@@ -142,7 +151,7 @@
               &__block {
                 margin-top: -1px;
               }
-              &__tariff {
+              &__tariffs {
                 h4 {
                   &.mt-8 {
                     margin-top: 40px !important;
