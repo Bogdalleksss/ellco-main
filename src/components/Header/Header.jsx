@@ -137,7 +137,7 @@ const Header = ({ mode='default' }) => {
                     <IconSearch fill={ color } />
                     <span>Поиск</span>
                   </div>
-                  <a href="https://bill.ellco.ru/my/index.xhtml" target="_blank" rel="noreferrer">
+                  <a className="no-mt" href="https://bill.ellco.ru/my/index.xhtml" target="_blank" rel="noreferrer">
                     <div className="link flex flex-aic">
                       <IconProfile fill={ color }/>
                       <span>Личный кабинет</span>

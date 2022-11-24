@@ -32,6 +32,20 @@ const labels = [
     link: '/telephony',
     title: 'IP-телефония',
   },
+  {
+    id: 5,
+    type: 'outline',
+    color: '#2f51d2',
+    link: '/kion',
+    title: 'KION',
+  },
+  {
+    id: 6,
+    type: 'outline',
+    color: '#00004F',
+    link: '/smotreshka',
+    title: 'Смотрёшка',
+  },
 ];
 
 // const cards = [

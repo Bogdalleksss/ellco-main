@@ -51,7 +51,11 @@
     span {
       margin-top: 0;
       span {
-        margin-top: -4px !important;
+        margin-top: -8px !important;
+
+        svg {
+          margin-top: 3px;
+        }
       }
     }
   }

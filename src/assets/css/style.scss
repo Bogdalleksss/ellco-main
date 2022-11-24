@@ -1425,11 +1425,6 @@ footer {
 
   @media (max-width: $media-desktop-small) {
     .banner {
-      label {
-        height: 33px;
-        background: $green;
-        border-radius: 35px;
-      }
 
       img {
         max-width: 1440px !important;
@@ -1510,10 +1505,15 @@ footer {
       }
     }
   }
-
   .banner {
     display: flex;
     justify-content: center;
+
+    label {
+      height: 33px;
+      background: $green;
+      border-radius: 35px;
+    }
 
     img {
       position: absolute;
@@ -1625,7 +1625,7 @@ footer {
     h1 {
       margin-bottom: 12px;
       span {
-        margin-top: 15px;
+        margin-top: 2px;
       }
     }
     .button {
