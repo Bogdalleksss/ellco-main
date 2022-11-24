@@ -323,8 +323,8 @@ section, main {
   }
   &-mobile {
     padding-top: 0;
-    padding-bottom: 50px;
-    span {
+    padding-bottom: 10px;
+    a {
       height: 32px;
       font-family: $font-second;
       display: flex;
@@ -1150,7 +1150,7 @@ footer {
   }
 
   @media (max-width: $media-medium) {
-    padding-top: 50px;
+    padding-top: 10px;
 
     h2 {
       margin-bottom: 30px;
