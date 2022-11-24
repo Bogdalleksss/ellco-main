@@ -23,11 +23,25 @@ const MobileAppSection = () => {
 
           <div className="buttons-wrapper flex gap-2">
             <Fade bottom delay={300} duration={900}>
-              <img src={GooglePlayBtn} alt=""/>
+              <a
+                className="no-mt"
+                href="https://play.google.com/store/apps/details?id=ru.ellco.myellco"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={GooglePlayBtn} alt=""/>
+              </a>
             </Fade>
 
             <Fade bottom delay={500} duration={900}>
-              <img src={AppStoreBtn} alt=""/>
+              <a
+                className="no-mt"
+                href="https://apps.apple.com/ru/app/%D0%BC%D0%BE%D0%B9-%D1%8D%D0%BB%D0%BB%D0%BA%D0%BE/id1506587687"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={AppStoreBtn} alt=""/>
+              </a>
             </Fade>
 
             <Fade bottom delay={700} duration={900}>

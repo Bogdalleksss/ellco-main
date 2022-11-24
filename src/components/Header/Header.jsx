@@ -19,10 +19,11 @@ const Header = ({ mode='default' }) => {
   const [showLocation, updateShowLocation] = useState(false);
   const [showSearch, updateShowSearch] = useState(false);
   const color = mode === 'default' && !showLocation && !showSearch ? '#2f51d2' : '#FFFFFF';
-  const location = useSelector(state => state.location.location);
 
+  const location = useSelector(state => state.location.location);
   const locationMatchies = useSelector(state => state.location.locations);
   const searchMatchies = useSelector(state => state.search.results);
+  const info = useSelector(state => state.settings.info);
 
   useEffect(() => {
     if (showSearch) updateShowLocation(false);
@@ -58,7 +59,16 @@ const Header = ({ mode='default' }) => {
 
             <ul className="flex gap-6 ">
               <li className="header__link header__link--active">Для меня</li>
-              <li className="header__link">Для бизнеса</li>
+                <li className="header__link">
+                  <a
+                    className="no-mt"
+                    href="https://business.ellco.ru/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Для бизнеса
+                  </a>
+                </li>
             </ul>
           </div>
           {
@@ -74,12 +84,37 @@ const Header = ({ mode='default' }) => {
                   <Link to="/support">
                     <div className="link">Поддержка</div>
                   </Link>
-                  <div className="phone">+7 (8722) 555-222</div>
+                  <a
+                    href={`tel:${info?.phone}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="phone">{ info?.phone }</div>
+                  </a>
                 </div>
               : <div className="mobile flex flex-1 height-full flex-jcfe flex-aic gap-2">
                   <div className="flex">
-                    <IconProfile fill={ color } />
-                    <IconSearch fill={ color }/>
+                    <a
+                      href="https://bill.ellco.ru/my/index.xhtml"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        marginTop: '0 !important',
+                        display: 'inline',
+                        height: '30px'
+                      }}
+                    >
+                      <IconProfile fill={ color } />
+                    </a>
+                    <div
+                      onClick={() => updateShowModals(true, updateShowSearch)}
+                      style={{
+                        display: 'inline',
+                        height: '30px'
+                      }}
+                    >
+                      <IconSearch fill={ color }/>
+                    </div>
                   </div>
                   <div
                     className="mobile__menu flex flex-aic height-full"
@@ -102,10 +137,12 @@ const Header = ({ mode='default' }) => {
                     <IconSearch fill={ color } />
                     <span>Поиск</span>
                   </div>
-                  <div className="link flex flex-aic">
-                    <IconProfile fill={ color }/>
-                    <span>Личный кабинет</span>
-                  </div>
+                  <a href="https://bill.ellco.ru/my/index.xhtml" target="_blank" rel="noreferrer">
+                    <div className="link flex flex-aic">
+                      <IconProfile fill={ color }/>
+                      <span>Личный кабинет</span>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -113,6 +150,7 @@ const Header = ({ mode='default' }) => {
               showMenu={showMenu}
               updateShowMenu={updateShowMenu}
               updateShowModal={(val) => updateShowModals(val, updateShowLocation)}
+              updateShowSearch={(val) => updateShowModals(val, updateShowSearch)}
             />
       }
 

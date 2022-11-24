@@ -13,7 +13,7 @@ const StockCard = ({ type = 'default', post }) => {
   const { _id, title, annonce, createdAt } = post;
 
   return (
-    <Link to={`/stocks/post/${_id}`} relative="path">
+    <Link to={`/stocks/${_id}`} relative="path">
       <div className={`stock-card flex column flex-aifs pl-20 ${ type } ${ !isSmall && 'flex-jcc' }`}>
         <div className="img">
           <img className="zi-1" src={Banner} alt=""/>

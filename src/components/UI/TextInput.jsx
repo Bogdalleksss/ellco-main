@@ -6,6 +6,9 @@ const TextInput = ({ type = 'text', label, placeholder, prepend, value, onChange
         { prepend ? <div className="prepend">{ prepend }</div> : <></> }
         <input
           className="pt-2 pb-2"
+          style={{
+            borderRadius: '0 !important'
+          }}
           placeholder={placeholder}
           disabled={disabled}
           type={type}

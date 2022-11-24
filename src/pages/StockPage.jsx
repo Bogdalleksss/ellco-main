@@ -29,7 +29,6 @@ const StockPage = () => {
       <BannerSection
         classNames="stock-page"
         title="Выгодное предложение"
-        action="Перейти к оплате"
         date={formatDate(promo?.createdAt)}
       >
         <p className="body body-3 opacity-10">{promo?.annonce}</p>

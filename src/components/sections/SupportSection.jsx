@@ -3,6 +3,7 @@ import Button from "../UI/Button";
 import { v4 } from "uuid";
 import { useScreen } from "../../hooks/useScreen";
 import Fade from 'react-reveal/Fade';
+import { useSelector } from "react-redux";
 
 const requisites = [
   {
@@ -59,6 +60,7 @@ const requisites = [
 
 const SupportSection = () => {
   const { mediaPoint } = useScreen();
+  const info = useSelector(state => state.settings.info);
 
   return (
     <section id="support">
@@ -73,10 +75,10 @@ const SupportSection = () => {
             </Fade>
             <div className="support-info__buttons flex column gap-4">
               <Fade bottom delay={400} duration={900}>
-                <Button className="font-color-bl body body-1" type="button-secondary">company@ellco.ru</Button>
+                <Button className="font-color-bl body body-1" type="button-secondary">{ info?.email }</Button>
               </Fade>
               <Fade bottom delay={600} duration={900}>
-                <Button className="font-color-bl body body-1" type="button-secondary">+7 (8722) 555–222 </Button>
+                <Button className="font-color-bl body body-1" type="button-secondary">{ info?.phone }</Button>
               </Fade>
             </div>
           </div>

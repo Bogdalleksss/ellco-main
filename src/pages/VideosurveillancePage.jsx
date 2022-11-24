@@ -11,6 +11,7 @@ import AdvantagesSection from "../components/sections/AdvantagesSection";
 import { isMobile } from "../utils/constants";
 import Footer from "../components/Footer/Footer";
 import CalculatorSection from "../components/sections/CalculatorSection";
+import { useScrollToTop } from "../hooks";
 
 const checklistInfo = [
   {
@@ -51,6 +52,8 @@ const advantagesList = [
 ]
 
 const VideosurveillancePage = () => {
+  useScrollToTop();
+
   return (
     <>
       <Header />
@@ -58,6 +61,7 @@ const VideosurveillancePage = () => {
         classNames="iptv-page"
         title="Видеонаблюдение"
         action="Подключить"
+        link="/cctv#calculator"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">

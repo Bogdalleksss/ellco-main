@@ -2,12 +2,21 @@ import PostCard from "../UI/Cards/PostCard";
 import IconArrowRight from "../icons/IconArrowRight";
 import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
-import { events } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import StockCard from "../UI/Cards/StockCard";
+import { useEffect, useState } from "react";
 
 const EventsSection = () => {
   const news = useSelector(state => state.news.items);
+  const promotions = useSelector(state => state.promotions.items);
+  const [events, updateEvents] = useState([]);
+
+  useEffect(() => {
+    updateEvents([...news, ...promotions]);
+  }, [news, promotions]);
+
+  const sortByDate = (a, b) => new Date(b.createdAt) - new Date(a.createdAt);
 
   return (
     <section id="events">
@@ -15,16 +24,19 @@ const EventsSection = () => {
         <Fade bottom text duration={900}>
           <h2 className="flex gap-3 font-color-bl mb-12">
             <IconStripes fill="#054FD6"/>
-            <span className="flex pt-1">События и акции</span>
+            <span className="flex pt-1">Новости и акции</span>
           </h2>
         </Fade>
 
         <div className="post-wrapper flex">
           {
-            news.map((event, idx) => (
+            events.sort(sortByDate).map((event) => (
               <div key={event._id} className={'post-card__wrapper'}>
-                <Fade bottom text delay={110 * (idx + 1)} duration={900}>
-                  <PostCard key={event.id} post={event} />
+                <Fade bottom text delay={120} duration={900}>
+                  <>
+                    { event.type === 'NEWS' && <PostCard post={event} /> }
+                    { event.type === 'STOCK' && <StockCard post={event} type="small" /> }
+                  </>
                 </Fade>
               </div>
             ))

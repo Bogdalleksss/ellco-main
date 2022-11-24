@@ -2,8 +2,9 @@ import Button from "../UI/Button";
 import TitleH1 from "../UI/TitleH1";
 import Fade from 'react-reveal/Fade';
 import React from "react";
+import { Link } from "react-router-dom";
 
-const BannerSection = ({ children, title, action, classNames, banner, date }) => {
+const BannerSection = ({ children, title, action, classNames, banner, date, link }) => {
 
   return (
     <main id="banner" className={classNames}>
@@ -20,9 +21,14 @@ const BannerSection = ({ children, title, action, classNames, banner, date }) =>
               { children }
             </Fade>
 
-            <Fade bottom delay={400} duration={900}>
-              <Button>{ action }</Button>
-            </Fade>
+            {
+              action
+              && <Fade bottom delay={ 400 } duration={ 900 }>
+                    <Link to={ link }>
+                      <Button>{ action }</Button>
+                    </Link>
+                  </Fade>
+            }
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const navLinks = [
   {
     id: v4(),
     name: 'Видеонаблюдение',
-    link: '/videosurveillance',
+    link: '/cctv',
   },
   {
     id: v4(),

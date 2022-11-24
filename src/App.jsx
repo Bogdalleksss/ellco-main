@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { newsFetch } from "./store/news";
 import { promotionsFetch } from "./store/promotions";
 import { tariffsFetch } from "./store/tariffs";
-import { fetchCamsSettings } from "./store/settings";
+import { fetchCamsSettings, fetchInformation } from "./store/settings";
 
 const withoutFooterPages = ['/rate']
 
@@ -35,6 +35,7 @@ const App = () => {
   }, [window.location.pathname])
 
   useEffect(() => {
+    dispatch(fetchInformation());
     dispatch(newsFetch());
     dispatch(promotionsFetch());
     dispatch(tariffsFetch(location.id));
@@ -55,7 +56,7 @@ const App = () => {
         <Route path="/telephony">
           <TelephoniaPage />
         </Route>
-        <Route path="/videosurveillance">
+        <Route path="/cctv">
           <VideosurveillancePage />
         </Route>
         <Route path="/stocks/:id">

@@ -66,10 +66,10 @@ const SupportSection = () => {
       <div className="addresses container gap-8">
         {
           mediaPoint <= 1024
-            ? <h2 className="flex gap-3 font-color-bl mb-6">
+            ? <h3 className="flex gap-3 font-color-bl mb-6">
                 <IconStripes fill="#054FD6"/>
                 <span className="flex pt-1">Офисы продаж и обслуживания</span>
-              </h2>
+              </h3>
             : <></>
         }
         <div className="addresses-wrapper flex height-full pt-8 pb-8 pr-6 pl-6">

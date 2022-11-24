@@ -55,12 +55,12 @@ const SearchModals = ({ placeholder, close, className, matchies, isShow, onSearc
           history.push(`/promotions/${match._id}`);
           break;
       }
-      if (type === 'location') {
-        onSelect(match);
-      }
-
-      updateSearch('');
     }
+    if (type === 'location') {
+      onSelect(match);
+    }
+
+    updateSearch('');
   }
 
   return (

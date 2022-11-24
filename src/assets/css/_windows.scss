@@ -24,6 +24,15 @@
   }
   @media (min-width: $media-desktop-small) {
     section {
+
+      &#support {
+        h1 {
+          span {
+            margin-top: -7px !important;
+          }
+        }
+      }
+
       h1 {
         span {
           margin-top: -12px !important;
@@ -38,8 +47,21 @@
     }
   }
 
-    h1, h2, h3, h4, h5, p, span, a, b, i, li {
+  .button {
+    span {
+      margin-top: 0;
+      span {
+        margin-top: -4px !important;
+      }
+    }
+  }
+
+  h1, h2, h3, h4, h5, p, span, a, b, i, li {
     margin-top: -5px !important;
+  }
+
+  .no-mt {
+    margin-top: 0 !important;
   }
 
   .main {
@@ -61,7 +83,17 @@
     .banner {
       h1 {
         span {
-          padding-top: 7px !important;
+          padding-top: 12px !important;
+        }
+      }
+    }
+  }
+
+  #tariffs {
+    .additional {
+      h2 {
+        span {
+          padding-top: 8px !important;
         }
       }
     }
@@ -90,6 +122,10 @@
           }
         }
       }
+
+      .currency {
+        margin-top: 0 !important;
+      }
     }
   }
 
@@ -97,7 +133,7 @@
     &-box {
       &__tab {
         span {
-          display: inline-block;
+          display: block;
           margin-top: -3px !important;
         }
       }
@@ -173,6 +209,22 @@
           }
         }
       }
+    }
+
+    &-search {
+      a {
+        margin-top: 0 !important;
+      }
+
+      svg {
+        top: 16px !important;
+      }
+    }
+  }
+
+  .radio, .checkbox, .counter__num {
+    span {
+      margin-top: -3px !important;
     }
   }
 }

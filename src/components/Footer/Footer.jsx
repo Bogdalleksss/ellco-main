@@ -6,154 +6,160 @@ import PhoneMockup from '@/assets/img/footer-phone.png';
 import VK from '@/assets/img/social-vk.svg';
 import TG from '@/assets/img/social-tg.svg';
 import Logo from "../Logo";
+import { v4 } from "uuid";
+import { Link } from "react-router-dom";
 
 const nav = [
   {
-    id: 1,
+    id: v4(),
     title: 'Интернет',
+    link: '/rate',
     links: [
       {
-        id: 1,
+        id: v4(),
         title: 'Об услуге',
-        link: '',
+        hash: '#info',
       },
       {
-        id: 3,
+        id: v4(),
         title: 'Преимущества',
-        link: '',
+        hash: '#advantages',
       },
       {
-        id: 2,
+        id: v4(),
         title: 'Тарифы',
-        link: '',
+        hash: '#tariffs',
       },
       {
-        id: 2,
+        id: v4(),
         title: 'Новости и акции',
-        link: '',
+        hash: '#events',
       },
     ]
   },
   {
-    id: 2,
+    id: v4(),
     title: 'Телефония',
+    link: '/telephony',
     links: [
       {
-        id: 1,
-        title: 'Международная свзяь',
-        link: '',
+        id: v4(),
+        title: 'Об услуге',
+        hash: '#info',
       },
       {
-        id: 2,
+        id: v4(),
+        title: 'Преимущества',
+        hash: '#advantages',
+      },
+      {
+        id: v4(),
         title: 'Тарифы',
-        link: '',
+        hash: '#tariffs',
       },
       {
-        id: 3,
-        title: 'Выбор номеров',
-        link: '',
+        id: v4(),
+        title: 'Новости и акции',
+        hash: '#events',
       },
-      {
-        id: 4,
-        title: 'Дополнительные услуги',
-        link: '',
-      }
     ]
   },
   {
-    id: 3,
+    id: v4(),
     title: 'Телевидение',
+    link: '/iptv',
     links: [
       {
-        id: 1,
-        title: 'Акции',
-        link: '',
+        id: v4(),
+        title: 'Об услуге',
+        hash: '#info',
       },
       {
-        id: 2,
+        id: v4(),
+        title: 'Преимущества',
+        hash: '#advantages',
+      },
+      {
+        id: v4(),
         title: 'Тарифы',
-        link: '',
+        hash: '#tariffs',
       },
       {
-        id: 3,
-        title: 'Оборудование',
-        link: '',
+        id: v4(),
+        title: 'Новости и акции',
+        hash: '#events',
       },
-      {
-        id: 4,
-        title: 'Каналы',
-        link: '',
-      }
     ]
   },
   {
-    id: 4,
+    id: v4(),
     title: 'Видеонаблюдение',
+    link: '/cctv',
     links: [
       {
-        id: 1,
+        id: v4(),
+        title: 'Об услуге',
+        hash: '#info',
+      },
+      {
+        id: v4(),
+        title: 'Преимущества',
+        hash: '#advantages',
+      },
+      {
+        id: v4(),
         title: 'Калькулятор',
-        link: '',
+        hash: '#calculator',
       },
       {
-        id: 2,
-        title: 'Тарифы',
-        link: '',
+        id: v4(),
+        title: 'Новости и акции',
+        hash: '#events',
       },
-      {
-        id: 3,
-        title: 'Оборудование',
-        link: '',
-      },
-      {
-        id: 4,
-        title: 'Дополнительные услуги',
-        link: '',
-      }
     ]
   },
 ];
 
 const navMenu = [
   {
-    id: 1,
-    title: 'Личный кабинет',
-    link: ''
-  },
-  {
-    id: 2,
-    title: 'Способ оплаты',
-    link: ''
-  },
-  {
-    id: 3,
-    title: 'Услуги',
-    link: ''
-  },
-  {
-    id: 4,
+    id: v4(),
     title: 'О компании',
-    link: ''
+    link: '/support'
   },
   {
-    id: 5,
-    title: 'Партнерам',
-    link: ''
+    id: v4(),
+    title: 'Новости и акции',
+    link: '/news'
   },
   {
-    id: 6,
-    title: 'Новости',
-    link: ''
+    id: v4(),
+    title: 'Интернет',
+    link: '/rate',
   },
   {
-    id: 7,
-    title: 'Контакты',
-    link: ''
+    id: v4(),
+    title: 'Видеонаблюдение',
+    link: '/cctv',
   },
   {
-    id: 8,
-    title: 'Наши агенты',
-    link: ''
+    id: v4(),
+    title: 'IPTV',
+    link: '/iptv',
+  },
+  {
+    id: v4(),
+    title: 'Телефония',
+    link: '/telephony',
+  },
+  {
+    id: v4(),
+    title: 'KION',
+    link: '/kion',
+  },
+  {
+    id: v4(),
+    title: 'Смотрешка',
+    link: '/smotreshka',
   },
 ];
 
@@ -180,8 +186,22 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex aic gap-6 mt-5 mobile-block-footer">
-              <img className="zi-2" src={GooglePlay} alt=""/>
-              <img className="zi-2" src={AppStore} alt=""/>
+              <a
+                className="zi-2"
+                href="https://play.google.com/store/apps/details?id=ru.ellco.myellco"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={GooglePlay} alt=""/>
+              </a>
+              <a
+                className="zi-2"
+                href="https://apps.apple.com/ru/app/%D0%BC%D0%BE%D0%B9-%D1%8D%D0%BB%D0%BB%D0%BA%D0%BE/id1506587687"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img className="zi-2" src={AppStore} alt=""/>
+              </a>
             </div>
           </div>
           <div className="mockup__wrapper height-full">
@@ -200,12 +220,16 @@ const Footer = () => {
                     <div className="flex column gap-3">
                       {
                         item.links.map(link => (
-                          <p
+                          <Link
+                            to={{
+                              pathname: item.link,
+                              hash: link.hash,
+                            }}
                             key={link.id}
                             className="body body-7 font-color-w"
                           >
                             { link.title }
-                          </p>
+                          </Link>
                         ))
                       }
                     </div>
@@ -216,12 +240,13 @@ const Footer = () => {
             <div className="nav-wrapper__menu flex column gap-8 pt-12 ml-24">
               {
                 navMenu.map(item => (
-                  <p
+                  <Link
+                    to={item.link}
                     key={`nav-${item.id}`}
                     className="body body-8 font-color-w"
                   >
                     { item.title }
-                  </p>
+                  </Link>
                 ))
               }
             </div>
@@ -229,8 +254,12 @@ const Footer = () => {
 
           <div className="footer-bottom">
             <div className="socials flex gap-2 opacity-10 mb-9">
-              <img src={VK} alt=""/>
-              <img src={TG} alt=""/>
+              <a href="https://vk.com/ellco_ru" target="_blank" rel="noreferrer">
+                <img src={VK} alt=""/>
+              </a>
+              <a href="https://t.me/ellco_ru" target="_blank" rel="noreferrer">
+                <img src={TG} alt=""/>
+              </a>
             </div>
             <div className="footer-bottom flex">
               <p className="footer-description body body-8 font-color-w opacity-10 mr-18">

@@ -14,6 +14,14 @@
     height: 52px;
   }
 
+  span {
+    display: flex;
+    align-items: center;
+    span {
+      padding-top: 2px;
+    }
+  }
+
   &.disabled {
     cursor: auto;
     opacity: 50%;
@@ -486,7 +494,7 @@
   @media (max-width: $media-medium) {
     flex-wrap: wrap;
     justify-content: flex-start !important;
-    gap: 4px;
+    gap: 5px;
     border-bottom: none;
     margin-bottom: 30px;
 
@@ -505,6 +513,10 @@
 
       &.active {
         border: 1px solid $blue !important;
+      }
+
+      span {
+        line-height: 1;
       }
     }
   }

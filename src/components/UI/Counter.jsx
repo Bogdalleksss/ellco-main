@@ -18,7 +18,9 @@ const Counter = ({ className = '', value, onChange, disabled, max = 100, min = 0
         <MinusIcon />
       </button>
       <div className="counter__num flex flex-aic flex-jcc body body-9 font-color-bld">
-        { value }
+        <span>
+          { value }
+        </span>
       </div>
       <button
         className="flex flex-aic flex-jcc"

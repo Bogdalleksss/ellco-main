@@ -17,7 +17,8 @@ const PostCard = ({ post }) => {
         <div className="content p-2 mt-2">
           <p className="body body-7 font-color-bl mb-2">{ formatDate(createdAt) }</p>
 
-          <p className="body body-3 font-color-bl">{ annonce }</p>
+          <h3 className="font-color-bl mb-1">{ title }</h3>
+          <p className="body body-7s font-color-gd">{ annonce }</p>
         </div>
       </div>
     </Link>

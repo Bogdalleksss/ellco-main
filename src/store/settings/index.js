@@ -16,8 +16,23 @@ export const fetchCamsSettings = createAsyncThunk(
   }
 );
 
+export const fetchInformation = createAsyncThunk(
+  'settings/info',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await $axios.get(`/information`)
+
+      return data;
+    } catch (e) {
+      const { message } = e.response.data;
+      return rejectWithValue(message || e.message);
+    }
+  }
+);
+
 const initialState = {
   cctv: null,
+  info: null,
   status: null,
   error: null
 }
@@ -31,6 +46,10 @@ export const settingsSlice = createSlice({
 
     extraReducerBuild.addCases(fetchCamsSettings, (state, { payload }) => {
       state.cctv = payload
+    });
+
+    extraReducerBuild.addCases(fetchInformation, (state, { payload }) => {
+      state.info = payload
     })
   }
 })

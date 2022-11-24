@@ -333,6 +333,7 @@ section, main {
       font-weight: 400;
       font-size: 18px;
       border-radius: 6px;
+      padding-top: 7px;
     }
 
     img {
@@ -657,6 +658,12 @@ section, main {
     padding-top: 23px;
     cursor: pointer;
 
+    a {
+      &:hover {
+        border-bottom: none !important;
+      }
+    }
+
     &--active {
       margin-bottom: -2px;
       border-bottom: 2px solid $yellow;
@@ -951,6 +958,14 @@ footer {
       p {
         cursor: pointer;
       }
+    }
+  }
+
+  a {
+    transition: .5s;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -1377,6 +1392,12 @@ footer {
       &__more {
         margin-top: 20px;
         justify-content: center;
+      }
+    }
+
+    h2 {
+      span {
+        padding-top: 5px !important;
       }
     }
   }
@@ -1815,7 +1836,7 @@ footer {
       h1 {
         span {
           font-size: 24px !important;
-          padding-top: 8px !important;
+          padding-top: 6px !important;
         }
       }
 
@@ -1939,6 +1960,8 @@ footer {
     }
   }
 
+  //@media (max-width: $media-desktop-small)
+
   .addresses {
     height: 511px;
 
@@ -1947,6 +1970,13 @@ footer {
 
       border: 2px solid $grey;
       border-radius: 20px;
+    }
+
+    h3 {
+      font-size: 24px;
+      span {
+        padding-top: 6px;
+      }
     }
 
     &-list {

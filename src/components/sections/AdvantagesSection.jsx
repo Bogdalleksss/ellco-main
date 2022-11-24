@@ -18,14 +18,14 @@ const AdvantagesSection = ({ title, list, classNames }) => {
             list.map(item => (
               <div key={item.id} className="advantages-content__block flex column flex-aic ta-c">
                 <span
-                  className="advantages-content__icon flex flex-aic flex-jcc"
+                  className="advantages-content__icon flex flex-aic flex-jcc mb-4"
                   style={{ background: item.color }}
                 >
                   { item.icon ? <img src={ getIcon(item.icon) } alt=""/> : <span>{ item.content }</span> }
                 </span>
 
                 <div className="advantages-content__block__content flex column">
-                  <h3 className="mt-4 mb-3 ta-c">{item.title}</h3>
+                  <h3 className="mb-3 ta-c">{item.title}</h3>
                   <p className="body body-9 opacity-12">{item.description}</p>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import MobileImage from '@/assets/img/mobile-main.png'
 import Fade from 'react-reveal/Fade';
+import { useSelector } from "react-redux";
 
 const labels = [
   {
@@ -54,6 +55,8 @@ const MainCard = ({ subtitle, title, action }) => {
 }
 
 const MainMobileSection = () => {
+  const tariffs = useSelector(state => state.tariffs.items);
+
   const getStyle = (type, color) => {
     switch (type) {
       case 'fill': return {
@@ -70,6 +73,16 @@ const MainMobileSection = () => {
       }
       default:
         break;
+    }
+  }
+
+  const getTariffLabel = (type) => {
+    switch (type) {
+      case 'standard': return 'Интернет + TV'
+      case 'game': return 'Интернет'
+      case 'telephony': return 'IP-Телефония'
+      case 'kion': return 'KION'
+      case 'smotroshka': return 'Смотрёшка'
     }
   }
 
@@ -101,12 +114,12 @@ const MainMobileSection = () => {
         <Fade bottom delay={100} duration={900}>
           <div className="flex main-mobile-card__wrapper gap-4 hide-scrollbar">
             {
-              cards.map(card => (
+              tariffs.map(card => (
                 <MainCard
                   key={`card-${card.id}`}
                   title={card.title}
-                  subtitle={card.subtitle}
-                  action={card.action}
+                  subtitle={getTariffLabel(card.type)}
+                  action={`Подключить за ${card.newPrice || card.price} руб./мес`}
                 />
               ))
             }

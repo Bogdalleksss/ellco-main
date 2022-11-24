@@ -2,11 +2,15 @@ import { useLocation } from "react-router";
 import { useEffect } from "react";
 
 export const useScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!hash) window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    if (hash) document.querySelector(hash).scrollIntoView();
+  }, [hash]);
 }
 
 export const useOnClickOutside = (ref, handler) => {

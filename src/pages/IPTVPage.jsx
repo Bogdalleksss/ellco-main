@@ -63,7 +63,8 @@ const IPTVPage = () => {
       <BannerSection
         classNames="iptv-page"
         title="IPTV от Эллко"
-        action="Подключить за 750 руб./мес"
+        action="Подключить"
+        link="/iptv#tariffs"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">
@@ -76,6 +77,7 @@ const IPTVPage = () => {
         classNames="bg-light"
       />
        <InfoSection
+         withoutButton={true}
          title="Технологии общения. Онлайн"
          description="Проверьте техническую возможность подключения интернета для частного дома прямо на этой странице, оставьте свои данные. Мы свяжемся с вами в ближайшее время"
          list={checklistInfo}

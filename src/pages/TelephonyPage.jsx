@@ -12,6 +12,7 @@ import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSe
 import { isMobile } from "../utils/constants";
 import Footer from "../components/Footer/Footer";
 import { useSelector } from "react-redux";
+import { useScrollToTop } from "../hooks";
 
 const checklistInfo = [
   {
@@ -52,6 +53,7 @@ const advantagesList = [
 ]
 
 const TelephonyPage = () => {
+  useScrollToTop();
   const tariffs = useSelector(state => state.tariffs.items.filter(tariff => ['telephony'].includes(tariff.type)));
 
   return (
@@ -60,7 +62,8 @@ const TelephonyPage = () => {
       <BannerSection
         classNames="iptv-page"
         title="IP Телефония"
-        action="Подключить за 750 руб./мес"
+        action="Подключить"
+        link="/telephony#tariffs"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">
@@ -73,6 +76,7 @@ const TelephonyPage = () => {
         classNames="bg-light"
       />
        <InfoSection
+         withoutButton={true}
          title="Технологии общения. Онлайн"
          description="Проверьте техническую возможность подключения интернета для частного дома прямо на этой странице, оставьте свои данные. Мы свяжемся с вами в ближайшее время"
          list={checklistInfo}

@@ -1,8 +1,6 @@
 import Header from "@/components/Header/Header";
 import EventsSection from "../components/sections/EventsSection";
 import BannerSection from "../components/sections/BannerSection";
-import IconSpeed from "../components/icons/IconSpeed";
-import IconPC from "../components/icons/IconPC";
 import InfoSection from "../components/sections/InfoSection";
 
 import Banner from '@/assets/img/banner/rate.png';
@@ -62,28 +60,18 @@ const RatePage = () => {
     <>
       <Header />
       <BannerSection
-        classNames="rate-page"
+        classNames="iptv-page"
         title="Технологии общения. Онлайн"
-        action="Подключить за 750 руб./мес"
+        action="Подключить"
+        link="/rate#tariffs"
         banner={isMobile ? BannerMobile : Banner}
       >
-        <div className="banner-content__block flex gap-2 pb-2 mb-3">
-          <IconSpeed />
-          <h4>70</h4>
-          <div>
-            <p className="body body-7">Мбит/с</p>
-            <p className="body body-7">скорость интернета</p>
-          </div>
-        </div>
-        <div className="banner-content__block flex flex-aifs gap-2 pb-2">
-          <IconPC />
-          <h4>250</h4>
-          <div>
-            <p className="body body-7">каналов</p>
-          </div>
-        </div>
+        <p className="body body-7">
+          Интернет безграничных возможностей
+        </p>
       </BannerSection>
        <InfoSection
+         withoutButton={true}
          title="Технологии общения. Онлайн"
          description="Проверьте техническую возможность подключения интернета для частного дома прямо на этой странице, оставьте свои данные. Мы свяжемся с вами в ближайшее время"
          list={checklistInfo}
