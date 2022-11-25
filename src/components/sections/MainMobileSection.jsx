@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const labels = [
   {
     id: 1,
-    type: 'fill-dark',
+    type: 'fill',
     color: '#2f51d2',
     link: '/rate',
     title: 'Интернет',
@@ -41,8 +41,8 @@ const labels = [
   },
   {
     id: 6,
-    type: 'outline',
-    color: '#00004F',
+    type: 'fill-dark',
+    color: '#FFC229',
     link: '/smotreshka',
     title: 'Смотрёшка',
   },
@@ -82,7 +82,7 @@ const MainMobileSection = () => {
         }
       case 'fill-dark': return {
         background: color,
-        color: '#ffffff'
+        color: '#000000'
       }
       case 'outline': return {
         color: color,

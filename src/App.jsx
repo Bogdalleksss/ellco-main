@@ -1,10 +1,4 @@
-import {
-  Route,
-  Switch,
-} from 'react-router-dom';
-
 import IndexPage from "@/pages/IndexPage";
-import Footer from "./components/Footer/Footer";
 import RatePage from "./pages/RatePage";
 import IPTVPage from "./pages/IPTVPage";
 import TelephoniaPage from "./pages/TelephonyPage";
@@ -22,6 +16,10 @@ import { newsFetch } from "./store/news";
 import { promotionsFetch } from "./store/promotions";
 import { tariffsFetch } from "./store/tariffs";
 import { fetchCamsSettings, fetchInformation } from "./store/settings";
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 const withoutFooterPages = ['/rate']
 
@@ -41,8 +39,6 @@ const App = () => {
     dispatch(tariffsFetch(location.id));
     dispatch(fetchCamsSettings());
   }, []);
-
-  console.log(navigator.appVersion.indexOf('Win') !== -1)
 
   return (
     <div className={navigator.appVersion.indexOf('Win') !== -1 && 'windows'}>

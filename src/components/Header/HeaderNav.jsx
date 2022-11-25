@@ -12,13 +12,13 @@ const navLinks = [
   },
   {
     id: v4(),
-    name: 'Видеонаблюдение',
-    link: '/cctv',
+    name: 'IPTV',
+    link: '/iptv',
   },
   {
     id: v4(),
-    name: 'IPTV',
-    link: '/iptv',
+    name: 'Видеонаблюдение',
+    link: '/cctv',
   },
   {
     id: v4(),

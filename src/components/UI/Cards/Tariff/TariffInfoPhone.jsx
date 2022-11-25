@@ -10,7 +10,7 @@ const TariffInfoPhone = ({ title, firstMinutePrice, localTelephoneСonnectionsTy
 
       <div className="tariff-card__phone-info flex gap-2">
         <img src={Phone} alt=""/>
-        <p className="body body-2">{firstMinutePrice}₽ за 1-ую минуту исходящего вызова</p>
+        <p className="body body-2">{firstMinutePrice}₽ за первую минуту исходящего вызова</p>
       </div>
       <div className="tariff-card__phone-info flex gap-2">
         <img src={Connection} alt=""/>
