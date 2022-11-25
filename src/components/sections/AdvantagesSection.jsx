@@ -12,7 +12,9 @@ const AdvantagesSection = ({ title, list, classNames }) => {
     <section id="advantages" className={`flex column flex-aic ${classNames}`}>
       <div className="img opacity-2 zi-1" style={{ backgroundImage: `url(${MountainsTexture})` }} />
       <div className="container column zi-2">
-        <h2 className="mb-12 ta-c">{ title }</h2>
+        {
+          title && <h2 className="mb-12 ta-c">{ title }</h2>
+        }
         <div className="advantages-content flex width-full flex-jcsb flex-aic gap-12">
           {
             list.map(item => (

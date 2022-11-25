@@ -1,4 +1,4 @@
-const Button = ({ children, type='main', className, onClick, disabled }) => {
+const Button = ({ children, type='main', className, onClick, disabled, winType = 'default' }) => {
   const onClickAction = () => {
     if (onClick) onClick();
     else return;
@@ -10,7 +10,7 @@ const Button = ({ children, type='main', className, onClick, disabled }) => {
       disabled={disabled}
       onClick={() => onClickAction()}
     >
-      <span>
+      <span className={winType === 'arrow' && 'wrapper-arrow-btn'}>
         { children }
       </span>
     </button>

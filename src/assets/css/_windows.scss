@@ -23,10 +23,12 @@
     }
 
     #modal {
-      &-order {
-        &-search {
-          svg {
-            top: 12px !important;
+      &-search {
+        .modal {
+          &-search {
+            svg {
+              top: 2px !important;
+            }
           }
         }
       }
@@ -67,10 +69,12 @@
     }
 
     #modal {
-      &-order {
-        &-search {
-          svg {
-            top: 23px !important;
+      &-search {
+        .modal {
+          &-search {
+            svg {
+              top: 12px !important;
+            }
           }
         }
       }
@@ -79,7 +83,9 @@
 
   .button {
     span {
-      margin-top: 0 !important;
+      &.wrapper-arrow-btn {
+        margin-top: 0 !important;
+      }
       span {
         margin-top: -8px !important;
 
@@ -240,6 +246,16 @@
             &.mt-8 {
               margin-top: 40px !important;
             }
+          }
+        }
+      }
+    }
+
+    &-search {
+      .modal {
+        &-search {
+          a {
+            margin-top: 0 !important;
           }
         }
       }

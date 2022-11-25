@@ -46,7 +46,7 @@ const HeaderNav = ({ color='#FFFFFF', closeMobile }) => {
     <nav className="header-menu">
       <ul className="flex flex-aic gap-10">
         { nav.map((link) => (
-            <li key={link.id} onClick={() => closeMobile()}>
+            <li key={link.id} onClick={() => closeMobile && closeMobile()}>
               <Link to={link.link}>{ link.name }</Link>
             </li>
         )) }

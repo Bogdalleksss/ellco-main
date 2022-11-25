@@ -19,7 +19,7 @@ const VideoSurveillanceSection = () => {
             </p>
           </Fade>
           <Fade bottom delay={200} duration={900}>
-            <Button type="main button-main--short">
+            <Button type="main button-main--short" winType="arrow">
               <span>Узнать больше</span>
               <IconArrowRight fill="#000000" />
             </Button>

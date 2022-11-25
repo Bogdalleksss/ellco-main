@@ -12,9 +12,11 @@ import SearchModals from "../modals/SearchModals";
 import { useDispatch, useSelector } from "react-redux";
 import { searchLocation, setLocation } from "../../store/location";
 import { searchPages } from "../../store/search";
+import { useLocation } from "react-router";
 
 const Header = ({ mode='default' }) => {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
   const [showMenu, updateShowMenu] = useState(false);
   const [showLocation, updateShowLocation] = useState(false);
   const [showSearch, updateShowSearch] = useState(false);
@@ -32,6 +34,10 @@ const Header = ({ mode='default' }) => {
   useEffect(() => {
     if (showLocation) updateShowSearch(false);
   }, [showLocation]);
+
+  useEffect(() => {
+    document.body.style = '';
+  }, [pathname])
 
   const selectCity = (data) => {
     dispatch(setLocation(data));

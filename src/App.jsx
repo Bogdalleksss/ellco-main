@@ -45,7 +45,7 @@ const App = () => {
   console.log(navigator.appVersion.indexOf('Win') !== -1)
 
   return (
-    <div className={navigator.appVersion.indexOf('Win') !== -1 && 'windows'}>
+    <div className={navigator.appVersion.indexOf('Mac') !== -1 && 'windows'}>
       <Switch>
         <Route path="/rate">
           <RatePage />
