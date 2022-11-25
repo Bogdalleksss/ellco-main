@@ -13,8 +13,22 @@ const AppBlock = ({ className }) => {
         Скачайте наше мобильное приложение и получите приятный бонус!
       </p>
       <div className="flex gap-2">
-        <img src={GooglePlay} alt=""/>
-        <img src={AppStore} alt=""/>
+        <a
+          className="no-mt"
+          href="https://play.google.com/store/apps/details?id=ru.ellco.myellco"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={GooglePlay} alt=""/>
+        </a>
+        <a
+          className="no-mt"
+          href="https://apps.apple.com/ru/app/%D0%BC%D0%BE%D0%B9-%D1%8D%D0%BB%D0%BB%D0%BA%D0%BE/id1506587687"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={AppStore} alt=""/>
+        </a>
       </div>
     </div>
   )
