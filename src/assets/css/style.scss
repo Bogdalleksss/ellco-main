@@ -600,6 +600,7 @@ section, main {
           padding: 0 20px;
           border-radius: 100px;
           border: 1px solid $blue;
+          padding-top: 2px;
 
           &.active {
             border: none;
@@ -622,6 +623,14 @@ section, main {
         }
       }
 
+      &__actions {
+        .link {
+          span {
+            padding-top: 3px;
+          }
+        }
+      }
+
       &__links {
         .top-links {
           gap: 20px;
@@ -629,6 +638,9 @@ section, main {
           .link {
             svg {
               margin-right: 4px;
+            }
+            span {
+              padding-top: 3px;
             }
           }
         }
@@ -1169,8 +1181,25 @@ footer {
     }
   }
 
+  @media (max-width: 1110px) {
+    .button-arrow {
+      display: none;
+    }
+  }
+
+  .button {
+    &-arrow {
+      position: absolute;
+      right: -30px;
+      z-index: 9999;
+    }
+  }
+
   .tariffs {
     &-list {
+      display: flex;
+      align-items: center;
+      position: relative;
       &__wrapper {
         @media (max-width: $media-desktop-small) {
           justify-content: flex-start;

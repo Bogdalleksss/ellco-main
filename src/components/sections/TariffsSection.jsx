@@ -3,8 +3,10 @@ import Tabs from "../UI/Tabs/Tabs";
 import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CalculatorSection from "./CalculatorSection";
+import IconArrowRight from "../icons/IconArrowRight";
+import { useTariffsScroll } from "../../hooks/useTariffsScroll";
 
 const tabs = [
   {
@@ -30,13 +32,20 @@ const tabs = [
 ]
 
 const TariffsSection = () => {
+  const tariffsScroll = useTariffsScroll();
   const [currentTab, updateCurrentTab] = useState(tabs[0].id || 1);
   const [tariffs, updateTariffs] = useState([]);
   const allTariffs = useSelector(state => state.tariffs.items);
 
+  const { showRight, showLeft, tariffsRef, checkArrow, toScroll } = tariffsScroll;
+
   useEffect(() => {
     updateTariffs(allTariffs.filter(tariff => getTab(currentTab).slug.split(' ').includes(tariff.type)));
   }, [currentTab, allTariffs]);
+
+  useEffect(() => {
+    checkArrow();
+  }, [tariffsRef, tariffs]);
 
   const getTab = (id) => tabs.find(tab => tab.id === id);
 
@@ -59,12 +68,25 @@ const TariffsSection = () => {
         </Fade>
       </div>
       <div className="tariffs-list container">
-        <div className="tariffs-list__wrapper o-hidden width-full flex gap-4 hide-scrollbar">
+        {
+          showLeft
+            && <div
+                  className="button-arrow button-arrow--left"
+                  onClick={() => toScroll('left')}
+                >
+                <IconArrowRight />
+              </div>
+        }
+        <div
+          ref={tariffsRef}
+          className="tariffs-list__wrapper o-hidden width-full flex gap-4 hide-scrollbar"
+          onScroll={() => checkArrow()}
+        >
           {
             getTab(currentTab).slug === 'cctv'
               ? <CalculatorSection />
               : tariffs.map((tariff, idx) => (
-                <Fade bottom delay={200 * (idx + 1)} duration={900}>
+                <Fade key={tariff._id} bottom delay={200 * (idx + 1)} duration={900}>
                   <TariffCard
                     key={tariff.id}
                     tariff={tariff}
@@ -73,6 +95,15 @@ const TariffsSection = () => {
             ))
           }
         </div>
+        {
+          showRight
+            && <div
+                  className="button-arrow"
+                  onClick={() => toScroll()}
+                >
+                <IconArrowRight />
+              </div>
+        }
       </div>
     </section>
   )

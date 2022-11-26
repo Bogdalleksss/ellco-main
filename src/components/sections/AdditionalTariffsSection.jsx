@@ -2,8 +2,18 @@ import TariffCard from "../UI/Cards/Tariff/TariffCard";
 import Tabs from "../UI/Tabs/Tabs";
 import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
+import IconArrowRight from "../icons/IconArrowRight";
+import { useTariffsScroll } from "../../hooks/useTariffsScroll";
+import { useEffect } from "react";
 
 const AdditionalTariffsSection = ({ tariffs, title }) => {
+  const tariffsScroll = useTariffsScroll();
+  const { showRight, showLeft, tariffsRef, checkArrow, toScroll } = tariffsScroll;
+
+  useEffect(() => {
+    checkArrow();
+  }, [tariffsRef, tariffs]);
+
   return (
     <section id="tariffs">
       <div className="additional container column">
@@ -15,7 +25,20 @@ const AdditionalTariffsSection = ({ tariffs, title }) => {
         </Fade>
       </div>
       <div className="additional tariffs-list container">
-        <div className="tariffs-list__wrapper o-hidden width-full flex hide-scrollbar gap-4">
+        {
+          showLeft
+            && <div
+                  className="button-arrow button-arrow--left"
+                  onClick={() => toScroll('left')}
+                >
+                  <IconArrowRight />
+                </div>
+        }
+        <div
+          ref={tariffsRef}
+          className="tariffs-list__wrapper o-hidden width-full flex hide-scrollbar gap-4"
+          onScroll={() => checkArrow()}
+        >
           {
             tariffs.map((tariff, idx) => (
               <Fade key={tariff._id} bottom delay={200 * (idx + 1)} duration={900}>
@@ -27,6 +50,15 @@ const AdditionalTariffsSection = ({ tariffs, title }) => {
             ))
           }
         </div>
+        {
+          showRight
+            && <div
+                  className="button-arrow"
+                  onClick={() => toScroll()}
+                >
+                  <IconArrowRight />
+                </div>
+        }
       </div>
     </section>
   )

@@ -14,6 +14,34 @@
     height: 52px;
   }
 
+  &-arrow {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $blue;
+    background: $white;
+    cursor: pointer;
+    transition: .4s;
+
+    &--left {
+      transform: rotateZ(180deg);
+      right: auto;
+      left: -30px;
+    }
+
+    &:hover {
+      background: $blue;
+      border-color: $white;
+
+      path {
+        stroke: $white;
+      }
+    }
+  }
+
   span {
     display: flex;
     align-items: center;
