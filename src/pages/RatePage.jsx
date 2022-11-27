@@ -72,7 +72,7 @@ const RatePage = () => {
       </BannerSection>
        <InfoSection
          withoutButton={true}
-         title="Наслаждайтесь надёжной связью"
+         title="Интернет"
          description="Проверьте техническую возможность подключения интернета для частного дома прямо на этой странице, оставьте свои данные. Мы свяжемся с вами в ближайшее время"
          list={checklistInfo}
          image={Image}

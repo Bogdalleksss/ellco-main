@@ -597,9 +597,9 @@ section, main {
       &__top {
         a {
           height: 33px;
-          padding: 0 20px;
           border-radius: 100px;
           border: 1px solid $blue;
+          padding: 0 20px;
           padding-top: 2px;
 
           &.active {
@@ -786,7 +786,8 @@ footer {
             justify-content: center;
             grid-template-columns: repeat(4, 115px);
             width: 100%;
-            gap: 10px;
+            row-gap: 15px;
+            column-gap: 50x;
             margin: 0 auto;
             padding: 40px 0;
 
@@ -1034,6 +1035,13 @@ footer {
 
   .footer-description {
     width: 490px;
+
+    a {
+      display: inline !important;
+      color: $white;
+      text-decoration: underline;
+      margin-left: 5px;
+    }
   }
 }
 

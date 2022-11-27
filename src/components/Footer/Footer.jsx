@@ -263,9 +263,11 @@ const Footer = () => {
             </div>
             <div className="footer-bottom flex">
               <p className="footer-description body body-8 font-color-w opacity-10 mr-18">
-                Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с Политикой конфиденциальности и Пользовательским соглашением
+                Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с
+                <a href="">Политикой конфиденциальности</a> и
+                <a href="">Пользовательским соглашением</a>
               </p>
-              <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ПАО «ellko». 18+</p>
+              <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ООО «эЭллко»</p>
             </div>
           </div>
         </div>
