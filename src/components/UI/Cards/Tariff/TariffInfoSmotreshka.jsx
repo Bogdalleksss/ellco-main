@@ -18,7 +18,7 @@ const TariffInfoSmotreshka = ({ title, channels, movies, tags }) => {
 
 
         {
-          movies.length
+          !!movies.length
             && <div className="tariff-card__advantages mb-6">
                 <div className="tariff-card__advantages__title flex flex-aic gap-2">
                   <img src={ IconMovie } alt=""/>
