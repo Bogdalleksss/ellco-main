@@ -59,6 +59,7 @@ const SmotreshkaPage = () => {
       <Header />
       <img className="movie-banner" src={Banner} alt=""/>
       <InfoSection
+        withoutButton
         classNames="movie-info"
         title="Смотрешка"
         description="Смотрите ТВ на компьютере или ноутбуке: наслаждайтесь высоким качеством вещания и удобными функциями по управлению эфиром."

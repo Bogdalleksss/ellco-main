@@ -61,6 +61,7 @@ const KionPage = () => {
       <Header />
       <img className="movie-banner" src={Banner} alt=""/>
       <InfoSection
+        withoutButton
         classNames="movie-info-kion"
         title="Онлайн - Кинотеатр KION"
         description="Фильмы и сериалы лучших российских и зарубежных студий, оригинальные фильмы и сериалы собственного производства без рекламы и в отличном качестве, в любое время и там, где вам удобно"

@@ -10,14 +10,14 @@ const TariffInfoKion = ({ title, kion, mts}) => {
       {
         kion
         && <div className="tariff-card__available flex flex-aic mb-3 gap-3">
-            <img src={KION} alt=""/>
+            <img className="mb-1" src={KION} alt=""/>
             <p className="body body-2">{ kion }</p>
           </div>
       }
       {
-        mts
+        !!mts.trim()
         && <div className="tariff-card__available flex flex-aic mb-3 gap-3">
-            <img src={MTS} alt=""/>
+            <img className="mb-1" src={MTS} alt=""/>
             <p className="body body-2">{ mts }</p>
           </div>
       }
