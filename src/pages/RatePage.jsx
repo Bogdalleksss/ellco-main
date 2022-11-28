@@ -61,7 +61,7 @@ const RatePage = () => {
       <Header />
       <BannerSection
         classNames="iptv-page"
-        title="Технологии общения. Онлайн"
+        title="Домашний интернет"
         action="Подключить"
         link="/rate#tariffs"
         banner={isMobile ? BannerMobile : Banner}

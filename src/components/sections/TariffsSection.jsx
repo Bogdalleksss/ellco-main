@@ -86,7 +86,7 @@ const TariffsSection = () => {
             getTab(currentTab).slug === 'cctv'
               ? <CalculatorSection />
               : tariffs.map((tariff, idx) => (
-                <Fade key={tariff._id} bottom delay={200 * (idx + 1)} duration={900}>
+                <Fade key={tariff._id} bottom delay={100 * (idx + 1)} duration={900}>
                   <TariffCard
                     key={tariff.id}
                     tariff={tariff}

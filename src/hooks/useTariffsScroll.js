@@ -22,14 +22,14 @@ export const useTariffsScroll = () => {
       case 'right':
         tariffsRef.current.scroll({
           top: 0,
-          left: scrollLeft + offsetWidth,
+          left: scrollLeft + 500,
           behavior: 'smooth'
         });
         break;
       case 'left':
         tariffsRef.current.scroll({
           top: 0,
-          left: scrollLeft - offsetWidth,
+          left: scrollLeft - 500,
           behavior: 'smooth'
         });
         break;

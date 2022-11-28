@@ -6,21 +6,31 @@ import ESliderControl from "./ESliderControl";
 const initSlides = [
   {
     id: 1,
-    img: 'slide-1',
-    title: 'Домашний интернет — Технологии общения. Онлайн',
-    content: 'IPTV до 250 каналов',
-  },
-  {
-    id: 2,
-    img: 'slide-2',
-    title: 'Видеонаблюдение',
-    content: 'Подбор оптимальной конфигурации, монтаж и настройка, обслуживание',
+    img: 'internet',
+    title: 'Домашний интернет',
+    content: ' Интернет безграничных возможностей',
+    link: '/rate',
   },
   {
     id: 3,
-    img: 'slide-2',
+    img: 'iptv',
+    title: 'IP-телевидение',
+    content: 'Интерактивное телевидение в форматах HD и Full HD',
+    link: '/iptv',
+  },
+  {
+    id: 2,
+    img: 'cctv',
     title: 'Видеонаблюдение',
     content: 'Подбор оптимальной конфигурации, монтаж и настройка, обслуживание',
+    link: '/cctv',
+  },
+  {
+    id: 4,
+    img: 'telephony',
+    title: 'IP-телефония',
+    content: 'Звонки в любую точку мира по выгодной цене',
+    link: '/telephony',
   },
 ]
 
@@ -41,6 +51,8 @@ const ESlider = () => {
                 id={slide.id}
                 title={slide.title}
                 content={slide.content}
+                img={slide.img}
+                link={slide.link}
               />
             </SwiperSlide>
           ))

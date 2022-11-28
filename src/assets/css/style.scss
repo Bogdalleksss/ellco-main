@@ -539,6 +539,8 @@ section, main {
       padding-top: 20px;
       transition: .5s;
       transform: translateX(100vw);
+      overflow: auto;
+      padding-bottom: 30px;
 
       * {
         color: $blue !important;

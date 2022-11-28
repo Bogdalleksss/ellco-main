@@ -44,12 +44,12 @@ const MobileAppSection = () => {
               </a>
             </Fade>
 
-            <Fade bottom delay={700} duration={900}>
-              <Button type="outline" winType="arrow">
-                <span>Подробнее</span>
-                <IconArrowRight fill="#FFC229" />
-              </Button>
-            </Fade>
+            {/*<Fade bottom delay={700} duration={900}>*/}
+            {/*  <Button type="outline" winType="arrow">*/}
+            {/*    <span>Подробнее</span>*/}
+            {/*    <IconArrowRight fill="#FFC229" />*/}
+            {/*  </Button>*/}
+            {/*</Fade>*/}
           </div>
         </div>
         <Fade bottom delay={500} duration={1000}>
