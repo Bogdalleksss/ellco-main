@@ -6,9 +6,9 @@ import AppStore from '@/assets/img/AppStore.svg'
 import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
 
-const AppBlock = ({ className }) => {
+const AppBlock = ({ className = '' }) => {
   return (
-    <div className={className} style={{ maxWidth: 350 }}>
+    <div className={ className } style={{ maxWidth: 350 }}>
       <p className="body body-5 font-color-w mb-3">
         Скачайте наше мобильное приложение и получите приятный бонус!
       </p>
@@ -48,12 +48,12 @@ const MainSection = () => {
             </Fade>
 
             <Fade bottom delay={100} duration={900}>
-                <p className="main__description body body-1 font-color-w mb-6">
-                  Интернет безграничных возможностей <br/>
-                  <div className="main__description-selected-text">
-                    <span>в каждом уголке Дагестана</span>
-                  </div>
-                </p>
+              <p className="main__description body body-1 font-color-w mb-6">
+                Интернет безграничных возможностей <br/>
+                <div className="main__description-selected-text">
+                  <span>в каждом уголке Дагестана</span>
+                </div>
+              </p>
             </Fade>
 
             <Fade bottom delay={200} duration={900}>

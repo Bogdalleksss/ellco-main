@@ -6,7 +6,7 @@ const InfoSection = ({ title, description, list, classNames, image, withoutButto
   return (
     <section id="info" className={classNames}>
       <div className="info container">
-        <div className="info-content pr-26">
+        <div className="info-content flex column flex-jcc pr-26">
           <Fade bottom duration={900}>
             <h2 className="font-color-bl mb-6">{ title }</h2>
           </Fade>
@@ -15,7 +15,7 @@ const InfoSection = ({ title, description, list, classNames, image, withoutButto
           </Fade>
           {
             list
-              ? <ul className="mb-6 flex column gap-2">
+              && <ul className="flex column gap-2">
                   {
                     list.map((item, idx) => (
                       <Fade key={idx} bottom delay={400 * (idx + 1)} duration={1000}>
@@ -27,14 +27,6 @@ const InfoSection = ({ title, description, list, classNames, image, withoutButto
                     ))
                   }
                 </ul>
-              : <></>
-          }
-          {
-            !withoutButton
-              ? <Fade bottom delay={1400} duration={900}>
-                  <Button>{ action }</Button>
-                </Fade>
-              : <></>
           }
         </div>
         <Fade duration={2500}>
