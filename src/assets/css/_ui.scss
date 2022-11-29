@@ -619,6 +619,16 @@
       &__wrapper {
         //flex-basis: calc((100% - 40px) / 2) !important;
       }
+
+      h3 {
+        width: 345px !important;
+      }
+    }
+
+    @media (max-width: $media-large) {
+      h3 {
+        width: 245px !important;
+      }
     }
 
     @media (max-width: $media-medium) {
@@ -641,6 +651,17 @@
       .img {
         transform: scale(1.1);
       }
+    }
+
+    h3 {
+      width: 245px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    p {
+      line-height: 22px !important;
     }
 
     .img {
@@ -1111,13 +1132,16 @@
 
     &.large, &.medium, &.small {
       height: 100%;
-      h1 {
+      h2 {
         svg {
           width: 18px;
           height: 30px;
         }
         span {
           font-size: 24px !important;
+          line-height: 24px;
+          height: 24px;
+          padding-top: 4px;
         }
       }
 
@@ -1213,11 +1237,12 @@
       }
     }
 
-    h1 {
+    h2 {
       align-items: center;
       span {
         @include h5($blue);
-        margin-top: 10px;
+        //margin-top: 10px;
+        padding-top: 3px !important;
       }
     }
 

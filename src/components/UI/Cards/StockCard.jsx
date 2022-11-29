@@ -4,6 +4,7 @@ import TitleH1 from "../TitleH1";
 import Button from "../Button";
 import { useFormatDate } from "../../../hooks";
 import { Link } from "react-router-dom";
+import IconStripes from "../../icons/IconStripes";
 
 const Label = ({ text }) => <label className="body body-7 font-color-w zi-2 mb-3 ml-6 pr-2 pl-2 flex flex-aic">{ text }</label>
 
@@ -20,7 +21,17 @@ const StockCard = ({ type = 'default', post }) => {
           { isSmall && <Label text={formatDate(createdAt)} /> }
         </div>
         { !isSmall && <Label text="с 5 по 12 сентября" /> }
-        <TitleH1 className="zi-2 mb-2">{ title }</TitleH1>
+        {/*<TitleH1 className="zi-2 mb-2">{ title }</TitleH1>*/}
+        <h2
+          className="flex gap-3 font-color-bl mb-2 flex-aic"
+          style={{
+            marginBottom: '10px'
+          }}
+        >
+          <IconStripes fill="#054FD6"/>
+          <span className="flex">{ title }</span>
+        </h2>
+
         <p className={`body body-9 zi-2 ml-6 opacity-10 ${ !isSmall && 'mb-6' }`}>{ annonce }</p>
         { !isSmall && <Button className="zi-2 ml-6">Подробнее</Button>}
       </div>

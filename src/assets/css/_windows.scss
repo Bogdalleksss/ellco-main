@@ -43,6 +43,15 @@
         }
       }
     }
+
+    .news {
+      h1 {
+        span {
+          padding-top: 0px !important;
+          margin-top: 4px !important;
+        }
+      }
+    }
   }
   @media (min-width: $media-desktop-small) {
     section {
@@ -95,6 +104,14 @@
 
         svg {
           margin-top: 3px;
+        }
+      }
+    }
+
+    .news {
+      h1 {
+        span {
+          padding-top: 12px !important;
         }
       }
     }
