@@ -1,4 +1,3 @@
-import Button from "../UI/Button";
 import IconCheckMark from "../icons/IconCheckMark";
 import Fade from 'react-reveal/Fade';
 
