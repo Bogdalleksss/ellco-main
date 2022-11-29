@@ -6,7 +6,7 @@ import InfoSection from "../components/sections/InfoSection";
 import Banner from '@/assets/img/banner/tvip.png';
 import BannerMobile from '@/assets/img/banner/tvip-mobile.png';
 
-import Image from '@/assets/img/iptv-image.png';
+import Image from '@/assets/img/info/iptv.png';
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { isMobile } from "../utils/constants";

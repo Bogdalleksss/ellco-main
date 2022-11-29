@@ -6,7 +6,7 @@ import InfoSection from "../components/sections/InfoSection";
 import Banner from '@/assets/img/banner/rate.png';
 import BannerMobile from '@/assets/img/banner/rate-mobile.png';
 
-import Image from '@/assets/img/woman-yellow.png';
+import Image from '@/assets/img/info/internet.png';
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import AdditionalTariffsSection from "../components/sections/AdditionalTariffsSection";
 import { isMobile } from "../utils/constants";

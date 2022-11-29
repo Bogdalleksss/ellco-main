@@ -3,7 +3,6 @@ import Button from "../UI/Button";
 import PhonesMockups from '@/assets/img/phones.png'
 import GooglePlayBtn from '@/assets/img/GooglePlay-btn.svg'
 import AppStoreBtn from '@/assets/img/AppStore-btn.svg'
-import IconArrowRight from "../icons/IconArrowRight";
 import Fade from 'react-reveal/Fade';
 
 const MobileAppSection = () => {

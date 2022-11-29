@@ -29,8 +29,8 @@ const TariffCard = ({ tariff }) => {
 
   return (
     <div className={`tariff-card flex column flex-jcsb p-6 ${ isGame ? 'game-mode' : '' }`}>
-      { newPrice ? <img className="zi-2" src={DiscountLabel} alt=""/> : <></> }
-      { isGame ? <img className="game-mode__texture zi-1" src={MountainsTexture} alt=""/> : <></> }
+      { newPrice && <img className="zi-2" src={DiscountLabel} alt=""/> }
+      { isGame && <img className="game-mode__texture zi-1" src={MountainsTexture} alt=""/> }
 
       {
         type === 'kion'

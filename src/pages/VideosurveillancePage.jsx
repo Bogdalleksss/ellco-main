@@ -6,7 +6,7 @@ import InfoSection from "../components/sections/InfoSection";
 import Banner from '@/assets/img/banner/video.png';
 import BannerMobile from '@/assets/img/banner/video-mobile.png';
 
-import Image from '@/assets/img/iptv-image.png';
+import Image from '@/assets/img/info/cctv.png';
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import { isMobile } from "../utils/constants";
 import Footer from "../components/Footer/Footer";
@@ -65,9 +65,7 @@ const VideosurveillancePage = () => {
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">
-          • Подбор оптимальной конфигурации <br/>
-          • Монтаж и настройка <br/>
-          • Обслуживание <br/>
+          Система видеонаблюдения на страже вашей безопасности
         </p>
       </BannerSection>
       <AdvantagesSection

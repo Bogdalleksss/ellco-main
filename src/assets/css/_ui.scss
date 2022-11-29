@@ -361,7 +361,7 @@
 
       &__advantages {
         &__title {
-          font-size: 16px !important;
+          //font-size: 16px !important;
         }
       }
 
@@ -422,7 +422,7 @@
       width: 50px;
       position: absolute;
       top: 0;
-      right: 15px;
+      right: 30px;
     }
 
     .price {
@@ -431,8 +431,6 @@
       letter-spacing: -0.03em;
 
       &-old {
-        //TODO Изменить шрифт на 'Inter'
-
         position: relative;
         color: $green;
         font-size: 21px;
