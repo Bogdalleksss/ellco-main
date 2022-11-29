@@ -267,7 +267,7 @@ const Footer = () => {
                 <a href="">Политикой конфиденциальности</a> и
                 <a href="">Пользовательским соглашением</a>
               </p>
-              <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ООО «эЭллко»</p>
+              <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ООО «Эллко»</p>
             </div>
           </div>
         </div>
