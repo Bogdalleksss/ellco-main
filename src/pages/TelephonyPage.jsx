@@ -63,7 +63,7 @@ const TelephonyPage = () => {
         classNames="iptv-page"
         title="IP-телефония"
         action="Подключить"
-        link="/telephony#tariffs"
+        link="#tariffs"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">

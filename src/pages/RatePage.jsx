@@ -63,7 +63,7 @@ const RatePage = () => {
         classNames="iptv-page"
         title="Домашний интернет"
         action="Подключить"
-        link="/rate#tariffs"
+        link="#tariffs"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">

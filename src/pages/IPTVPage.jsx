@@ -64,7 +64,7 @@ const IPTVPage = () => {
         classNames="iptv-page"
         title="IP-телевидение"
         action="Подключить"
-        link="/iptv#tariffs"
+        link="#tariffs"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">

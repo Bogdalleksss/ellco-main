@@ -57,7 +57,9 @@ const MainSection = () => {
             </Fade>
 
             <Fade bottom delay={200} duration={900}>
-              <Button>Подключить</Button>
+              <a href="#tariffs">
+                <Button>Подключить</Button>
+              </a>
             </Fade>
           </div>
 

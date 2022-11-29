@@ -33,9 +33,9 @@ const BannerSection = ({ type = 'default', children, title, action, classNames, 
             {
               action
               && <Fade bottom delay={ 400 } duration={ 900 }>
-                    <Link to={ link }>
+                    <a href={ link }>
                       <Button>{ action }</Button>
-                    </Link>
+                    </a>
                   </Fade>
             }
           </div>

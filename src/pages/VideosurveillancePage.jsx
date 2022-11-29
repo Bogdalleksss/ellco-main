@@ -61,7 +61,7 @@ const VideosurveillancePage = () => {
         classNames="iptv-page"
         title="Видеонаблюдение"
         action="Подключить"
-        link="/cctv#calculator"
+        link="#calculator"
         banner={isMobile ? BannerMobile : Banner}
       >
         <p className="body body-7">
