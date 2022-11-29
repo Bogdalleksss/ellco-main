@@ -4,6 +4,7 @@ import VideoSurveillanceMockup from '@/assets/img/video-camera.png'
 import VideoSurveillanceMockupAdapt from '@/assets/img/video-camera-2.png'
 import IconArrowRight from "../icons/IconArrowRight";
 import Fade from 'react-reveal/Fade';
+import { Link } from "react-router-dom";
 
 const VideoSurveillanceSection = () => {
   return (
@@ -19,10 +20,12 @@ const VideoSurveillanceSection = () => {
             </p>
           </Fade>
           <Fade bottom delay={200} duration={900}>
-            <Button type="main button-main--short" winType="arrow">
-              <span>Узнать больше</span>
-              <IconArrowRight fill="#000000" />
-            </Button>
+            <Link to="/cctv">
+              <Button type="main button-main--short" winType="arrow">
+                <span>Узнать больше</span>
+                <IconArrowRight fill="#000000" />
+              </Button>
+            </Link>
           </Fade>
         </div>
         <Fade bottom duration={900}>

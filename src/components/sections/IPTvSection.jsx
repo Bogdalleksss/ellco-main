@@ -4,6 +4,7 @@ import IPTv from '@/assets/img/IPTv.png'
 import IPTvAdatp from '@/assets/img/IPTv-2.png'
 import IconArrowRight from "../icons/IconArrowRight";
 import Fade from 'react-reveal/Fade';
+import { Link } from "react-router-dom";
 
 const IPTvSection = () => {
   return (
@@ -19,10 +20,12 @@ const IPTvSection = () => {
             </p>
           </Fade>
           <Fade bottom delay={200} duration={900}>
-            <Button type="main button-main--short" winType="arrow">
-              <span>Узнать больше</span>
-              <IconArrowRight fill="#000000" />
-            </Button>
+            <Link to="/iptv">
+              <Button type="main button-main--short" winType="arrow">
+                <span>Узнать больше</span>
+                <IconArrowRight fill="#000000" />
+              </Button>
+            </Link>
           </Fade>
         </div>
         <Fade bottom duration={900}>
