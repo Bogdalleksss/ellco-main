@@ -77,7 +77,7 @@ const VideosurveillancePage = () => {
       />
        <InfoSection
          withoutButton={true}
-         title="Облачное видеонаблюдение от Ellco"
+         title="Облачное видеонаблюдение от EIIco"
          description="Это интегрированный сервис, который позволяет мониторить объекты и помещения помогая вам защитить ваших близких и сохранить ценное имущество"
          list={checklistInfo}
          image={Image}

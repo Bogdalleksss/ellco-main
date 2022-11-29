@@ -78,7 +78,7 @@ const IPTVPage = () => {
       />
        <InfoSection
          withoutButton={true}
-         title="Телевидение от Ellco"
+         title="Телевидение от EIIco"
          description="Мы предлагаем стабильный, высокоскоростной доступ в сеть + бесплатное подключение к IPTV. IPTV – это телевидение, позволяющее передавать сигнал через интернет при помощи IP-протокола."
          list={checklistInfo}
          image={Image}

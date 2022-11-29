@@ -72,7 +72,7 @@ const RatePage = () => {
       </BannerSection>
        <InfoSection
          withoutButton={true}
-         title="Интернет от Ellco"
+         title="Интернет от EIIco"
          description="Это стабильный высокоскоростной доступ в сеть. Подключив у нас интернет, вы получите надёжную защищённую связь без сбоев, быстрый интернет по доступным ценам и круглосуточную техподдержку."
          list={checklistInfo}
          image={Image}

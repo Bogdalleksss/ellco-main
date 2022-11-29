@@ -182,7 +182,7 @@ const Footer = () => {
               </span>
               <p className="body body-2 font-color-w mt-2  zi-2">
                 Мобильное приложение <br/>
-                “Мой EIIсo”
+                «Мой EIIсo»
               </p>
             </div>
             <div className="flex aic gap-6 mt-5 mobile-block-footer">
