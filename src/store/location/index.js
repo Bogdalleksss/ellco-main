@@ -17,10 +17,7 @@ export const searchLocation = createAsyncThunk(
 );
 
 const initialState = {
-  location: localStorage.location ? JSON.parse(localStorage.location) : {
-    id: '6377bbe159db4f8337c13eaf',
-    title: 'Махачкала'
-  },
+  location: localStorage.location ? JSON.parse(localStorage.location) : {},
   locations: [],
   status: null,
   error: null

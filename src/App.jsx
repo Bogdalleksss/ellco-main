@@ -20,28 +20,47 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { searchLocation, setLocation } from "./store/location";
 
 const withoutFooterPages = ['/rate']
 
 const App = () => {
   const dispatch = useDispatch();
   const [ withoutFooter, updateWithoutFooter ] = useState(true);
-  const location = useSelector(state => state.location.location)
+  const location = useSelector(state => state.location.location);
+  const locations = useSelector(state => state.location.locations);
+
+  useEffect( () => {
+    fetchLocation();
+    dispatch(fetchInformation());
+    dispatch(newsFetch());
+    dispatch(promotionsFetch());
+    dispatch(fetchCamsSettings());
+  }, []);
 
   useEffect(() => {
     updateWithoutFooter(withoutFooterPages.includes(window.location.pathname));
   }, [window.location.pathname])
 
   useEffect(() => {
-    dispatch(fetchInformation());
-    dispatch(newsFetch());
-    dispatch(promotionsFetch());
-    dispatch(tariffsFetch(location.id));
-    dispatch(fetchCamsSettings());
-  }, []);
+    if (location?.id) dispatch(tariffsFetch(location.id));
+  }, [location]);
+
+  useEffect(() => {
+    const startLocation = locations.find(item => item.title.toLowerCase() === "махачкала");
+    if (startLocation) dispatch(setLocation(startLocation));
+  }, [locations])
+
+  const fetchLocation = async () => {
+    const myLocation = localStorage.location;
+
+    if (!myLocation) {
+      await dispatch(searchLocation('Махачкала'));
+    }
+  }
 
   return (
-    <div className={navigator.appVersion.indexOf('Win') !== -1 && 'windows'}>
+    <div className={navigator.appVersion.indexOf('Win') !== -1 ? 'windows' : ''}>
       <Switch>
         <Route path="/rate">
           <RatePage />

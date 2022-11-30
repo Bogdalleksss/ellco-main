@@ -5,7 +5,6 @@ import TariffInfoSmotreshka from "../Tariff/TariffInfoSmotreshka";
 import TariffInfoPhone from "../Tariff/TariffInfoPhone";
 
 const OrderTariffInfo = ({ active, tariff }) => {
-  console.log(tariff.type === 'smotroshka');
   return (
     <div className="order-tariff-info">
       {

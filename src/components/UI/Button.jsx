@@ -6,11 +6,11 @@ const Button = ({ children, type='main', className, onClick, disabled, winType =
 
   return (
     <button
-      className={`button button-${type} ${className} ${disabled && 'disabled'}`}
+      className={`button button-${type} ${className} ${disabled ? 'disabled' : ''}`}
       disabled={disabled}
       onClick={() => onClickAction()}
     >
-      <span className={winType === 'arrow' && 'wrapper-arrow-btn'}>
+      <span className={winType === 'arrow' ? 'wrapper-arrow-btn' : ''}>
         { children }
       </span>
     </button>
