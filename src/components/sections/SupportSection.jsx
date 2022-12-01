@@ -5,6 +5,8 @@ import { useScreen } from "../../hooks/useScreen";
 import Fade from 'react-reveal/Fade';
 import { useSelector } from "react-redux";
 
+import Requisites from '@/assets/documents/requisites.pdf'
+
 const requisites = [
   {
     id: v4(),
@@ -13,23 +15,23 @@ const requisites = [
   },
   {
     id: v4(),
-    title: 'Место нахождения',
-    data: 'Республика Дагестан, Ахвахский район, с.Анчих'
+    title: 'Юридический адрес',
+    data: 'РД, Ахвахский р-н, с. Анчих, ул. Анчихская, д. 6, к. А.'
   },
   {
     id: v4(),
     title: 'Почтовый адрес',
-    data: 'Махачкала, пр. А.Акушинского, 88«Е»'
+    data: 'г.Махачкала, пр. Имама Шамиля 2 «В»'
   },
   {
     id: v4(),
     title: 'Ф-л банка',
-    data: 'ГПБ (АО) в г.Ставрополе г.Ставрополь'
+    data: 'БАНК ГПБ (АО) г. Москва'
   },
   {
     id: v4(),
     title: 'Р/С',
-    data: '40702810700070003096'
+    data: '40702810000000038057'
   },
   {
     id: v4(),
@@ -54,7 +56,7 @@ const requisites = [
   {
     id: v4(),
     title: 'К/C',
-    data: '30101810600000000754'
+    data: '30101810200000000823'
   }
 ]
 
@@ -90,7 +92,9 @@ const SupportSection = () => {
           {
             mediaPoint >= 1600 &&
               <Fade bottom delay={600} duration={900}>
-                <Button>Скачать PDF-файл с реквизитами</Button>
+                <a href={Requisites} target="_blank" rel="noreferrer">
+                  <Button>Скачать PDF-файл с реквизитами</Button>
+                </a>
               </Fade>
           }
         </div>
@@ -111,7 +115,9 @@ const SupportSection = () => {
         {
           mediaPoint < 1600 &&
             <Fade bottom delay={100 * requisites.length + 800} duration={900}>
-              <Button>Скачать PDF-файл с реквизитами</Button>
+              <a href={Requisites} target="_blank" rel="noreferrer">
+                <Button>Скачать PDF-файл с реквизитами</Button>
+              </a>
             </Fade>
         }
       </div>
