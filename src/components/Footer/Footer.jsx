@@ -9,6 +9,9 @@ import Logo from "../Logo";
 import { v4 } from "uuid";
 import { Link } from "react-router-dom";
 
+import Policy from '@/assets/documents/policy.pdf'
+import Agreements from '@/assets/documents/agreements.pdf'
+
 const nav = [
   {
     id: v4(),
@@ -264,8 +267,8 @@ const Footer = () => {
             <div className="footer-bottom flex">
               <p className="footer-description body body-8 font-color-w opacity-10 mr-18">
                 Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с
-                <a href="">Политикой конфиденциальности</a> и
-                <a href="">Пользовательским соглашением</a>
+                <a href={Policy} target="_blank" rel="noreferrer">Политикой конфиденциальности</a> и
+                <a href={Agreements} target="_blank" rel="noreferrer">Пользовательским соглашением</a>
               </p>
               <p className="footer-watermark body body-8 font-color-w opacity-10">© 2022 ООО «Эллко»</p>
             </div>

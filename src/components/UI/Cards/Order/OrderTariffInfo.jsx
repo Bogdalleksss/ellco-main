@@ -23,6 +23,7 @@ const OrderTariffInfo = ({ active, tariff }) => {
               ? <TariffInfoPhone
                   firstMinutePrice={tariff.firstMinutePrice}
                   localTelephoneСonnectionsType={tariff.localTelephoneСonnectionsType}
+                  tags={tariff.tags}
                 />
               : <TariffInfo
                   speed={tariff.speedMbs}

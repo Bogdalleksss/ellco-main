@@ -75,19 +75,23 @@ const SupportSection = () => {
             </Fade>
             <div className="support-info__buttons flex column gap-4">
               <Fade bottom delay={400} duration={900}>
-                <Button className="font-color-bl body body-1" type="button-secondary">{ info?.email }</Button>
+                <a href={`mailto:${info?.email}`}>
+                  <Button className="font-color-bl body body-1" type="button-secondary">{ info?.email }</Button>
+                </a>
               </Fade>
               <Fade bottom delay={600} duration={900}>
-                <Button className="font-color-bl body body-1" type="button-secondary">{ info?.phone }</Button>
+                <a href={`tel:${info?.phone}`}>
+                  <Button className="font-color-bl body body-1" type="button-secondary">{ info?.phone }</Button>
+                </a>
               </Fade>
             </div>
           </div>
 
-          { mediaPoint >= 1600
-            ? <Fade bottom delay={600} duration={900}>
-              <Button>Скачать PDF-файл с реквизитами</Button>
-            </Fade>
-            : <></>
+          {
+            mediaPoint >= 1600 &&
+              <Fade bottom delay={600} duration={900}>
+                <Button>Скачать PDF-файл с реквизитами</Button>
+              </Fade>
           }
         </div>
         <div className="support-requisites flex-1">
@@ -104,11 +108,11 @@ const SupportSection = () => {
             }
           </ul>
         </div>
-        { mediaPoint < 1600
-          ? <Fade bottom delay={100 * requisites.length + 800} duration={900}>
-            <Button>Скачать PDF-файл с реквизитами</Button>
-          </Fade>
-          : <></>
+        {
+          mediaPoint < 1600 &&
+            <Fade bottom delay={100 * requisites.length + 800} duration={900}>
+              <Button>Скачать PDF-файл с реквизитами</Button>
+            </Fade>
         }
       </div>
     </section>

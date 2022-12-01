@@ -51,6 +51,7 @@ const TariffCard = ({ tariff }) => {
                   title={tariff.title}
                   firstMinutePrice={tariff.firstMinutePrice}
                   localTelephoneСonnectionsType={tariff.localTelephoneСonnectionsType}
+                  tags={tariff.tags}
                 />
               :
               <TariffInfo
