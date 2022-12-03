@@ -46,7 +46,7 @@ const NewsItemPage = () => {
               <NewsItemSection content={ { __html: html }} />
             </>
       }
-      <NewsListSection className="news-other" news={news.slice(0, 4)}>
+      <NewsListSection className="news-other" news={news.filter(item => item._id !== id).slice(0, 4)}>
         <h2 className="flex flex-aic mb-6">
           <IconStripes fill="#054FD6"/>
           <span className="mt-1 ml-3">Другие статьи</span>
