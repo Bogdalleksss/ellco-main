@@ -266,7 +266,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom flex">
               <p className="footer-description body body-8 font-color-w opacity-10 mr-18">
-                Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с
+                Продолжая пользоваться этим сайтом, вы даёте согласие на использование файлов cookies и обработку пользовательских данных в соответствии c
                 <a href={Policy} target="_blank" rel="noreferrer">Политикой конфиденциальности</a> и
                 <a href={Agreements} target="_blank" rel="noreferrer">Пользовательским соглашением</a>
               </p>

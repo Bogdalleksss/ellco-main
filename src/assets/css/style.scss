@@ -2410,6 +2410,7 @@ footer {
     @media (max-width: $media-medium) {
       .modal-order {
         padding: 20px !important;
+        padding-bottom: 80px !important;
 
         .tariff {
           &-total {
