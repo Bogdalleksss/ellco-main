@@ -28,7 +28,7 @@ const EventsSection = () => {
           </h2>
         </Fade>
 
-        <div className="post-wrapper flex">
+        <div className="post-wrapper flex mb-8">
           {
             events.sort(sortByDate).map((event) => (
               <div key={event._id} className={'post-card__wrapper'}>
@@ -43,7 +43,7 @@ const EventsSection = () => {
           }
         </div>
         <Fade bottom text duration={2000}>
-          <Link className="events__more body body-5 font-color-bl flex flex-aic flex-jcfe pt-2 pb-2 pr-4 pl-4 gap-2 mt-8" to="/news">
+          <Link className="events__more body body-5 font-color-bl flex flex-aic flex-jcfe pt-2 pb-2 pr-4 pl-4 gap-2" to="/news">
             <span>Смотреть еще</span>
             <IconArrowRight  fill="#054FD6"/>
           </Link>

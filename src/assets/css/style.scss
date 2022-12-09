@@ -2153,6 +2153,10 @@ footer {
     &.news {
       &-other {
         padding-top: 30px;
+
+        span {
+          padding-bottom: 4px;
+        }
       }
     }
 
@@ -2410,7 +2414,7 @@ footer {
     @media (max-width: $media-medium) {
       .modal-order {
         padding: 20px !important;
-        padding-bottom: 80px !important;
+        padding-bottom: 130px !important;
 
         .tariff {
           &-total {
