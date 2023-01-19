@@ -122,11 +122,14 @@ const OrderModal = () => {
       connectionAdress: address,
       connectionType,
       tariffs: selectedTariffs.join(','),
-      cctv: {
+    }
+
+    if (!!camsForBuyTotal) {
+      body.cctv = {
         buyCams: !!camsForBuyTotal,
-        recordKeepDays: getTab(cctv.term)?.value,
-        camsCount: cctv.camsCount,
-        camsForBuy: cctv.camsForBuy.map(cam => ({
+          recordKeepDays: getTab(cctv.term)?.value,
+          camsCount: cctv.camsCount,
+          camsForBuy: cctv.camsForBuy.map(cam => ({
           name: cam.name,
           count: cam.value
         }))
