@@ -1,18 +1,24 @@
 import TariffCard from "../UI/Cards/Tariff/TariffCard";
-import Tabs from "../UI/Tabs/Tabs";
 import IconStripes from "../icons/IconStripes";
 import Fade from 'react-reveal/Fade';
 import IconArrowRight from "../icons/IconArrowRight";
 import { useTariffsScroll } from "../../hooks/useTariffsScroll";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const AdditionalTariffsSection = ({ tariffs, title }) => {
+const AdditionalTariffsSection = ({ tariffs, title, isMoreInfo  }) => {
   const tariffsScroll = useTariffsScroll();
+  const [currentTariff, updateCurrentTariff] = useState();
+  const [showModal, updateShowModal] = useState(false);
   const { showRight, showLeft, tariffsRef, checkArrow, toScroll } = tariffsScroll;
 
   useEffect(() => {
     checkArrow();
   }, [tariffsRef, tariffs]);
+
+  const onMore = (tariff) => {
+    updateShowModal(true);
+    updateCurrentTariff(tariff);
+  }
 
   return (
     <section id="tariffs">
@@ -45,6 +51,8 @@ const AdditionalTariffsSection = ({ tariffs, title }) => {
                 <TariffCard
                   key={tariff.id}
                   tariff={tariff}
+                  withoutMore={false}
+                  onMore={() => onMore(tariff)}
                 />
               </Fade>
             ))
@@ -60,6 +68,19 @@ const AdditionalTariffsSection = ({ tariffs, title }) => {
                 </div>
         }
       </div>
+      {
+        showModal &&
+          <div className="tariffs-modal">
+            {
+              currentTariff && <TariffCard
+                tariff={ currentTariff }
+                withoutMore={ true }
+                isModal={ true }
+                onClose={() => updateShowModal(false)}
+              />
+            }
+          </div>
+      }
     </section>
   )
 }

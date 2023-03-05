@@ -21,6 +21,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import { searchLocation, setLocation } from "./store/location";
+import BonusPage from "./pages/BonusPage";
+import CompleteModal from "./components/modals/CompleteModal";
 
 const withoutFooterPages = ['/rate']
 
@@ -94,6 +96,12 @@ const App = () => {
         </Route>
         <Route exact path="/order/:id">
           <OrderPage />
+        </Route>
+        <Route exact path="/order">
+          <OrderPage />
+        </Route>
+        <Route path="/bonus">
+          <BonusPage />
         </Route>
         <Route path="/">
           <IndexPage />

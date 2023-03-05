@@ -6,7 +6,6 @@ const BackButton = ({ icon = <IconArrowLeft/> , title = 'Назад', action, cl
 
   const onClick = () => {
     if (action) return action();
-
     return history.goBack();
   }
 

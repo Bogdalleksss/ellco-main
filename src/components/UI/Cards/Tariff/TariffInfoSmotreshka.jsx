@@ -8,7 +8,7 @@ const TariffInfoSmotreshka = ({ title, channels, movies, tags }) => {
     <div className="tariff-card__info tariff-card__smotreshka width-full zi-2">
       <h3 className="mb-4">{ title }</h3>
 
-      <div className="mb-6">
+      <div className="tariff-card__advantages-wrapper mb-6">
         <div className="tariff-card__advantages">
           <div className="tariff-card__advantages__title flex flex-aic gap-2">
             <IconPC />

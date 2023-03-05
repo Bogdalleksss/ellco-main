@@ -67,7 +67,10 @@ const OrderModal = () => {
   } = settingCams();
 
   useEffect(() => {
-    if (!cctv.camsForBuy.length && !selectedTariffs.length) history.goBack();
+    if (!cctv.camsForBuy.length && !selectedTariffs.length && !localStorage.refferal) {
+      history.length > 0 ? history.goBack() : history.push('/')
+    }
+
     return () => {
       dispatch(clearSelectedTariffs());
       dispatch(clearSettingsCCTV());
@@ -122,6 +125,7 @@ const OrderModal = () => {
       connectionAdress: address,
       connectionType,
       tariffs: selectedTariffs.join(','),
+      referralCode: localStorage.refferal
     }
 
     if (!!camsForBuyTotal) {
