@@ -100,6 +100,12 @@ const Header = ({ mode='default' }) => {
                 </div>
               : <div className="mobile flex flex-1 height-full flex-jcfe flex-aic gap-2">
                   <div className="flex">
+                    <div
+                      className="link flex flex-aic"
+                      onClick={() => updateShowModals(true, updateShowLocation)}
+                    >
+                      <IconMarkerMap fill={ color } />
+                    </div>
                     <a
                       href="https://bill.ellco.ru/my/index.xhtml"
                       target="_blank"

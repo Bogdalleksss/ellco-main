@@ -20,6 +20,7 @@ const TariffCard = ({ tariff, withoutMore = false, isModal = false, onMore, onCl
     firstMonthFree,
     description,
     type,
+    priceDisplayCustom
   } = tariff;
   const dispatch = useDispatch();
   const history = useHistory();
@@ -29,6 +30,7 @@ const TariffCard = ({ tariff, withoutMore = false, isModal = false, onMore, onCl
   useEffect(() => {
       if (description) {
         const replaced = description.replace(/&quot;/gi, '"');
+        console.log(replaced);
         updateHtml(draftToHtml(JSON.parse(replaced)));
       }
   }, [tariff]);
@@ -86,9 +88,9 @@ const TariffCard = ({ tariff, withoutMore = false, isModal = false, onMore, onCl
       <div className="width-full zi-2 modal-footer">
         { firstMonthFree ? <p className="body body-8 ta-c font-color-gr mb-1">Первый месяц 0 ₽</p> : <></> }
         <div className="flex mb-2 flex-jcc">
-          { newPrice ? <p className="price-old mr-3">{ newPrice }</p> : <></> }
-          <p className="price mr-2">{ price }</p>
-          <p className="currency body body-7">руб/мес</p>
+          { newPrice ? <p className="price-old mr-3">{ price }</p> : <></> }
+          <p className="price mr-2">{ newPrice || price }</p>
+          <p className="currency body body-7">руб/{ priceDisplayCustom || 'мес' }</p>
         </div>
         <Button
           className="width-full mb-1"
