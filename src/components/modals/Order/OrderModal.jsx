@@ -105,15 +105,16 @@ const OrderModal = () => {
   const etcPrice = () => {
     return selectedTariffs?.reduce((acc, item) => {
       const { price, newPrice, _id } = tariffs.find(tariff => tariff._id === item);
+      console.log(_id === id ? 0 : (newPrice || price));
       return acc + (_id === id ? 0 : (newPrice || price));
     }, 0)
   }
   const getMonthPrice = () => {
     return id === 'VIDEO'
       ? getEveryMonthPrice()
-      : currentTariff?.newPrice || currentTariff?.price || 0
+      : +currentTariff?.newPrice || +currentTariff?.price || 0
   }
-  const getAddMonthPrice = () => etcPrice() + (id !== 'VIDEO' ? getEveryMonthPrice() : 0)
+  const getAddMonthPrice = () => etcPrice() + (id === 'VIDEO' ? getEveryMonthPrice() : 0)
   const getTotalPrice = () => {
     return getMonthPrice() + getAddMonthPrice() + (type === 'ellco' && !!camsForBuyTotal ? getFirstPrice() : 0);
   }
@@ -154,6 +155,13 @@ const OrderModal = () => {
               </div>
               : <></>
           }
+          <div style={{ width: '130px' }} className="mb-8">
+            <TextInput
+              value={localStorage.refferal}
+              label="Код реферала:"
+              disabled={true}
+            />
+          </div>
           <div className="flex form-row gap-8 mb-8">
             <TextInput
               value={fullName}
@@ -212,7 +220,7 @@ const OrderModal = () => {
             </p>
             <p className="body body-6">
               <span>
-                Дополнительно в месяц — { getAddMonthPrice() } ₽
+                Дополнительно в месяц — { getAddMonthPrice() || 0 } ₽
               </span>
             </p>
             { type === 'ellco' && !!camsForBuyTotal
@@ -222,7 +230,7 @@ const OrderModal = () => {
                     </span>
                   </p>
             }
-              <p className="body body-6 font-color-w total"> <span>К оплате — { getTotalPrice() } ₽</span></p>
+              <p className="body body-6 font-color-w total"> <span>К оплате — { getTotalPrice() || 0 } ₽</span></p>
           </div>
 
           <Checkbox
